@@ -3,8 +3,8 @@
     "name": "SHIHONGYUE",
     "shortName": "SHIHONGYUE",
     "role": "Backend & Data Analytics Developer",
-    "summary": "I build Python-based backend workflows and data analysis systems, with a focus on time series, statistical modeling, and reproducible research.",
-    "about": "I enjoy turning complex analytical problems into reliable, maintainable workflows. My work spans backend automation, data preparation, statistical analysis, and machine learning experiments, with an emphasis on clear code and reproducible results.",
+    "summary": "Python-focused backend and data analytics developer with experience in financial time-series research, statistical modeling, and reproducible machine learning experiments.",
+    "about": "My strengths are structured problem solving and the ability to investigate unfamiliar challenges. I can take a research problem from topic definition and literature review through method selection, implementation, experiment reproduction, and validation. Reading technical material across languages, translating theory into code, and extracting reliable insight from data are central to how I work.",
     "availability": "Open to internships, graduate roles, and collaborations",
     "location": "Japan · Open to Remote",
     "focus": "Backend / Data Analytics",
@@ -18,19 +18,35 @@
     ]
   },
   "skills": [
-    { "category": "Backend", "items": ["Python", "API Integration", "CLI Automation", "Data Pipelines"] },
-    { "category": "Data Analysis", "items": ["pandas", "Time Series", "Statistical Modeling", "Visualization"] },
+    { "category": "Backend", "items": ["Python", "SQL", "MySQL / SQL Server", "API Integration"] },
+    { "category": "Data Analysis", "items": ["pandas", "MATLAB", "Time Series", "Statistical Modeling", "Visualization"] },
     { "category": "Machine Learning", "items": ["PyTorch", "Diffusion Models", "Experiment Design"] },
     { "category": "Engineering", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "Reproducible Workflows"] }
   ],
   "experience": [
     {
-      "period": "2025 — Present",
-      "role": "Independent Project Developer",
-      "company": "Self-directed Practice",
-      "location": "Remote",
-      "description": "Developing Python workflows for backend automation, financial time-series analysis, covariance estimation, and machine learning experiments.",
-      "highlights": ["Build reproducible data preparation, experiment, and evaluation pipelines", "Manage iterative development and research artifacts with GitHub"]
+      "period": "Apr 2024 — Apr 2026",
+      "role": "Graduate Researcher — Conditional Diffusion & Covariance Forecasting",
+      "company": "Independent Academic Research",
+      "location": "Japan",
+      "description": "Designed Conditional Diffusion Score Matching (CDSM) and applied it to forecasting covariance structures in financial returns.",
+      "highlights": ["Conducted literature review, model design, Python implementation, experiment reproduction, and validation", "Evaluated FX29, Industry49, and iShares14 against established covariance forecasting baselines", "Demonstrated improved predictive accuracy and stability across empirical experiments"]
+    },
+    {
+      "period": "2024 — 2026",
+      "role": "Teaching Assistant",
+      "company": "University Course Support",
+      "location": "Japan",
+      "description": "Supported course delivery and student learning by adapting explanations to individual levels of understanding.",
+      "highlights": ["Answered student questions and provided supplementary explanations during class", "Prepared model solutions, assisted with grading, and coordinated with instructors and other teaching assistants"]
+    },
+    {
+      "period": "Sep 2015 — Jun 2019",
+      "role": "Quantitative Finance Research",
+      "company": "Undergraduate Academic Project",
+      "location": "China",
+      "description": "Studied portfolio construction for index investing and implemented multiple approaches in Excel for empirical comparison.",
+      "highlights": ["Evaluated portfolio construction methods from risk and return perspectives", "Built foundations in data structures, linear algebra, probability, statistics, economics, investment, C, and SQL"]
     }
   ],
   "education": [

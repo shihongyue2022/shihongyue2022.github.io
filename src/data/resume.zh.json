@@ -3,8 +3,8 @@
     "name": "SHIHONGYUE",
     "shortName": "SHIHONGYUE",
     "role": "后端与数据分析开发工程师",
-    "summary": "主要使用 Python 构建后端工作流和数据分析系统，关注时间序列、统计建模与可复现研究。",
-    "about": "我擅长将复杂的分析问题转化为可靠、易维护的工作流，覆盖后端自动化、数据准备、统计分析和机器学习实验，并重视清晰的代码与结果可复现性。",
+    "summary": "以后端与数据分析为主，使用 Python 开展金融时间序列研究、统计建模和可复现的机器学习实验。",
+    "about": "我的优势是结构化解决问题，以及面对未知课题时的研究能力。我能够独立完成研究主题设定、文献调研、分析方法选择、程序实现和实验复现验证，并善于阅读外语技术资料、将理论转化为代码、从数据中提炼可靠结论。",
     "availability": "开放实习、校招与项目合作机会",
     "location": "日本 · 可远程",
     "focus": "后端开发 / 数据分析",
@@ -16,18 +16,32 @@
     "socials": [{ "label": "GitHub", "url": "https://github.com/shihongyue2022" }]
   },
   "skills": [
-    { "category": "后端开发", "items": ["Python", "API 集成", "CLI 自动化", "数据管道"] },
-    { "category": "数据分析", "items": ["pandas", "时间序列", "统计建模", "数据可视化"] },
+    { "category": "后端开发", "items": ["Python", "SQL", "MySQL / SQL Server", "API 集成"] },
+    { "category": "数据分析", "items": ["pandas", "MATLAB", "时间序列", "统计建模", "数据可视化"] },
     { "category": "机器学习", "items": ["PyTorch", "扩散模型", "实验设计"] },
     { "category": "工程工具", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "可复现工作流"] }
   ],
   "experience": [{
-    "period": "2025 — 至今",
-    "role": "个人项目开发",
-    "company": "独立实践",
-    "location": "远程",
-    "description": "围绕后端自动化、金融时间序列分析、协方差估计和机器学习实验开发 Python 工作流。",
-    "highlights": ["构建可复现的数据准备、实验与评估管道", "使用 GitHub 管理开发过程与研究成果"]
+    "period": "2024年4月 — 2026年4月",
+    "role": "硕士研究 — 条件扩散与协方差预测",
+    "company": "独立学术研究",
+    "location": "日本",
+    "description": "设计条件逆扩散得分匹配模型（CDSM），并将其用于金融收益率协方差结构预测。",
+    "highlights": ["独立完成文献调研、模型设计、Python 实现和实验复现验证", "使用 FX29、Industry49 和 iShares14 与经典协方差预测基线进行比较", "通过实证实验验证预测精度与稳定性的提升"]
+  }, {
+    "period": "2024年 — 2026年",
+    "role": "课程助教（TA）",
+    "company": "大学课程与学习支持",
+    "location": "日本",
+    "description": "根据学生的理解程度提供针对性讲解，协助课程运行和学习支持。",
+    "highlights": ["回答学生问题并在课堂中进行补充说明", "编写参考答案、协助评分，并与教师和其他助教协作"]
+  }, {
+    "period": "2015年9月 — 2019年6月",
+    "role": "金融数学与量化研究",
+    "company": "本科研究项目",
+    "location": "中国",
+    "description": "研究指数投资中的投资组合构建方法，并使用 Excel 实现和比较多种方案。",
+    "highlights": ["从风险与收益角度对投资组合构建方法进行实证评估", "学习数据结构、线性代数、概率统计、经济学、投资学、C 语言和 SQL"]
   }],
   "education": [{
     "period": "2024年4月 — 2026年4月",
