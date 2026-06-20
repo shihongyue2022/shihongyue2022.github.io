@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { localePaths, ui, type Locale } from '../i18n';
+import type { ResumeData } from '../types';
+
+interface Props {
+  locale: Locale;
+  data: ResumeData;
+}
+
+const { locale, data } = Astro.props;
+const { profile, skills, experience, education, projects, certificates } = data;
+const t = ui[locale];
+const contacts = [profile.location, profile.phone, profile.email && !profile.email.startsWith('your-') ? profile.email : '', ...profile.socials.map((item) => item.url)].filter(Boolean);
+---
+
+<BaseLayout title={`${profile.name} · ${t.printResume}`} description={profile.summary} className="resume-page" locale={locale} page="resume" noindex>
+  <div class="print-toolbar">
+    <a href={localePaths[locale].home}>← {t.backWebsite}</a>
+    <span>{t.printHint}</span>
+    <LanguageSwitcher locale={locale} page="resume" />
+    <button id="print-button" class="button button-small" type="button">{t.printAction}</button>
+  </div>
+  <main class="resume-sheet">
+    <header class="resume-header"><div><h1>{profile.name}</h1><p>{profile.role}</p></div><div class="resume-contact">{contacts.map((value) => value.startsWith('http') ? <a href={value}>{value.replace(/^https?:\/\//, '')}</a> : <span>{value}</span>)}</div></header>
+    <section class="resume-summary"><h2>{t.resume.profile}</h2><p>{profile.summary}</p></section>
+    <div class="resume-columns">
+      <div class="resume-main">
+        <section><h2>{t.resume.experience}</h2>{experience.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.role}</h3><span class="period">{item.period}</span></div><h4>{item.company} · {item.location}</h4><p>{item.description}</p><ul>{item.highlights.map((point) => <li>{point}</li>)}</ul></article>)}</section>
+        <section><h2>{t.resume.projects}</h2>{projects.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3></div><h4>{item.tags.join(' · ')}</h4><p>{item.description}</p>{item.impact && <ul><li>{item.impact}</li></ul>}</article>)}</section>
+      </div>
+      <aside class="resume-side">
+        <section><h2>{t.resume.skills}</h2>{skills.map((group) => <div class="resume-skill"><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div>)}</section>
+        <section><h2>{t.resume.education}</h2>{education.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.school}</h3><span class="period">{item.period}</span></div><h4>{item.degree}</h4><p>{item.description}</p></article>)}</section>
+        <section><h2>{t.resume.certifications}</h2>{certificates.length > 0 ? certificates.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3><span class="period">{item.issuedAt}</span></div><h4>{item.issuer}</h4></article>) : <p class="resume-placeholder">{t.resume.empty}</p>}</section>
+      </aside>
+    </div>
+  </main>
+  <script>document.querySelector('#print-button')?.addEventListener('click', () => window.print());</script>
+</BaseLayout>

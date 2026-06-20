@@ -3,9 +3,10 @@ import type { Certificate } from '../types';
 
 interface Props {
   certificate: Certificate;
+  credentialLabel?: string;
 }
 
-const { certificate } = Astro.props;
+const { certificate, credentialLabel = 'Credential ID' } = Astro.props;
 const href = certificate.verifyUrl || undefined;
 const Tag = href ? 'a' : 'article';
 ---
@@ -17,5 +18,5 @@ const Tag = href ? 'a' : 'article';
   {href && <span class="certificate-arrow">↗</span>}
   <h3>{certificate.name}</h3>
   <p>{certificate.issuer} · {certificate.issuedAt}</p>
-  {certificate.credentialId && <p>Credential ID: {certificate.credentialId}</p>}
+  {certificate.credentialId && <p>{credentialLabel}: {certificate.credentialId}</p>}
 </Tag>

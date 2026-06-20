@@ -1,6 +1,6 @@
 # Personal Resume & Portfolio
 
-An Astro-powered personal resume website with project highlights, certification badges, credential verification links, dark mode, an A4 print layout, and automated GitHub Pages deployment.
+An Astro-powered multilingual personal resume website with project highlights, certification badges, credential verification links, dark mode, an A4 print layout, and automated GitHub Pages deployment.
 
 **Live site:** [shihongyue2022.github.io](https://shihongyue2022.github.io/)
 
@@ -24,9 +24,23 @@ npm run build
 npm run preview
 ```
 
+## Languages
+
+- English: `/` and `/resume/`
+- Japanese: `/ja/` and `/ja/resume/`
+- Chinese: `/zh/` and `/zh/resume/`
+
+The language selector keeps visitors on the corresponding portfolio or printable resume page.
+
 ## Edit resume content
 
-All resume content lives in [`src/data/resume.json`](src/data/resume.json):
+Resume content is stored by language:
+
+- English: [`src/data/resume.json`](src/data/resume.json)
+- Japanese: [`src/data/resume.ja.json`](src/data/resume.ja.json)
+- Chinese: [`src/data/resume.zh.json`](src/data/resume.zh.json)
+
+Each file contains:
 
 - `profile`: name, role, summary, and contact details
 - `skills`: grouped technical skills
@@ -57,7 +71,8 @@ Every push to `develop` runs the GitHub Actions workflow and deploys the generat
 ```text
 ├─ src/
 │  ├─ components/            # Reusable project and certificate cards
-│  ├─ data/resume.json       # Resume content
+│  ├─ data/                  # English, Japanese, and Chinese content
+│  ├─ i18n.ts                # Shared interface translations and routes
 │  ├─ layouts/               # Shared page layout
 │  ├─ pages/                 # Portfolio and printable resume
 │  ├─ styles/global.css      # Global visual design

@@ -1,29 +1,41 @@
 ---
 import '../styles/global.css';
+import { localePaths, type Locale, type PageKind } from '../i18n';
 
 interface Props {
   title: string;
   description?: string;
   className?: string;
   noindex?: boolean;
+  locale?: Locale;
+  page?: PageKind;
 }
 
 const {
   title,
   description = 'Personal resume, selected projects, and professional certifications.',
   className = '',
-  noindex = false
+  noindex = false,
+  locale = 'en',
+  page = 'home'
 } = Astro.props;
+
+const canonicalUrl = Astro.site ? new URL(localePaths[locale][page], Astro.site) : localePaths[locale][page];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale === 'zh' ? 'zh-CN' : locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f4f1eb" />
     {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={Astro.site ? new URL(localePaths.en[page], Astro.site) : localePaths.en[page]} />
+    <link rel="alternate" hreflang="ja" href={Astro.site ? new URL(localePaths.ja[page], Astro.site) : localePaths.ja[page]} />
+    <link rel="alternate" hreflang="zh-CN" href={Astro.site ? new URL(localePaths.zh[page], Astro.site) : localePaths.zh[page]} />
+    <link rel="alternate" hreflang="x-default" href={Astro.site ? new URL(localePaths.en[page], Astro.site) : localePaths.en[page]} />
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <title>{title}</title>
     <script is:inline>

@@ -4,9 +4,11 @@ import type { Project } from '../types';
 interface Props {
   project: Project;
   index: number;
+  sourceLabel?: string;
+  demoLabel?: string;
 }
 
-const { project, index } = Astro.props;
+const { project, index, sourceLabel = 'Source', demoLabel = 'Demo' } = Astro.props;
 ---
 
 <article class="project-card reveal">
@@ -19,8 +21,8 @@ const { project, index } = Astro.props;
       {project.tags.map((tag) => <span class="tag">{tag}</span>)}
     </div>
     <div class="project-links">
-      {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">Source ↗</a>}
-      {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">Demo ↗</a>}
+      {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">{sourceLabel} ↗</a>}
+      {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">{demoLabel} ↗</a>}
     </div>
   </div>
 </article>

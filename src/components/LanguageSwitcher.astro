@@ -1,0 +1,28 @@
+---
+import { localeNames, localePaths, type Locale, type PageKind } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  page: PageKind;
+}
+
+const { locale, page } = Astro.props;
+---
+
+<label class="language-switcher">
+  <span class="sr-only">Language</span>
+  <span aria-hidden="true">文</span>
+  <select data-language-select aria-label="Language">
+    {(Object.keys(localeNames) as Locale[]).map((code) => (
+      <option value={localePaths[code][page]} selected={code === locale}>{localeNames[code]}</option>
+    ))}
+  </select>
+</label>
+
+<script>
+  document.querySelectorAll<HTMLSelectElement>('[data-language-select]').forEach((select) => {
+    select.addEventListener('change', () => {
+      window.location.href = select.value;
+    });
+  });
+</script>

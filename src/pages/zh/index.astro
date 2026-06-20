@@ -1,0 +1,7 @@
+---
+import PortfolioPage from '../../components/PortfolioPage.astro';
+import data from '../../data/resume.zh.json';
+import type { ResumeData } from '../../types';
+---
+
+<PortfolioPage locale="zh" data={data as ResumeData} />

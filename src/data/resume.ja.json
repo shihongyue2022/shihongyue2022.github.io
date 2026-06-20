@@ -1,0 +1,58 @@
+{
+  "profile": {
+    "name": "SHIHONGYUE",
+    "shortName": "SHIHONGYUE",
+    "role": "ソフトウェア開発者",
+    "summary": "Pythonの実践経験を活かし、実際の課題を解決する明快で信頼性の高いソフトウェアを開発しています。現在は人工知能分野にも注力しています。",
+    "about": "複雑な問題を実行可能なステップに分解し、保守しやすいソフトウェアへ形にすることが好きです。機能性、コード品質、ユーザー体験のバランスを大切にしながら、ソフトウェア工学とAIの経験を積んでいます。",
+    "availability": "インターン・新卒採用・プロジェクト協業の機会を探しています",
+    "location": "日本 · リモート対応可",
+    "focus": "Python / 人工知能",
+    "workMode": "リモート / オンサイト",
+    "avatar": "https://avatars.githubusercontent.com/u/146401746?v=4",
+    "email": "your-email@example.com",
+    "phone": "",
+    "contactText": "採用機会、プロジェクトのご相談、技術交流などがありましたら、メールまたはGitHubからお気軽にご連絡ください。",
+    "socials": [{ "label": "GitHub", "url": "https://github.com/shihongyue2022" }]
+  },
+  "skills": [
+    { "category": "言語", "items": ["Python", "JavaScript", "HTML / CSS"] },
+    { "category": "エンジニアリング", "items": ["Git / GitHub", "データ処理", "問題解決"] },
+    { "category": "学習分野", "items": ["機械学習", "生成モデル", "Web開発"] }
+  ],
+  "experience": [{
+    "period": "2025 — 現在",
+    "role": "個人プロジェクト開発者",
+    "company": "自主開発",
+    "location": "リモート",
+    "description": "人工知能とソフトウェア工学のプロジェクトに取り組み、要件整理、実装、ソース管理、ドキュメント作成まで一貫して行っています。",
+    "highlights": ["GitHubを活用した反復的な開発管理", "Pythonと生成モデルの実践スキルを継続的に向上"]
+  }],
+  "education": [{
+    "period": "期間を追加",
+    "school": "学校名を追加",
+    "degree": "学位・専攻を追加",
+    "description": "関連科目、実績、活動などを追加"
+  }],
+  "projects": [
+    {
+      "name": "COMETS-GAN Operation",
+      "description": "生成対抗ネットワークを題材に、モデル実行、実験ワークフロー、結果管理を扱うPythonプロジェクトです。",
+      "impact": "コードベースの理解から実験実行まで、一連のワークフローを構築しました",
+      "tags": ["Python", "GAN", "機械学習"],
+      "repoUrl": "https://github.com/shihongyue2022/COMETS-GAN-operation",
+      "demoUrl": "",
+      "featured": true
+    },
+    {
+      "name": "個人履歴書・ポートフォリオ",
+      "description": "経歴、プロジェクト、資格情報を構造化JSONで管理する、Astro製のレスポンシブなポートフォリオです。",
+      "impact": "GitHub Pagesへの自動デプロイとA4印刷用の履歴書に対応しています",
+      "tags": ["HTML", "CSS", "JavaScript", "GitHub Actions"],
+      "repoUrl": "https://github.com/shihongyue2022/shihongyue2022.github.io",
+      "demoUrl": "",
+      "featured": true
+    }
+  ],
+  "certificates": []
+}

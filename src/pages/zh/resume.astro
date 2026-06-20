@@ -1,0 +1,7 @@
+---
+import ResumePage from '../../components/ResumePage.astro';
+import data from '../../data/resume.zh.json';
+import type { ResumeData } from '../../types';
+---
+
+<ResumePage locale="zh" data={data as ResumeData} />
