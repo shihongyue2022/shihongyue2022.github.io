@@ -68,6 +68,13 @@
       "issuedAt": "2026年6月颁发 · 2029年6月到期",
       "image": "/assets/certificates/aws-certified-cloud-practitioner.png",
       "verifyUrl": "https://www.credly.com/badges/fe7ccb10-4e40-4949-9566-e4cae84ad36e/public_url"
+    },
+    {
+      "name": "日本统计检定 2级（JSSC）",
+      "issuer": "日本统计质量保证推进协会",
+      "issuedAt": "2026年5月",
+      "image": "/assets/certificates/jssc-statistics-grade-2.png",
+      "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/46827d9b-bc16-8788-9809-019e24ccbc7b"
     }
   ]
 }
