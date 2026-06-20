@@ -61,6 +61,13 @@
       "issuedAt": "2025年3月",
       "image": "/assets/certificates/data-science-level-4-business.png",
       "verifyUrl": "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09"
+    },
+    {
+      "name": "AWS 認定クラウドプラクティショナー",
+      "issuer": "Amazon Web Services Training and Certification",
+      "issuedAt": "2026年6月取得 · 2029年6月まで有効",
+      "image": "/assets/certificates/aws-certified-cloud-practitioner.png",
+      "verifyUrl": "https://www.credly.com/badges/fe7ccb10-4e40-4949-9566-e4cae84ad36e/public_url"
     }
   ]
 }
