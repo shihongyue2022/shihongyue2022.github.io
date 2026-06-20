@@ -60,5 +60,13 @@
       "featured": true
     }
   ],
-  "certificates": []
+  "certificates": [
+    {
+      "name": "Data Science Education Program Level 4 (Advanced Specialization: Business)",
+      "issuer": "Tokyo University of Science",
+      "issuedAt": "Mar 2025",
+      "image": "/assets/certificates/data-science-level-4-business.png",
+      "verifyUrl": "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09"
+    }
+  ]
 }

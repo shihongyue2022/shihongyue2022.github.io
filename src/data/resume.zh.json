@@ -54,5 +54,13 @@
       "featured": true
     }
   ],
-  "certificates": []
+  "certificates": [
+    {
+      "name": "数据科学教育项目 Level 4（高级专业：商业）",
+      "issuer": "东京理科大学",
+      "issuedAt": "2025年3月",
+      "image": "/assets/certificates/data-science-level-4-business.png",
+      "verifyUrl": "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09"
+    }
+  ]
 }
