@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  className?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = '个人简历、项目作品与专业资格证书。',
+  className = '',
+  noindex = false
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f4f1eb" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        const saved = localStorage.getItem('resume-theme');
+        const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (dark ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body class={className}>
+    <slot />
+  </body>
+</html>

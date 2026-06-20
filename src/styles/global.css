@@ -162,6 +162,7 @@ img { display: block; max-width: 100%; }
 .resume-skill { margin-bottom: .75rem; }
 .resume-skill h3 { margin: 0 0 .2rem; font-size: .72rem; }
 .resume-skill p { margin: 0; color: #58645d; font-size: .68rem; }
+.resume-placeholder { color: #58645d; font-size: .68rem; }
 
 @media (max-width: 800px) {
   .site-header { grid-template-columns: 1fr auto auto; padding-inline: 1.5rem; }
