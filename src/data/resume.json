@@ -66,7 +66,7 @@
       "issuer": "Tokyo University of Science",
       "issuedAt": "Mar 2025",
       "image": "/assets/certificates/data-science-level-4-business.png",
-      "verifyUrl": "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09"
+      "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09?d=cGxhdGZvcm1UeXBlPXYyJnJpZD1RVm96YkRoeGRYaEpRbmsxVGtSRlJXRjZjMmxQVVQwOQ%3D%3D"
     },
     {
       "name": "AWS Certified Cloud Practitioner",
