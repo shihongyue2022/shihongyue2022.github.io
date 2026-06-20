@@ -27,7 +27,7 @@
     {
       "period": "Apr 2024 — Apr 2026",
       "role": "Graduate Researcher — Conditional Diffusion & Covariance Forecasting",
-      "company": "Independent Academic Research",
+      "company": "Tokyo University of Science",
       "location": "Japan",
       "description": "Designed Conditional Diffusion Score Matching (CDSM) and applied it to forecasting covariance structures in financial returns.",
       "highlights": ["Conducted literature review, model design, Python implementation, experiment reproduction, and validation", "Evaluated FX29, Industry49, and iShares14 against established covariance forecasting baselines", "Demonstrated improved predictive accuracy and stability across empirical experiments"]
