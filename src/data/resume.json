@@ -2,58 +2,58 @@
   "profile": {
     "name": "SHIHONGYUE",
     "shortName": "SHIHONGYUE",
-    "role": "软件开发工程师",
-    "summary": "关注可靠、清晰且真正解决问题的软件产品，具备 Python 项目实践与持续学习能力。",
-    "about": "我喜欢把复杂问题拆解成可执行的步骤，在实现功能的同时关注代码质量、使用体验和可维护性。目前持续积累软件开发与人工智能方向的项目经验。",
-    "availability": "开放实习、校招与项目合作机会",
-    "location": "日本 · 可远程",
-    "focus": "Python / 人工智能",
-    "workMode": "远程 / 现场",
+    "role": "Software Developer",
+    "summary": "I build clear, reliable software that solves real problems, with hands-on experience in Python and a growing focus on artificial intelligence.",
+    "about": "I enjoy breaking complex problems into practical steps and turning ideas into maintainable software. My work balances functionality, code quality, and user experience, while I continue building experience across software engineering and AI.",
+    "availability": "Open to internships, graduate roles, and collaborations",
+    "location": "Japan · Open to Remote",
+    "focus": "Python / Artificial Intelligence",
+    "workMode": "Remote / On-site",
     "avatar": "https://avatars.githubusercontent.com/u/146401746?v=4",
     "email": "your-email@example.com",
     "phone": "",
-    "contactText": "如果你有合适的工作机会、项目合作或技术交流，欢迎通过邮件或 GitHub 与我联系。",
+    "contactText": "If you have an opportunity, a project idea, or simply want to talk technology, feel free to reach out by email or GitHub.",
     "socials": [
       { "label": "GitHub", "url": "https://github.com/shihongyue2022" }
     ]
   },
   "skills": [
-    { "category": "开发语言", "items": ["Python", "JavaScript", "HTML / CSS"] },
-    { "category": "工程能力", "items": ["Git / GitHub", "数据处理", "问题分析"] },
-    { "category": "学习方向", "items": ["机器学习", "生成式模型", "Web 开发"] }
+    { "category": "Languages", "items": ["Python", "JavaScript", "HTML / CSS"] },
+    { "category": "Engineering", "items": ["Git / GitHub", "Data Processing", "Problem Solving"] },
+    { "category": "Learning", "items": ["Machine Learning", "Generative Models", "Web Development"] }
   ],
   "experience": [
     {
-      "period": "2025 — 至今",
-      "role": "个人项目开发",
-      "company": "独立实践",
+      "period": "2025 — Present",
+      "role": "Independent Project Developer",
+      "company": "Self-directed Practice",
       "location": "Remote",
-      "description": "围绕人工智能与软件工程开展项目实践，负责需求拆解、功能实现、代码管理和文档整理。",
-      "highlights": ["使用 GitHub 管理项目迭代", "持续完善 Python 与生成式模型相关能力"]
+      "description": "Developing hands-on projects in artificial intelligence and software engineering, from requirements and implementation to source control and documentation.",
+      "highlights": ["Manage iterative development with GitHub", "Build practical skills in Python and generative models"]
     }
   ],
   "education": [
     {
-      "period": "请补充时间",
-      "school": "请填写学校名称",
-      "degree": "请填写专业与学历",
-      "description": "可补充核心课程、排名或校园经历"
+      "period": "Add dates",
+      "school": "Add school name",
+      "degree": "Add degree and major",
+      "description": "Add relevant coursework, achievements, or activities"
     }
   ],
   "projects": [
     {
       "name": "COMETS-GAN Operation",
-      "description": "围绕生成对抗网络开展的 Python 项目实践，探索模型运行、实验流程与结果管理。",
-      "impact": "完成从代码理解到项目运行的实践闭环",
+      "description": "A Python-based exploration of generative adversarial networks, covering model execution, experiment workflows, and result management.",
+      "impact": "Built an end-to-end workflow from understanding the codebase to running experiments",
       "tags": ["Python", "GAN", "Machine Learning"],
       "repoUrl": "https://github.com/shihongyue2022/COMETS-GAN-operation",
       "demoUrl": "",
       "featured": true
     },
     {
-      "name": "个人简历与作品集",
-      "description": "零依赖的响应式个人简历网站，使用结构化 JSON 管理经历、项目和资格证书。",
-      "impact": "支持 GitHub Pages 自动发布与 A4 PDF 打印",
+      "name": "Personal Resume & Portfolio",
+      "description": "A responsive Astro portfolio that manages experience, projects, and professional certifications through structured JSON data.",
+      "impact": "Includes automated GitHub Pages deployment and an A4 print-ready resume",
       "tags": ["HTML", "CSS", "JavaScript", "GitHub Actions"],
       "repoUrl": "https://github.com/shihongyue2022/shihongyue2022",
       "demoUrl": "",

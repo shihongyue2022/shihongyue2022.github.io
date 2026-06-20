@@ -7,20 +7,20 @@ const { profile, skills, experience, education, projects, certificates } = data 
 const contacts = [profile.location, profile.phone, profile.email && !profile.email.startsWith('your-') ? profile.email : '', ...profile.socials.map((item) => item.url)].filter(Boolean);
 ---
 
-<BaseLayout title={`${profile.name}的简历`} className="resume-page" noindex>
-  <div class="print-toolbar"><a href="/">← 返回网站</a><span>建议在打印设置中选择 A4，并关闭页眉和页脚</span><button id="print-button" class="button button-small" type="button">打印 / 保存 PDF</button></div>
+<BaseLayout title={`${profile.name} · Resume`} className="resume-page" noindex>
+  <div class="print-toolbar"><a href="/">← Back to website</a><span>For best results, choose A4 and disable browser headers and footers</span><button id="print-button" class="button button-small" type="button">Print / Save PDF</button></div>
   <main class="resume-sheet">
     <header class="resume-header"><div><h1>{profile.name}</h1><p>{profile.role}</p></div><div class="resume-contact">{contacts.map((value) => value.startsWith('http') ? <a href={value}>{value.replace(/^https?:\/\//, '')}</a> : <span>{value}</span>)}</div></header>
-    <section class="resume-summary"><h2>个人简介</h2><p>{profile.summary}</p></section>
+    <section class="resume-summary"><h2>Profile</h2><p>{profile.summary}</p></section>
     <div class="resume-columns">
       <div class="resume-main">
-        <section><h2>工作与实践经历</h2>{experience.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.role}</h3><span class="period">{item.period}</span></div><h4>{item.company} · {item.location}</h4><p>{item.description}</p><ul>{item.highlights.map((point) => <li>{point}</li>)}</ul></article>)}</section>
-        <section><h2>项目经历</h2>{projects.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3></div><h4>{item.tags.join(' · ')}</h4><p>{item.description}</p>{item.impact && <ul><li>{item.impact}</li></ul>}</article>)}</section>
+        <section><h2>Experience</h2>{experience.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.role}</h3><span class="period">{item.period}</span></div><h4>{item.company} · {item.location}</h4><p>{item.description}</p><ul>{item.highlights.map((point) => <li>{point}</li>)}</ul></article>)}</section>
+        <section><h2>Projects</h2>{projects.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3></div><h4>{item.tags.join(' · ')}</h4><p>{item.description}</p>{item.impact && <ul><li>{item.impact}</li></ul>}</article>)}</section>
       </div>
       <aside class="resume-side">
-        <section><h2>专业技能</h2>{skills.map((group) => <div class="resume-skill"><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div>)}</section>
-        <section><h2>教育经历</h2>{education.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.school}</h3><span class="period">{item.period}</span></div><h4>{item.degree}</h4><p>{item.description}</p></article>)}</section>
-        <section><h2>资格证书</h2>{certificates.length > 0 ? certificates.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3><span class="period">{item.issuedAt}</span></div><h4>{item.issuer}</h4></article>) : <p class="resume-placeholder">待补充</p>}</section>
+        <section><h2>Skills</h2>{skills.map((group) => <div class="resume-skill"><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div>)}</section>
+        <section><h2>Education</h2>{education.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.school}</h3><span class="period">{item.period}</span></div><h4>{item.degree}</h4><p>{item.description}</p></article>)}</section>
+        <section><h2>Certifications</h2>{certificates.length > 0 ? certificates.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3><span class="period">{item.issuedAt}</span></div><h4>{item.issuer}</h4></article>) : <p class="resume-placeholder">To be added</p>}</section>
       </aside>
     </div>
   </main>

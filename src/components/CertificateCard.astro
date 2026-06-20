@@ -12,10 +12,10 @@ const Tag = href ? 'a' : 'article';
 
 <Tag class="certificate-card reveal" href={href} target={href ? '_blank' : undefined} rel={href ? 'noreferrer' : undefined}>
   {certificate.image
-    ? <img class="certificate-image" src={certificate.image} alt={`${certificate.name} 徽章`} loading="lazy" />
+    ? <img class="certificate-image" src={certificate.image} alt={`${certificate.name} badge`} loading="lazy" />
     : <span class="certificate-placeholder">✓</span>}
   {href && <span class="certificate-arrow">↗</span>}
   <h3>{certificate.name}</h3>
   <p>{certificate.issuer} · {certificate.issuedAt}</p>
-  {certificate.credentialId && <p>编号：{certificate.credentialId}</p>}
+  {certificate.credentialId && <p>Credential ID: {certificate.credentialId}</p>}
 </Tag>

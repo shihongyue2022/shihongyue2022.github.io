@@ -19,8 +19,8 @@ const { project, index } = Astro.props;
       {project.tags.map((tag) => <span class="tag">{tag}</span>)}
     </div>
     <div class="project-links">
-      {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">源码 ↗</a>}
-      {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">演示 ↗</a>}
+      {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">Source ↗</a>}
+      {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">Demo ↗</a>}
     </div>
   </div>
 </article>
