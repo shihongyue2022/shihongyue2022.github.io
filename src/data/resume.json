@@ -2,12 +2,12 @@
   "profile": {
     "name": "SHIHONGYUE",
     "shortName": "SHIHONGYUE",
-    "role": "Software Developer",
-    "summary": "I build clear, reliable software that solves real problems, with hands-on experience in Python and a growing focus on artificial intelligence.",
-    "about": "I enjoy breaking complex problems into practical steps and turning ideas into maintainable software. My work balances functionality, code quality, and user experience, while I continue building experience across software engineering and AI.",
+    "role": "Backend & Data Analytics Developer",
+    "summary": "I build Python-based backend workflows and data analysis systems, with a focus on time series, statistical modeling, and reproducible research.",
+    "about": "I enjoy turning complex analytical problems into reliable, maintainable workflows. My work spans backend automation, data preparation, statistical analysis, and machine learning experiments, with an emphasis on clear code and reproducible results.",
     "availability": "Open to internships, graduate roles, and collaborations",
     "location": "Japan · Open to Remote",
-    "focus": "Python / Artificial Intelligence",
+    "focus": "Backend / Data Analytics",
     "workMode": "Remote / On-site",
     "avatar": "https://avatars.githubusercontent.com/u/146401746?v=4",
     "email": "your-email@example.com",
@@ -18,9 +18,10 @@
     ]
   },
   "skills": [
-    { "category": "Languages", "items": ["Python", "JavaScript", "HTML / CSS"] },
-    { "category": "Engineering", "items": ["Git / GitHub", "Data Processing", "Problem Solving"] },
-    { "category": "Learning", "items": ["Machine Learning", "Generative Models", "Web Development"] }
+    { "category": "Backend", "items": ["Python", "API Integration", "CLI Automation", "Data Pipelines"] },
+    { "category": "Data Analysis", "items": ["pandas", "Time Series", "Statistical Modeling", "Visualization"] },
+    { "category": "Machine Learning", "items": ["PyTorch", "Diffusion Models", "Experiment Design"] },
+    { "category": "Engineering", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "Reproducible Workflows"] }
   ],
   "experience": [
     {
@@ -28,34 +29,43 @@
       "role": "Independent Project Developer",
       "company": "Self-directed Practice",
       "location": "Remote",
-      "description": "Developing hands-on projects in artificial intelligence and software engineering, from requirements and implementation to source control and documentation.",
-      "highlights": ["Manage iterative development with GitHub", "Build practical skills in Python and generative models"]
+      "description": "Developing Python workflows for backend automation, financial time-series analysis, covariance estimation, and machine learning experiments.",
+      "highlights": ["Build reproducible data preparation, experiment, and evaluation pipelines", "Manage iterative development and research artifacts with GitHub"]
     }
   ],
   "education": [
     {
-      "period": "Add dates",
-      "school": "Add school name",
-      "degree": "Add degree and major",
-      "description": "Add relevant coursework, achievements, or activities"
+      "period": "Apr 2024 — Apr 2026",
+      "school": "Tokyo University of Science",
+      "degree": "Graduate School of Management · Management Program",
+      "description": "Researched AI-based time-series analysis, focusing on diffusion models for denoising, forecasting, and sliding-window covariance estimation."
+    },
+    {
+      "period": "Mar 2023 — Apr 2024",
+      "school": "Tokyo University of Science",
+      "degree": "School of Management · Research Student in Management",
+      "description": "Prepared for graduate-level research in management, data analysis, and quantitative methods."
+    },
+    {
+      "period": "Jan 2021 — Mar 2023",
+      "school": "Kyoshin Language Academy Shinjuku",
+      "degree": "Japanese Language Program",
+      "description": "Completed advanced Japanese-language study and prepared for graduate education in Japan."
+    },
+    {
+      "period": "Sep 2015 — Jun 2019",
+      "school": "Soochow University",
+      "degree": "School of Mathematical Sciences · Financial Mathematics",
+      "description": "Studied financial mathematics, mathematical theory, and machine learning, developing rigorous reasoning, independent learning, and structured problem-solving skills."
     }
   ],
   "projects": [
     {
-      "name": "COMETS-GAN Operation",
-      "description": "A Python-based exploration of generative adversarial networks, covering model execution, experiment workflows, and result management.",
-      "impact": "Built an end-to-end workflow from understanding the codebase to running experiments",
-      "tags": ["Python", "GAN", "Machine Learning"],
-      "repoUrl": "https://github.com/shihongyue2022/COMETS-GAN-operation",
-      "demoUrl": "",
-      "featured": true
-    },
-    {
-      "name": "Personal Resume & Portfolio",
-      "description": "A responsive Astro portfolio that manages experience, projects, and professional certifications through structured JSON data.",
-      "impact": "Includes automated GitHub Pages deployment and an A4 print-ready resume",
-      "tags": ["HTML", "CSS", "JavaScript", "GitHub Actions"],
-      "repoUrl": "https://github.com/shihongyue2022/shihongyue2022",
+      "name": "Conditional Fourier Diffusion (CDSM)",
+      "description": "A Python research codebase for sliding-window covariance estimation using conditional diffusion in time and Fourier domains, evaluated against classical statistical baselines on financial time-series datasets.",
+      "impact": "Provides reproducible data preparation, training, baseline, metric, and visualization workflows for thesis and paper experiments",
+      "tags": ["Python", "PyTorch", "Time Series", "Statistical Modeling", "Data Analysis"],
+      "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
       "demoUrl": "",
       "featured": true
     }

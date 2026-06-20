@@ -2,12 +2,12 @@
   "profile": {
     "name": "SHIHONGYUE",
     "shortName": "SHIHONGYUE",
-    "role": "ソフトウェア開発者",
-    "summary": "Pythonの実践経験を活かし、実際の課題を解決する明快で信頼性の高いソフトウェアを開発しています。現在は人工知能分野にも注力しています。",
-    "about": "複雑な問題を実行可能なステップに分解し、保守しやすいソフトウェアへ形にすることが好きです。機能性、コード品質、ユーザー体験のバランスを大切にしながら、ソフトウェア工学とAIの経験を積んでいます。",
+    "role": "バックエンド・データ分析エンジニア",
+    "summary": "Pythonを中心にバックエンド処理とデータ分析システムを開発し、時系列分析、統計モデリング、再現可能な研究に取り組んでいます。",
+    "about": "複雑な分析課題を、信頼性と保守性の高いワークフローへ落とし込むことを得意としています。バックエンド自動化、データ前処理、統計分析、機械学習実験を横断し、明快なコードと結果の再現性を重視しています。",
     "availability": "インターン・新卒採用・プロジェクト協業の機会を探しています",
     "location": "日本 · リモート対応可",
-    "focus": "Python / 人工知能",
+    "focus": "バックエンド / データ分析",
     "workMode": "リモート / オンサイト",
     "avatar": "https://avatars.githubusercontent.com/u/146401746?v=4",
     "email": "your-email@example.com",
@@ -16,40 +16,47 @@
     "socials": [{ "label": "GitHub", "url": "https://github.com/shihongyue2022" }]
   },
   "skills": [
-    { "category": "言語", "items": ["Python", "JavaScript", "HTML / CSS"] },
-    { "category": "エンジニアリング", "items": ["Git / GitHub", "データ処理", "問題解決"] },
-    { "category": "学習分野", "items": ["機械学習", "生成モデル", "Web開発"] }
+    { "category": "バックエンド", "items": ["Python", "API連携", "CLI自動化", "データパイプライン"] },
+    { "category": "データ分析", "items": ["pandas", "時系列分析", "統計モデリング", "可視化"] },
+    { "category": "機械学習", "items": ["PyTorch", "拡散モデル", "実験設計"] },
+    { "category": "開発環境", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "再現可能なワークフロー"] }
   ],
   "experience": [{
     "period": "2025 — 現在",
     "role": "個人プロジェクト開発者",
     "company": "自主開発",
     "location": "リモート",
-    "description": "人工知能とソフトウェア工学のプロジェクトに取り組み、要件整理、実装、ソース管理、ドキュメント作成まで一貫して行っています。",
-    "highlights": ["GitHubを活用した反復的な開発管理", "Pythonと生成モデルの実践スキルを継続的に向上"]
+    "description": "バックエンド自動化、金融時系列分析、共分散推定、機械学習実験のためのPythonワークフローを開発しています。",
+    "highlights": ["再現可能なデータ準備・実験・評価パイプラインを構築", "GitHubで開発履歴と研究成果物を管理"]
   }],
   "education": [{
-    "period": "期間を追加",
-    "school": "学校名を追加",
-    "degree": "学位・専攻を追加",
-    "description": "関連科目、実績、活動などを追加"
+    "period": "2024年4月 — 2026年4月",
+    "school": "東京理科大学",
+    "degree": "大学院 経営学研究科 · 経営学専攻",
+    "description": "AIを活用した時系列データ分析を研究し、拡散モデルによるノイズ除去・予測・スライディングウィンドウ共分散推定に取り組みました。"
+  }, {
+    "period": "2023年3月 — 2024年4月",
+    "school": "東京理科大学",
+    "degree": "経営学部 経営学専攻 · 学部研究生",
+    "description": "経営学、データ分析、定量的手法に関する大学院研究の準備に取り組みました。"
+  }, {
+    "period": "2021年1月 — 2023年3月",
+    "school": "京進ランゲージアカデミー新宿校",
+    "degree": "日本語課程",
+    "description": "上級日本語を学び、日本での大学院進学に向けた準備を行いました。"
+  }, {
+    "period": "2015年9月 — 2019年6月",
+    "school": "蘇州大学",
+    "degree": "数学科学学院 · 金融数学学科",
+    "description": "金融数学、数学理論、機械学習を学び、厳密な論理的思考力、独学力、構造的な問題解決力を身につけました。"
   }],
   "projects": [
     {
-      "name": "COMETS-GAN Operation",
-      "description": "生成対抗ネットワークを題材に、モデル実行、実験ワークフロー、結果管理を扱うPythonプロジェクトです。",
-      "impact": "コードベースの理解から実験実行まで、一連のワークフローを構築しました",
-      "tags": ["Python", "GAN", "機械学習"],
-      "repoUrl": "https://github.com/shihongyue2022/COMETS-GAN-operation",
-      "demoUrl": "",
-      "featured": true
-    },
-    {
-      "name": "個人履歴書・ポートフォリオ",
-      "description": "経歴、プロジェクト、資格情報を構造化JSONで管理する、Astro製のレスポンシブなポートフォリオです。",
-      "impact": "GitHub Pagesへの自動デプロイとA4印刷用の履歴書に対応しています",
-      "tags": ["HTML", "CSS", "JavaScript", "GitHub Actions"],
-      "repoUrl": "https://github.com/shihongyue2022/shihongyue2022.github.io",
+      "name": "Conditional Fourier Diffusion (CDSM)",
+      "description": "時間領域・フーリエ領域の条件付き拡散モデルを用いたスライディングウィンドウ共分散推定を扱い、金融時系列データ上で古典的統計手法と比較するPython研究コードベースです。",
+      "impact": "論文・修士研究のためのデータ準備、学習、ベースライン、評価指標、可視化を再現可能な形で提供します",
+      "tags": ["Python", "PyTorch", "時系列", "統計モデリング", "データ分析"],
+      "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
       "demoUrl": "",
       "featured": true
     }

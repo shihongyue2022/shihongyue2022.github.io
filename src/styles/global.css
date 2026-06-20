@@ -108,6 +108,7 @@ img { display: block; max-width: 100%; }
 .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 .project-card { display: flex; flex-direction: column; min-height: 26rem; padding: 2rem; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: transform .25s, box-shadow .25s; }
 .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.project-card:only-child { grid-column: 1 / -1; min-height: 24rem; }
 .project-number { color: var(--muted); font-size: .75rem; }
 .project-card h3 { margin: 3rem 0 1rem; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -.04em; }
 .project-card > p { color: var(--muted); }

@@ -2,12 +2,12 @@
   "profile": {
     "name": "SHIHONGYUE",
     "shortName": "SHIHONGYUE",
-    "role": "软件开发工程师",
-    "summary": "关注可靠、清晰且真正解决问题的软件产品，具备 Python 项目实践，并持续深入人工智能方向。",
-    "about": "我喜欢把复杂问题拆解成可执行的步骤，并将想法转化为易于维护的软件。在实现功能的同时，我也关注代码质量、使用体验和长期可维护性。",
+    "role": "后端与数据分析开发工程师",
+    "summary": "主要使用 Python 构建后端工作流和数据分析系统，关注时间序列、统计建模与可复现研究。",
+    "about": "我擅长将复杂的分析问题转化为可靠、易维护的工作流，覆盖后端自动化、数据准备、统计分析和机器学习实验，并重视清晰的代码与结果可复现性。",
     "availability": "开放实习、校招与项目合作机会",
     "location": "日本 · 可远程",
-    "focus": "Python / 人工智能",
+    "focus": "后端开发 / 数据分析",
     "workMode": "远程 / 现场",
     "avatar": "https://avatars.githubusercontent.com/u/146401746?v=4",
     "email": "your-email@example.com",
@@ -16,40 +16,47 @@
     "socials": [{ "label": "GitHub", "url": "https://github.com/shihongyue2022" }]
   },
   "skills": [
-    { "category": "开发语言", "items": ["Python", "JavaScript", "HTML / CSS"] },
-    { "category": "工程能力", "items": ["Git / GitHub", "数据处理", "问题分析"] },
-    { "category": "学习方向", "items": ["机器学习", "生成式模型", "Web 开发"] }
+    { "category": "后端开发", "items": ["Python", "API 集成", "CLI 自动化", "数据管道"] },
+    { "category": "数据分析", "items": ["pandas", "时间序列", "统计建模", "数据可视化"] },
+    { "category": "机器学习", "items": ["PyTorch", "扩散模型", "实验设计"] },
+    { "category": "工程工具", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "可复现工作流"] }
   ],
   "experience": [{
     "period": "2025 — 至今",
     "role": "个人项目开发",
     "company": "独立实践",
     "location": "远程",
-    "description": "围绕人工智能与软件工程开展项目实践，负责需求拆解、功能实现、代码管理和文档整理。",
-    "highlights": ["使用 GitHub 管理项目迭代", "持续完善 Python 与生成式模型相关能力"]
+    "description": "围绕后端自动化、金融时间序列分析、协方差估计和机器学习实验开发 Python 工作流。",
+    "highlights": ["构建可复现的数据准备、实验与评估管道", "使用 GitHub 管理开发过程与研究成果"]
   }],
   "education": [{
-    "period": "请补充时间",
-    "school": "请填写学校名称",
-    "degree": "请填写专业与学历",
-    "description": "可补充核心课程、排名或校园经历"
+    "period": "2024年4月 — 2026年4月",
+    "school": "东京理科大学",
+    "degree": "经营学研究科 · 经营学专业",
+    "description": "研究基于 AI 的时间序列数据分析，重点探索扩散模型在数据去噪、预测和滑动窗口协方差估计中的应用。"
+  }, {
+    "period": "2023年3月 — 2024年4月",
+    "school": "东京理科大学",
+    "degree": "经营学部经营学专业 · 学部研究生",
+    "description": "围绕经营学、数据分析与定量方法开展研究生阶段的前期准备。"
+  }, {
+    "period": "2021年1月 — 2023年3月",
+    "school": "京进语言学院新宿校",
+    "degree": "日语课程",
+    "description": "完成高级日语学习，并为在日本进入研究生阶段学习做准备。"
+  }, {
+    "period": "2015年9月 — 2019年6月",
+    "school": "苏州大学",
+    "degree": "数学科学学院 · 金融数学专业",
+    "description": "学习金融数学、数学理论与机器学习，培养了严谨的逻辑思维、自主学习和结构化问题解决能力。"
   }],
   "projects": [
     {
-      "name": "COMETS-GAN Operation",
-      "description": "围绕生成对抗网络开展的 Python 项目实践，探索模型运行、实验流程与结果管理。",
-      "impact": "完成从代码理解到项目运行的实践闭环",
-      "tags": ["Python", "GAN", "机器学习"],
-      "repoUrl": "https://github.com/shihongyue2022/COMETS-GAN-operation",
-      "demoUrl": "",
-      "featured": true
-    },
-    {
-      "name": "个人简历与作品集",
-      "description": "使用结构化 JSON 管理经历、项目和资格证书的 Astro 响应式个人网站。",
-      "impact": "支持 GitHub Pages 自动发布与 A4 PDF 打印",
-      "tags": ["HTML", "CSS", "JavaScript", "GitHub Actions"],
-      "repoUrl": "https://github.com/shihongyue2022/shihongyue2022.github.io",
+      "name": "Conditional Fourier Diffusion（CDSM）",
+      "description": "使用时域和傅里叶域条件扩散模型进行滑动窗口协方差估计，并在金融时间序列数据上与经典统计基线比较的 Python 研究代码库。",
+      "impact": "为论文与学位研究提供可复现的数据准备、训练、基线、指标评估和可视化流程",
+      "tags": ["Python", "PyTorch", "时间序列", "统计建模", "数据分析"],
+      "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
       "demoUrl": "",
       "featured": true
     }
