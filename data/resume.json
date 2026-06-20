@@ -1,0 +1,64 @@
+{
+  "profile": {
+    "name": "SHIHONGYUE",
+    "shortName": "SHIHONGYUE",
+    "role": "软件开发工程师",
+    "summary": "关注可靠、清晰且真正解决问题的软件产品，具备 Python 项目实践与持续学习能力。",
+    "about": "我喜欢把复杂问题拆解成可执行的步骤，在实现功能的同时关注代码质量、使用体验和可维护性。目前持续积累软件开发与人工智能方向的项目经验。",
+    "availability": "开放实习、校招与项目合作机会",
+    "location": "日本 · 可远程",
+    "focus": "Python / 人工智能",
+    "workMode": "远程 / 现场",
+    "avatar": "https://avatars.githubusercontent.com/u/146401746?v=4",
+    "email": "your-email@example.com",
+    "phone": "",
+    "contactText": "如果你有合适的工作机会、项目合作或技术交流，欢迎通过邮件或 GitHub 与我联系。",
+    "socials": [
+      { "label": "GitHub", "url": "https://github.com/shihongyue2022" }
+    ]
+  },
+  "skills": [
+    { "category": "开发语言", "items": ["Python", "JavaScript", "HTML / CSS"] },
+    { "category": "工程能力", "items": ["Git / GitHub", "数据处理", "问题分析"] },
+    { "category": "学习方向", "items": ["机器学习", "生成式模型", "Web 开发"] }
+  ],
+  "experience": [
+    {
+      "period": "2025 — 至今",
+      "role": "个人项目开发",
+      "company": "独立实践",
+      "location": "Remote",
+      "description": "围绕人工智能与软件工程开展项目实践，负责需求拆解、功能实现、代码管理和文档整理。",
+      "highlights": ["使用 GitHub 管理项目迭代", "持续完善 Python 与生成式模型相关能力"]
+    }
+  ],
+  "education": [
+    {
+      "period": "请补充时间",
+      "school": "请填写学校名称",
+      "degree": "请填写专业与学历",
+      "description": "可补充核心课程、排名或校园经历"
+    }
+  ],
+  "projects": [
+    {
+      "name": "COMETS-GAN Operation",
+      "description": "围绕生成对抗网络开展的 Python 项目实践，探索模型运行、实验流程与结果管理。",
+      "impact": "完成从代码理解到项目运行的实践闭环",
+      "tags": ["Python", "GAN", "Machine Learning"],
+      "repoUrl": "https://github.com/shihongyue2022/COMETS-GAN-operation",
+      "demoUrl": "",
+      "featured": true
+    },
+    {
+      "name": "个人简历与作品集",
+      "description": "零依赖的响应式个人简历网站，使用结构化 JSON 管理经历、项目和资格证书。",
+      "impact": "支持 GitHub Pages 自动发布与 A4 PDF 打印",
+      "tags": ["HTML", "CSS", "JavaScript", "GitHub Actions"],
+      "repoUrl": "https://github.com/shihongyue2022/shihongyue2022",
+      "demoUrl": "",
+      "featured": true
+    }
+  ],
+  "certificates": []
+}
