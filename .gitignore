@@ -3,3 +3,12 @@ dist/
 .astro/
 .DS_Store
 *.log
+
+# Private credential source files (keep outside the public repository)
+/private/
+/certificates-private/
+/*.pdf
+/*_bc_certificate*.json
+/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09.*
+/46827d9b-bc16-8788-9809-019e24ccbc7b.*
+/aws-certified-cloud-practitioner.png
