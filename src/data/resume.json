@@ -18,10 +18,10 @@
     ]
   },
   "skills": [
-    { "category": "Backend", "items": ["Python", "SQL", "MySQL / SQL Server", "API Integration"] },
+    { "category": "Backend", "items": ["Python", "Flask", "SQLAlchemy", "SQL", "MySQL / TiDB"] },
     { "category": "Data Analysis", "items": ["pandas", "MATLAB", "Time Series", "Statistical Modeling", "Visualization"] },
     { "category": "Machine Learning", "items": ["PyTorch", "Diffusion Models", "Experiment Design"] },
-    { "category": "Engineering", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "Reproducible Workflows"] }
+    { "category": "Engineering", "items": ["Git / GitHub", "Docker", "pytest", "Linux / Shell", "Jupyter", "Reproducible Workflows"] }
   ],
   "experience": [
     {
@@ -82,6 +82,15 @@
       "impact": "Provides reproducible data preparation, training, baseline, metric, and visualization workflows for thesis and paper experiments",
       "tags": ["Python", "PyTorch", "Time Series", "Statistical Modeling", "Data Analysis"],
       "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
+      "demoUrl": "",
+      "featured": true
+    },
+    {
+      "name": "Equipment Inspection Management System (EIMS)",
+      "description": "A role-based Flask web application where field engineers register equipment inspection results and administrators monitor equipment, assignments, and records in real time.",
+      "impact": "Built modular Blueprints, authentication and authorization, equipment/account/inspection CRUD, transactional services, MySQL and TiDB Cloud connectivity, Alembic migrations, Docker deployment, and HTTP integration tests",
+      "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
+      "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
       "demoUrl": "",
       "featured": true
     }

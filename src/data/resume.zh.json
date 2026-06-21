@@ -16,10 +16,10 @@
     "socials": [{ "label": "GitHub", "url": "https://github.com/shihongyue2022" }]
   },
   "skills": [
-    { "category": "后端开发", "items": ["Python", "SQL", "MySQL / SQL Server", "API 集成"] },
+    { "category": "后端开发", "items": ["Python", "Flask", "SQLAlchemy", "SQL", "MySQL / TiDB"] },
     { "category": "数据分析", "items": ["pandas", "MATLAB", "时间序列", "统计建模", "数据可视化"] },
     { "category": "机器学习", "items": ["PyTorch", "扩散模型", "实验设计"] },
-    { "category": "工程工具", "items": ["Git / GitHub", "Linux / Shell", "Jupyter", "可复现工作流"] }
+    { "category": "工程工具", "items": ["Git / GitHub", "Docker", "pytest", "Linux / Shell", "Jupyter", "可复现工作流"] }
   ],
   "experience": [{
     "period": "2024年4月 — 2026年4月",
@@ -71,6 +71,15 @@
       "impact": "为论文与学位研究提供可复现的数据准备、训练、基线、指标评估和可视化流程",
       "tags": ["Python", "PyTorch", "时间序列", "统计建模", "数据分析"],
       "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
+      "demoUrl": "",
+      "featured": true
+    },
+    {
+      "name": "设备点检管理系统（EIMS）",
+      "description": "基于角色权限的 Flask Web 应用，现场工程师可登记设备点检结果，管理员可实时查看设备、负责人和点检记录。",
+      "impact": "实现 Blueprint 模块化架构、认证与权限控制、设备/账号/点检 CRUD、事务服务、MySQL 与 TiDB Cloud 连接、Alembic 迁移、Docker 部署和 HTTP 集成测试",
+      "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
+      "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
       "demoUrl": "",
       "featured": true
     }
