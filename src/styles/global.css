@@ -68,6 +68,10 @@ img { display: block; max-width: 100%; }
 .status-dot { display: inline-block; width: .55rem; height: .55rem; margin-right: .55rem; border-radius: 50%; background: #60c673; box-shadow: 0 0 0 .3rem rgb(96 198 115 / 15%); }
 .hero h1 { margin: 0; font-size: clamp(3.7rem, 8.5vw, 8rem); line-height: .95; letter-spacing: -.075em; }
 .hero h1 span { color: transparent; -webkit-text-stroke: 1.5px var(--ink); }
+html[lang='ja'] .hero h1,
+html[lang='zh-CN'] .hero h1 { font-size: clamp(3.15rem, 6vw, 6rem); letter-spacing: -.04em; word-break: keep-all; overflow-wrap: normal; }
+html[lang='ja'] .hero h1 span,
+html[lang='zh-CN'] .hero h1 span { color: var(--ink); -webkit-text-stroke: 0; }
 .hero-role { margin: 2rem 0 .5rem; font-size: clamp(1.15rem, 2vw, 1.55rem); font-weight: 600; }
 .hero-summary { max-width: 42rem; margin: 0; color: var(--muted); font-size: 1.08rem; }
 .hero-actions { display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; }

@@ -17,7 +17,7 @@ export const ui = {
   en: {
     skip: 'Skip to main content', backHome: 'Back to home', menu: 'Menu', navigation: 'Main navigation',
     nav: ['About', 'Experience', 'Projects', 'Certifications', 'Contact'], theme: 'Toggle theme', printResume: 'Print Resume',
-    hello: "Hello, I'm", viewProjects: 'View Projects', contactMe: 'Contact Me', overview: 'Profile overview',
+    hello: "Hello, I'm", nameSuffix: '', viewProjects: 'View Projects', contactMe: 'Contact Me', overview: 'Profile overview',
     facts: ['Location', 'Focus', 'Work style'], aboutIndex: '01 / About', aboutTitle: 'What I bring to the table', skills: 'Skills',
     experienceIndex: '02 / Experience', experienceTitle: 'Research and professional experience', work: 'Research & Professional Experience', education: 'Education',
     projectsIndex: '03 / Projects', projectsTitle: 'Selected work', projectsNote: 'A closer look at what I built, why it matters, and how I approached it.',
@@ -31,7 +31,7 @@ export const ui = {
   ja: {
     skip: 'メインコンテンツへ移動', backHome: 'ホームへ戻る', menu: 'メニュー', navigation: 'メインナビゲーション',
     nav: ['概要', '経験', 'プロジェクト', '資格・認定', '連絡先'], theme: 'テーマを切り替える', printResume: '履歴書を印刷',
-    hello: 'こんにちは、', viewProjects: 'プロジェクトを見る', contactMe: 'お問い合わせ', overview: 'プロフィール概要',
+    hello: 'はじめまして。', nameSuffix: 'です。', viewProjects: 'プロジェクトを見る', contactMe: 'お問い合わせ', overview: 'プロフィール概要',
     facts: ['所在地', '専門分野', '働き方'], aboutIndex: '01 / 概要', aboutTitle: '私が提供できる価値', skills: 'スキル',
     experienceIndex: '02 / 経験', experienceTitle: '業務・研究経験', work: '業務・研究経験', education: '学歴',
     projectsIndex: '03 / プロジェクト', projectsTitle: '主なプロジェクト', projectsNote: '何を作ったかだけでなく、その目的とアプローチも紹介します。',
@@ -45,7 +45,7 @@ export const ui = {
   zh: {
     skip: '跳到主要内容', backHome: '返回首页', menu: '菜单', navigation: '主导航',
     nav: ['关于', '经历', '项目', '证书', '联系'], theme: '切换主题', printResume: '打印简历',
-    hello: '你好，我是', viewProjects: '查看项目', contactMe: '联系我', overview: '个人概览',
+    hello: '你好，我是', nameSuffix: '', viewProjects: '查看项目', contactMe: '联系我', overview: '个人概览',
     facts: ['所在地', '专业方向', '工作方式'], aboutIndex: '01 / 关于', aboutTitle: '我能带来的价值', skills: '技能',
     experienceIndex: '02 / 经历', experienceTitle: '业务与研究经验', work: '业务与研究经验', education: '教育经历',
     projectsIndex: '03 / 项目', projectsTitle: '精选项目作品', projectsNote: '不仅展示做了什么，也说明为什么这样做。',
