@@ -64,7 +64,7 @@ Place badge images in `public/assets/certificates/`, then add a record such as:
 
 ## Deployment
 
-Every push to `develop` runs the GitHub Actions workflow and deploys the generated `dist/` directory to GitHub Pages.
+Every push to `main` runs the GitHub Actions workflow and deploys the generated `dist/` directory to GitHub Pages.
 
 ## Project structure
 
