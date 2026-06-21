@@ -90,13 +90,13 @@ html[lang='zh-CN'] .hero h1 span { color: var(--ink); -webkit-text-stroke: 0; }
 .section-heading h2 { max-width: 800px; margin: 0; font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: 1.04; letter-spacing: -.055em; }
 .heading-row { display: flex; justify-content: space-between; align-items: end; gap: 2rem; }
 .heading-note { max-width: 18rem; margin: 0; color: var(--muted); font-size: .9rem; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 8vw, 8rem); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(3rem, 8vw, 8rem); }
 .lead { margin: 0; font-size: clamp(1.25rem, 2.5vw, 2rem); line-height: 1.45; }
-.skills-list { display: grid; gap: 1.5rem; }
-.skill-group { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.skills-list { display: grid; align-self: start; align-content: start; gap: 1.5rem; }
+.skill-group { display: grid; grid-template-columns: 8rem 1fr; align-items: start; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
 .skill-group h3 { margin: 0; font-size: .85rem; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
-.tag { padding: .3rem .65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .78rem; }
+.skill-tags { display: flex; flex-wrap: wrap; align-items: flex-start; align-content: flex-start; gap: .5rem; }
+.tag { display: inline-flex; flex: 0 0 auto; align-items: center; padding: .3rem .65rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .78rem; line-height: 1.2; }
 .experience-layout { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(3rem, 8vw, 8rem); }
 .subheading { margin: 0 0 2rem; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; }
 .timeline-item { position: relative; padding: 0 0 3rem 2rem; border-left: 1px solid var(--line); }
