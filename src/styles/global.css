@@ -141,6 +141,16 @@ html[lang='zh-CN'] .hero h1 span { color: var(--ink); -webkit-text-stroke: 0; }
 .contact-actions { display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; }
 .button-light { background: var(--accent); color: #17231d; }
 .text-link-light { color: #f4f1eb; }
+.contact-dialog { width: min(31rem, calc(100% - 2rem)); padding: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); box-shadow: 0 30px 90px rgb(0 0 0 / 28%); }
+.contact-dialog::backdrop { background: rgb(8 12 9 / 65%); backdrop-filter: blur(4px); }
+.contact-dialog-inner { padding: 1.5rem; }
+.contact-dialog-header { display: flex; align-items: start; justify-content: space-between; gap: 1.5rem; }
+.contact-dialog-header h3 { margin: 0; font-size: 1.35rem; }
+.contact-dialog-header p { margin: .4rem 0 1.25rem; color: var(--muted); font-size: .88rem; }
+.dialog-close { display: grid; flex: 0 0 auto; place-items: center; width: 2.25rem; height: 2.25rem; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--ink); font-size: 1.25rem; cursor: pointer; }
+.email-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: .65rem; }
+.email-option { display: flex; align-items: center; justify-content: space-between; min-height: 3.4rem; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: .85rem; background: var(--bg); color: var(--ink); font: inherit; font-weight: 600; text-align: left; text-decoration: none; cursor: pointer; }
+.email-option:hover { border-color: var(--accent-strong); transform: translateY(-1px); }
 .site-footer { display: flex; justify-content: space-between; gap: 2rem; padding-block: 1.5rem; color: #abb4ad; font-size: .78rem; }
 .site-footer::before { content: ''; position: absolute; z-index: -1; left: 0; right: 0; height: 5rem; margin-top: -1.5rem; background: var(--dark); }
 .load-error { position: fixed; z-index: 50; right: 1rem; bottom: 1rem; max-width: 28rem; padding: 1rem; border-radius: .75rem; background: #a52a2a; color: white; box-shadow: var(--shadow); }

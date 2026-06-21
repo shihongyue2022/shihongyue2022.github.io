@@ -16,6 +16,7 @@ const { profile, skills, experience, education, projects, certificates } = data;
 const t = ui[locale];
 const github = profile.socials.find((item) => item.label.toLowerCase() === 'github');
 const emailReady = profile.email && !profile.email.startsWith('your-');
+const encodedEmail = encodeURIComponent(profile.email);
 const navTargets = ['about', 'experience', 'projects', 'certificates', 'contact'];
 ---
 
@@ -89,7 +90,28 @@ const navTargets = ['about', 'experience', 'projects', 'certificates', 'contact'
 
     <section id="contact" class="contact section-shell reveal">
       <p class="section-index">{t.contactIndex}</p><h2>{t.contactTitle}<br />{t.contactLine}</h2><p>{profile.contactText}</p>
-      <div class="contact-actions"><a class="button button-light" href={emailReady ? `mailto:${profile.email}` : github?.url}>{emailReady ? t.sendEmail : t.viewGitHub} ↗</a>{github && emailReady && <a class="text-link text-link-light" href={github.url} target="_blank" rel="noreferrer">GitHub ↗</a>}</div>
+      <div class="contact-actions">
+        {emailReady
+          ? <button class="button button-light" id="email-dialog-open" type="button">{t.sendEmail} ↗</button>
+          : <a class="button button-light" href={github?.url}>{t.viewGitHub} ↗</a>}
+        {github && emailReady && <a class="text-link text-link-light" href={github.url} target="_blank" rel="noreferrer">GitHub ↗</a>}
+      </div>
+      {emailReady && (
+        <dialog id="email-dialog" class="contact-dialog" aria-labelledby="email-dialog-title">
+          <div class="contact-dialog-inner">
+            <div class="contact-dialog-header">
+              <div><h3 id="email-dialog-title">{t.emailOptionsTitle}</h3><p>{t.emailOptionsText}</p></div>
+              <button class="dialog-close" type="button" data-dialog-close aria-label={t.close}>×</button>
+            </div>
+            <div class="email-options">
+              <a class="email-option" href={`mailto:${profile.email}`}>{t.defaultMail}<span>↗</span></a>
+              <a class="email-option" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodedEmail}`} target="_blank" rel="noreferrer">{t.gmail}<span>↗</span></a>
+              <a class="email-option" href={`https://outlook.live.com/mail/0/deeplink/compose?to=${encodedEmail}`} target="_blank" rel="noreferrer">{t.outlook}<span>↗</span></a>
+              <button class="email-option" type="button" data-copy-email={profile.email} data-copy-label={t.copyEmail} data-copied-label={t.emailCopied}>{t.copyEmail}<span>⧉</span></button>
+            </div>
+          </div>
+        </dialog>
+      )}
     </section>
   </main>
 
@@ -110,6 +132,27 @@ const navTargets = ['about', 'experience', 'projects', 'certificates', 'contact'
     nav?.addEventListener('click', () => {
       nav.classList.remove('open');
       menuButton?.setAttribute('aria-expanded', 'false');
+    });
+    const emailDialog = document.querySelector<HTMLDialogElement>('#email-dialog');
+    document.querySelector('#email-dialog-open')?.addEventListener('click', () => emailDialog?.showModal());
+    emailDialog?.querySelector('[data-dialog-close]')?.addEventListener('click', () => emailDialog.close());
+    emailDialog?.addEventListener('click', (event) => {
+      if (event.target === emailDialog) emailDialog.close();
+    });
+    emailDialog?.querySelector<HTMLButtonElement>('[data-copy-email]')?.addEventListener('click', async (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const email = button.dataset.copyEmail || '';
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch {
+        window.prompt(button.dataset.copyLabel || 'Copy email', email);
+      }
+      if (!copied) return;
+      const original = button.childNodes[0]?.textContent || '';
+      if (button.childNodes[0]) button.childNodes[0].textContent = button.dataset.copiedLabel || original;
+      window.setTimeout(() => { if (button.childNodes[0]) button.childNodes[0].textContent = original; }, 1800);
     });
   </script>
 </BaseLayout>
