@@ -77,7 +77,7 @@
   ],
   "projects": [
     {
-      "name": "Conditional Denoising Score Matching(CDSM)",
+      "name": "Conditional Denoising Score Matching (CDSM)",
       "description": "A Python research codebase for sliding-window covariance estimation using conditional diffusion in time and Fourier domains, evaluated against classical statistical baselines on financial time-series datasets.",
       "impact": "Provides reproducible data preparation, training, baseline, metric, and visualization workflows for thesis and paper experiments",
       "tags": ["Python", "PyTorch", "Time Series", "Statistical Modeling", "Data Analysis"],

@@ -66,7 +66,7 @@
   }],
   "projects": [
     {
-      "name": "Conditional Denoising Score Matching(CDSM)",
+      "name": "Conditional Denoising Score Matching (CDSM)",
       "description": "使用时域和傅里叶域条件扩散模型进行滑动窗口协方差估计，并在金融时间序列数据上与经典统计基线比较的 Python 研究代码库。",
       "impact": "为论文与学位研究提供可复现的数据准备、训练、基线、指标评估和可视化流程",
       "tags": ["Python", "PyTorch", "时间序列", "统计建模", "数据分析"],
