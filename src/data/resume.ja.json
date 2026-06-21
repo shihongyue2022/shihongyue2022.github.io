@@ -66,7 +66,7 @@
   }],
   "projects": [
     {
-      "name": "Conditional Fourier Diffusion (CDSM)",
+      "name": "Conditional Denoising Score Matching(CDSM)",
       "description": "時間領域・フーリエ領域の条件付き拡散モデルを用いたスライディングウィンドウ共分散推定を扱い、金融時系列データ上で古典的統計手法と比較するPython研究コードベースです。",
       "impact": "論文・修士研究のためのデータ準備、学習、ベースライン、評価指標、可視化を再現可能な形で提供します",
       "tags": ["Python", "PyTorch", "時系列", "統計モデリング", "データ分析"],
