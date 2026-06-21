@@ -77,7 +77,7 @@ const navTargets = ['about', 'experience', 'projects', 'certificates', 'contact'
     </section>
 
     <section id="projects" class="section section-shell">
-      <div class="section-heading heading-row reveal"><div><p class="section-index">{t.projectsIndex}</p><h2>{t.projectsTitle}</h2></div><p class="heading-note">{t.projectsNote}</p></div>
+      <div class="section-heading reveal"><p class="section-index">{t.projectsIndex}</p><h2>{t.projectsTitle}</h2></div>
       <div class="projects-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} sourceLabel={t.source} demoLabel={t.demo} />)}</div>
     </section>
 
