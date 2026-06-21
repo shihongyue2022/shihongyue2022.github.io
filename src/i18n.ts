@@ -38,7 +38,7 @@ export const ui = {
     projectsIndex: '03 / プロジェクト', projectsTitle: '主なプロジェクト',
     certificationsIndex: '04 / 資格・認定', certificationsTitle: '資格と認定', certificationsNote: '資格を選択すると、発行機関のサイトで確認できます。',
     emptyCertTitle: '資格情報を追加できます', emptyCertHelp: '画像を public/assets/certificates に置き、言語別データファイルに情報を追加してください。',
-    contactIndex: '05 / お問い合わせ', contactTitle: '新しい機会や面白いプロジェクトはありますか？', contactLine: 'ぜひお話ししましょう。', sendEmail: 'メールを送る', viewGitHub: 'GitHubを見る',
+    contactIndex: '05 / お問い合わせ', contactTitle: '新しい機会やプロジェクトについて', contactLine: 'ぜひお話ししましょう。', sendEmail: 'メールを送る', viewGitHub: 'GitHubを見る',
     emailOptionsTitle: 'メールの送信方法を選択', emailOptionsText: 'Webメール、既定のメールアプリ、またはアドレスのコピーを利用できます。', defaultMail: 'メールアプリ', gmail: 'Gmail', outlook: 'Outlook', copyEmail: 'アドレスをコピー', emailCopied: 'コピーしました', close: '閉じる',
     footer: 'Astroで構築 · GitHub Pagesで公開', source: 'ソース', demo: 'デモ', credentialId: '認定ID',
     backWebsite: 'サイトへ戻る', printHint: 'A4を選択し、ブラウザのヘッダーとフッターを無効にしてください', printAction: '印刷 / PDF保存',
