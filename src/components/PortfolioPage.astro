@@ -17,7 +17,7 @@ const t = ui[locale];
 const github = profile.socials.find((item) => item.label.toLowerCase() === 'github');
 const emailReady = profile.email && !profile.email.startsWith('your-');
 const encodedEmail = encodeURIComponent(profile.email);
-const navTargets = ['about', 'experience', 'certificates', 'projects', 'contact'];
+const navTargets = ['certificates', 'about', 'experience', 'projects', 'contact'];
 ---
 
 <BaseLayout title={`${profile.name} · ${profile.role}`} description={profile.summary} locale={locale} page="home">
@@ -54,6 +54,13 @@ const navTargets = ['about', 'experience', 'certificates', 'projects', 'contact'
       </aside>
     </section>
 
+    <section id="certificates" class="section section-shell">
+      <div class="section-heading heading-row reveal"><div><p class="section-index">{t.certificationsIndex}</p><h2>{t.certificationsTitle}</h2></div><p class="heading-note">{t.certificationsNote}</p></div>
+      {certificates.length > 0
+        ? <div class="certificates-grid">{certificates.map((certificate) => <CertificateCard certificate={certificate} credentialLabel={t.credentialId} />)}</div>
+        : <div class="empty-state"><span class="empty-icon">＋</span><p>{t.emptyCertTitle}</p><small>{t.emptyCertHelp}</small></div>}
+    </section>
+
     <section id="about" class="section section-shell">
       <div class="section-heading reveal"><p class="section-index">{t.aboutIndex}</p><h2>{t.aboutTitle}</h2></div>
       <div class="about-grid">
@@ -74,13 +81,6 @@ const navTargets = ['about', 'experience', 'certificates', 'projects', 'contact'
           {education.map((item) => <article class="education-card reveal"><p class="period">{item.period}</p><h3>{item.school}</h3><h4>{item.degree}</h4><p>{item.description}</p></article>)}
         </div></div>
       </div>
-    </section>
-
-    <section id="certificates" class="section section-shell">
-      <div class="section-heading heading-row reveal"><div><p class="section-index">{t.certificationsIndex}</p><h2>{t.certificationsTitle}</h2></div><p class="heading-note">{t.certificationsNote}</p></div>
-      {certificates.length > 0
-        ? <div class="certificates-grid">{certificates.map((certificate) => <CertificateCard certificate={certificate} credentialLabel={t.credentialId} />)}</div>
-        : <div class="empty-state"><span class="empty-icon">＋</span><p>{t.emptyCertTitle}</p><small>{t.emptyCertHelp}</small></div>}
     </section>
 
     <section id="projects" class="section section-shell">
