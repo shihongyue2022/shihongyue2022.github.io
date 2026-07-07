@@ -17,7 +17,7 @@ const t = ui[locale];
 const github = profile.socials.find((item) => item.label.toLowerCase() === 'github');
 const emailReady = profile.email && !profile.email.startsWith('your-');
 const encodedEmail = encodeURIComponent(profile.email);
-const navTargets = ['about', 'experience', 'projects', 'certificates', 'contact'];
+const navTargets = ['about', 'experience', 'certificates', 'projects', 'contact'];
 ---
 
 <BaseLayout title={`${profile.name} · ${profile.role}`} description={profile.summary} locale={locale} page="home">
@@ -76,16 +76,16 @@ const navTargets = ['about', 'experience', 'projects', 'certificates', 'contact'
       </div>
     </section>
 
-    <section id="projects" class="section section-shell">
-      <div class="section-heading reveal"><p class="section-index">{t.projectsIndex}</p><h2>{t.projectsTitle}</h2></div>
-      <div class="projects-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} sourceLabel={t.source} demoLabel={t.demo} />)}</div>
-    </section>
-
     <section id="certificates" class="section section-shell">
       <div class="section-heading heading-row reveal"><div><p class="section-index">{t.certificationsIndex}</p><h2>{t.certificationsTitle}</h2></div><p class="heading-note">{t.certificationsNote}</p></div>
       {certificates.length > 0
         ? <div class="certificates-grid">{certificates.map((certificate) => <CertificateCard certificate={certificate} credentialLabel={t.credentialId} />)}</div>
         : <div class="empty-state"><span class="empty-icon">＋</span><p>{t.emptyCertTitle}</p><small>{t.emptyCertHelp}</small></div>}
+    </section>
+
+    <section id="projects" class="section section-shell">
+      <div class="section-heading reveal"><p class="section-index">{t.projectsIndex}</p><h2>{t.projectsTitle}</h2></div>
+      <div class="projects-grid">{projects.map((project, index) => <ProjectCard project={project} index={index} sourceLabel={t.source} demoLabel={t.demo} />)}</div>
     </section>
 
     <section id="contact" class="contact section-shell reveal">
