@@ -1,5 +1,5 @@
 export type Locale = 'en' | 'ja' | 'zh';
-export type PageKind = 'home' | 'resume';
+export type PageKind = 'home' | 'resume' | 'project';
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',
@@ -8,9 +8,9 @@ export const localeNames: Record<Locale, string> = {
 };
 
 export const localePaths: Record<Locale, Record<PageKind, string>> = {
-  en: { home: '/', resume: '/resume/' },
-  ja: { home: '/ja/', resume: '/ja/resume/' },
-  zh: { home: '/zh/', resume: '/zh/resume/' }
+  en: { home: '/', resume: '/resume/', project: '/projects/eims/' },
+  ja: { home: '/ja/', resume: '/ja/resume/', project: '/ja/projects/eims/' },
+  zh: { home: '/zh/', resume: '/zh/resume/', project: '/zh/projects/eims/' }
 };
 
 export const ui = {
