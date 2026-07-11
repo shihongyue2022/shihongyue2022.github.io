@@ -91,7 +91,7 @@
       "impact": "Built modular Blueprints, authentication and authorization, equipment/account/inspection CRUD, transactional services, MySQL and TiDB Cloud connectivity, Alembic migrations, Docker deployment, and HTTP integration tests",
       "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
       "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
-      "demoUrl": "",
+      "demoUrl": "/projects/eims/",
       "featured": true
     }
   ],

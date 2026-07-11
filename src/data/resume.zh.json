@@ -80,7 +80,7 @@
       "impact": "实现 Blueprint 模块化架构、认证与权限控制、设备/账号/点检 CRUD、事务服务、MySQL 与 TiDB Cloud 连接、Alembic 迁移、Docker 部署和 HTTP 集成测试",
       "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
       "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
-      "demoUrl": "",
+      "demoUrl": "/zh/projects/eims/",
       "featured": true
     }
   ],
