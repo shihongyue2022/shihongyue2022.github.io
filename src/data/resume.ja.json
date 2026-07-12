@@ -86,6 +86,14 @@
   ],
   "certificates": [
     {
+      "name": "GitHub Foundations 認定",
+      "issuer": "GitHub",
+      "issuedAt": "2026年7月取得 · 2028年7月まで有効",
+      "credentialId": "BO754B-08ED34",
+      "image": "/assets/certificates/github-foundations.svg",
+      "verifyUrl": "https://learn.microsoft.com/api/credentials/share/zh-cn/HONGYUESHI-8545/A6953977AA07CD41?sharingId=BAEBD7F09A41169B"
+    },
+    {
       "name": "データサイエンス教育プログラム Level 4（専門レベル）ビジネスコース",
       "issuer": "東京理科大学",
       "issuedAt": "2025年3月",

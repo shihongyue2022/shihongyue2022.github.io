@@ -86,6 +86,14 @@
   ],
   "certificates": [
     {
+      "name": "GitHub 基础认证",
+      "issuer": "GitHub",
+      "issuedAt": "2026年7月 · 2028年7月到期",
+      "credentialId": "BO754B-08ED34",
+      "image": "/assets/certificates/github-foundations.svg",
+      "verifyUrl": "https://learn.microsoft.com/api/credentials/share/zh-cn/HONGYUESHI-8545/A6953977AA07CD41?sharingId=BAEBD7F09A41169B"
+    },
+    {
       "name": "数据科学教育项目 Level 4（高级专业：商业）",
       "issuer": "东京理科大学",
       "issuedAt": "2025年3月",

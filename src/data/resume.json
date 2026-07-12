@@ -97,6 +97,14 @@
   ],
   "certificates": [
     {
+      "name": "GitHub Foundations",
+      "issuer": "GitHub",
+      "issuedAt": "Jul 2026 · Expires Jul 2028",
+      "credentialId": "BO754B-08ED34",
+      "image": "/assets/certificates/github-foundations.svg",
+      "verifyUrl": "https://learn.microsoft.com/api/credentials/share/zh-cn/HONGYUESHI-8545/A6953977AA07CD41?sharingId=BAEBD7F09A41169B"
+    },
+    {
       "name": "Data Science Education Program Level 4 (Advanced Specialization: Business)",
       "issuer": "Tokyo University of Science",
       "issuedAt": "Mar 2025",
