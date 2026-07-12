@@ -94,13 +94,6 @@
       "verifyUrl": "https://learn.microsoft.com/api/credentials/share/zh-cn/HONGYUESHI-8545/A6953977AA07CD41?sharingId=BAEBD7F09A41169B"
     },
     {
-      "name": "数据科学教育项目 Level 4（高级专业：商业）",
-      "issuer": "东京理科大学",
-      "issuedAt": "2025年3月",
-      "image": "/assets/certificates/data-science-level-4-business.png",
-      "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09?d=cGxhdGZvcm1UeXBlPXYyJnJpZD1RVm96YkRoeGRYaEpRbmsxVGtSRlJXRjZjMmxQVVQwOQ%3D%3D"
-    },
-    {
       "name": "AWS Certified Cloud Practitioner",
       "issuer": "Amazon Web Services Training and Certification",
       "issuedAt": "2026年6月颁发 · 2029年6月到期",
@@ -113,6 +106,13 @@
       "issuedAt": "2026年5月",
       "image": "/assets/certificates/jssc-statistics-grade-2.png",
       "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/46827d9b-bc16-8788-9809-019e24ccbc7b"
+    },
+    {
+      "name": "数据科学教育项目 Level 4（高级专业：商业）",
+      "issuer": "东京理科大学",
+      "issuedAt": "2025年3月",
+      "image": "/assets/certificates/data-science-level-4-business.png",
+      "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09?d=cGxhdGZvcm1UeXBlPXYyJnJpZD1RVm96YkRoeGRYaEpRbmsxVGtSRlJXRjZjMmxQVVQwOQ%3D%3D"
     }
   ]
 }

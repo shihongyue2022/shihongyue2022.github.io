@@ -105,13 +105,6 @@
       "verifyUrl": "https://learn.microsoft.com/api/credentials/share/zh-cn/HONGYUESHI-8545/A6953977AA07CD41?sharingId=BAEBD7F09A41169B"
     },
     {
-      "name": "Data Science Education Program Level 4 (Advanced Specialization: Business)",
-      "issuer": "Tokyo University of Science",
-      "issuedAt": "Mar 2025",
-      "image": "/assets/certificates/data-science-level-4-business.png",
-      "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09?d=cGxhdGZvcm1UeXBlPXYyJnJpZD1RVm96YkRoeGRYaEpRbmsxVGtSRlJXRjZjMmxQVVQwOQ%3D%3D"
-    },
-    {
       "name": "AWS Certified Cloud Practitioner",
       "issuer": "Amazon Web Services Training and Certification",
       "issuedAt": "Jun 2026 · Expires Jun 2029",
@@ -124,6 +117,13 @@
       "issuedAt": "May 2026",
       "image": "/assets/certificates/jssc-statistics-grade-2.png",
       "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/46827d9b-bc16-8788-9809-019e24ccbc7b"
+    },
+    {
+      "name": "Data Science Education Program Level 4 (Advanced Specialization: Business)",
+      "issuer": "Tokyo University of Science",
+      "issuedAt": "Mar 2025",
+      "image": "/assets/certificates/data-science-level-4-business.png",
+      "verifyUrl": "https://walletapi.openbadge.net/api/public-credentials/share/SVJqYy9BMCtrMm81ckpnVWFWOUFJQT09?d=cGxhdGZvcm1UeXBlPXYyJnJpZD1RVm96YkRoeGRYaEpRbmsxVGtSRlJXRjZjMmxQVVQwOQ%3D%3D"
     }
   ]
 }
