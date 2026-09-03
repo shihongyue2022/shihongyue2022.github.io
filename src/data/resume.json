@@ -97,6 +97,13 @@
   ],
   "certificates": [
     {
+      "name": "ORACLE MASTER Silver SQL Oracle AI Database 26ai",
+      "issuer": "Oracle",
+      "issuedAt": "Aug 2026",
+      "image": "/assets/certificates/oracle-master-silver-sql-26ai.jpg",
+      "verifyUrl": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=F781A99FF69B0CB15D2FE7B2028E24BCFD9637A0BF4D9774BFE49ADAFA2BF966"
+    },
+    {
       "name": "GitHub Foundations",
       "issuer": "GitHub",
       "issuedAt": "Jul 2026 · Expires Jul 2028",

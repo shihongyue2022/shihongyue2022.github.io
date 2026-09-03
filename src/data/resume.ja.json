@@ -86,6 +86,13 @@
   ],
   "certificates": [
     {
+      "name": "ORACLE MASTER Silver SQL Oracle AI Database 26ai",
+      "issuer": "Oracle",
+      "issuedAt": "2026年8月取得",
+      "image": "/assets/certificates/oracle-master-silver-sql-26ai.jpg",
+      "verifyUrl": "https://catalog-education.oracle.com/pls/certview/sharebadge?id=F781A99FF69B0CB15D2FE7B2028E24BCFD9637A0BF4D9774BFE49ADAFA2BF966"
+    },
+    {
       "name": "GitHub Foundations 認定",
       "issuer": "GitHub",
       "issuedAt": "2026年7月取得 · 2028年7月まで有効",
