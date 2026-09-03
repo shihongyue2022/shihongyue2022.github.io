@@ -124,6 +124,7 @@ html[lang='zh-CN'] .hero h1 span { color: var(--ink); -webkit-text-stroke: 0; }
 .certificate-card { position: relative; display: flex; flex-direction: column; min-height: 17rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); text-decoration: none; }
 .certificate-card:hover { border-color: var(--accent-strong); }
 .certificate-image { width: 4.5rem; height: 4.5rem; object-fit: contain; margin-bottom: 2rem; border-radius: .75rem; }
+.certificate-image[src$="oracle-master-silver-sql-26ai.jpg"] { object-fit: cover; object-position: center; }
 .certificate-placeholder { display: grid; place-items: center; width: 4.5rem; height: 4.5rem; margin-bottom: 2rem; border-radius: 50%; background: var(--accent); color: #17231d; font-size: 1.4rem; font-weight: 700; }
 .certificate-card h3 { margin: auto 0 .3rem; font-size: 1.05rem; }
 .certificate-card p { margin: 0; color: var(--muted); font-size: .82rem; }
