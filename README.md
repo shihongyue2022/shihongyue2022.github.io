@@ -38,6 +38,8 @@ VoiceCraft is featured on the homepage and printable resume. Its development sto
 
 Edit the case study in `src/components/VoiceCraftProjectPage.astro`, its localized content in `src/data/voicecraft.ts`, and its styles in `src/styles/voicecraft.css`. The client illustration and delivery workflow are portfolio demonstrations using fictitious data; they do not run audio inference or contact the production licensing service. Package-size figures compare historical uncompressed VoiceCraft builds, and inference timings describe a two-second audio block on an RTX 4060, not end-to-end latency.
 
+The market and outlook section describes the developer's product assessment and future plans for VTuber workflows, ASR/TTS integration, and modular packaging. Linked speech projects are candidates for evaluation, rather than existing VoiceCraft integrations.
+
 ## Edit resume content
 
 Resume content is stored by language:
