@@ -77,6 +77,16 @@
   ],
   "projects": [
     {
+      "name": "VoiceCraft — Windows Voice Changer",
+      "description": "An AI-assisted personal project built around RVC for male-to-female voice conversion, with a focused Windows interface and a separate optional model-conversion environment.",
+      "impact": "Implemented C# ONNX/CUDA inference, portable Python packaging, model asset protection, and an ASP.NET Core/PostgreSQL licensing dashboard with temporary HTTPS activation URLs and generated delivery messages",
+      "tags": ["C# / .NET", "WPF", "ONNX Runtime", "ASP.NET Core", "PostgreSQL"],
+      "repoUrl": "https://github.com/shihongyue2022/VoiceCraft-Community",
+      "demoUrl": "",
+      "caseStudyUrl": "/projects/voicecraft/",
+      "featured": true
+    },
+    {
       "name": "Conditional Denoising Score Matching (CDSM)",
       "description": "A Python research codebase for sliding-window covariance estimation using conditional diffusion in time and Fourier domains, evaluated against classical statistical baselines on financial time-series datasets.",
       "impact": "Provides reproducible data preparation, training, baseline, metric, and visualization workflows for thesis and paper experiments",

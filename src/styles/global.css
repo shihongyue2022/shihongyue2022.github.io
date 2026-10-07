@@ -113,6 +113,12 @@ html[lang='zh-CN'] .hero h1 span { color: var(--ink); -webkit-text-stroke: 0; }
 .project-card { display: flex; flex-direction: column; min-height: 26rem; padding: 2rem; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: transform .25s, box-shadow .25s; }
 .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .project-card:only-child { grid-column: 1 / -1; min-height: 24rem; }
+.project-card-case-study { grid-column: 1 / -1; min-height: 23rem; border-top: 4px solid var(--accent-strong); }
+.project-card-case-study h3 { max-width: 46rem; margin-top: 2rem; }
+.project-card-case-study > p { max-width: 62rem; }
+.project-links { flex-wrap: wrap; flex-shrink: 0; }
+.project-links a { white-space: nowrap; }
+.case-study-link { text-decoration-thickness: 2px; text-underline-offset: .25em; }
 .project-number { color: var(--muted); font-size: .75rem; }
 .project-card h3 { margin: 3rem 0 1rem; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -.04em; }
 .project-card > p { color: var(--muted); }
@@ -212,6 +218,7 @@ html[lang='zh-CN'] .contact h2 { max-width: 1080px; font-size: clamp(2.5rem, 4.8
   .skill-group { grid-template-columns: 1fr; }
   .certificates-grid { grid-template-columns: 1fr; }
   .project-card { min-height: 23rem; padding: 1.4rem; }
+  .project-footer { align-items: flex-start; flex-direction: column; }
   .contact-actions, .site-footer { align-items: start; flex-direction: column; }
   .resume-columns { grid-template-columns: 1fr; }
   .resume-header { flex-direction: column; }

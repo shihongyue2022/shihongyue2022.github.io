@@ -48,6 +48,7 @@ export interface Project {
   tags: string[];
   repoUrl: string;
   demoUrl: string;
+  caseStudyUrl?: string;
   featured: boolean;
 }
 

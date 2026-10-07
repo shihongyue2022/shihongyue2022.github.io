@@ -66,6 +66,16 @@
   }],
   "projects": [
     {
+      "name": "VoiceCraft — Windows 变声器",
+      "description": "采用 AI 辅助编码完成的个人项目。以 RVC 为基础聚焦男声转女声，整理 Windows 操作界面，并将外部模型转换环境拆为可选组件。",
+      "impact": "实现 C# ONNX/CUDA 推理、便携 Python 打包、模型资产保护，以及基于 ASP.NET Core/PostgreSQL 的授权后台、临时 HTTPS 认证入口与定制发货信息生成",
+      "tags": ["C# / .NET", "WPF", "ONNX Runtime", "ASP.NET Core", "PostgreSQL"],
+      "repoUrl": "https://github.com/shihongyue2022/VoiceCraft-Community",
+      "demoUrl": "",
+      "caseStudyUrl": "/zh/projects/voicecraft/",
+      "featured": true
+    },
+    {
       "name": "Conditional Denoising Score Matching (CDSM)",
       "description": "使用时域和傅里叶域条件扩散模型进行滑动窗口协方差估计，并在金融时间序列数据上与经典统计基线比较的 Python 研究代码库。",
       "impact": "为论文与学位研究提供可复现的数据准备、训练、基线、指标评估和可视化流程",

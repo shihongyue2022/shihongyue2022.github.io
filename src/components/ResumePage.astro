@@ -28,7 +28,7 @@ const contacts = [profile.location, profile.phone, profile.email && !profile.ema
     <div class="resume-columns">
       <div class="resume-main">
         <section><h2>{t.resume.experience}</h2>{experience.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.role}</h3><span class="period">{item.period}</span></div><h4>{item.company} · {item.location}</h4><p>{item.description}</p><ul>{item.highlights.map((point) => <li>{point}</li>)}</ul></article>)}</section>
-        <section><h2>{t.resume.projects}</h2>{projects.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.name}</h3></div><h4>{item.tags.join(' · ')}</h4><p>{item.description}</p>{item.impact && <ul><li>{item.impact}</li></ul>}</article>)}</section>
+        <section><h2>{t.resume.projects}</h2>{projects.map((item) => <article class="resume-entry"><div class="resume-entry-header"><h3>{item.caseStudyUrl ? <a href={item.caseStudyUrl}>{item.name}</a> : item.name}</h3></div><h4>{item.tags.join(' · ')}</h4><p>{item.description}</p>{item.impact && <ul><li>{item.impact}</li></ul>}</article>)}</section>
       </div>
       <aside class="resume-side">
         <section><h2>{t.resume.skills}</h2>{skills.map((group) => <div class="resume-skill"><h3>{group.category}</h3><p>{group.items.join(' · ')}</p></div>)}</section>

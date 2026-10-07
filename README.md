@@ -32,6 +32,12 @@ npm run preview
 
 The language selector keeps visitors on the corresponding portfolio or printable resume page.
 
+## Project case studies
+
+VoiceCraft is featured on the homepage and printable resume. Its development story is available at `/projects/voicecraft/`, `/ja/projects/voicecraft/`, and `/zh/projects/voicecraft/`. The language selector and canonical/alternate links keep visitors on the corresponding project.
+
+Edit the case study in `src/components/VoiceCraftProjectPage.astro`, its localized content in `src/data/voicecraft.ts`, and its styles in `src/styles/voicecraft.css`. The client illustration and delivery workflow are portfolio demonstrations using fictitious data; they do not run audio inference or contact the production licensing service. Package-size figures compare historical uncompressed VoiceCraft builds, and inference timings describe a two-second audio block on an RTX 4060, not end-to-end latency.
+
 ## Edit resume content
 
 Resume content is stored by language:

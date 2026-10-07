@@ -6,12 +6,13 @@ interface Props {
   index: number;
   sourceLabel?: string;
   demoLabel?: string;
+  caseStudyLabel?: string;
 }
 
-const { project, index, sourceLabel = 'Source', demoLabel = 'Demo' } = Astro.props;
+const { project, index, sourceLabel = 'Source', demoLabel = 'Demo', caseStudyLabel = 'Case study' } = Astro.props;
 ---
 
-<article class="project-card reveal">
+<article class:list={['project-card', 'reveal', { 'project-card-case-study': Boolean(project.caseStudyUrl) }]}>
   <span class="project-number">PROJECT / {String(index + 1).padStart(2, '0')}</span>
   <h3>{project.name}</h3>
   <p>{project.description}</p>
@@ -23,6 +24,7 @@ const { project, index, sourceLabel = 'Source', demoLabel = 'Demo' } = Astro.pro
     <div class="project-links">
       {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">{sourceLabel} ↗</a>}
       {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">{demoLabel} ↗</a>}
+      {project.caseStudyUrl && <a class="case-study-link" href={project.caseStudyUrl}>{caseStudyLabel} →</a>}
     </div>
   </div>
 </article>

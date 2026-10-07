@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { localePaths, type Locale } from '../i18n';
+import { voicecraftCopy, buildDeliveryMessage } from '../data/voicecraft';
+import '../styles/voicecraft.css';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const c = voicecraftCopy[locale];
+const repository = 'https://github.com/shihongyue2022/VoiceCraft-Community';
+const license = 'https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/81eed5e8f68b6bed1789f682fe78cdd324495afc/LICENSE';
+const initialChannel = locale === 'zh' ? 'zh' : 'ja';
+const initialMessage = buildDeliveryMessage(initialChannel, 'DEMO-2026-001', '30', '1', c.downloadDefault);
+const anchors = ['motivation', 'architecture', 'engineering', 'delivery'];
+const waveform = Array.from({ length: 53 }, (_, index) => 10 + Math.abs(Math.sin(index * 1.21) * Math.cos(index * .13)) * 64);
+---
+
+<BaseLayout title={`${c.title} | Shihong Yue`} description={c.description} locale={locale} page="voicecraft" className="voicecraft-page">
+  <a class="skip-link" href="#main-content">{c.skip}</a>
+  <header class="vc-header">
+    <a class="vc-back" href={`${localePaths[locale].home}#projects`}><span aria-hidden="true">↖</span> {c.back}</a>
+    <a class="vc-header-wordmark" href="#main-content">VoiceCraft<span aria-hidden="true"> /</span></a>
+    <div class="vc-header-actions">
+      <LanguageSwitcher locale={locale} page="voicecraft" />
+      <button class="icon-button" id="vc-theme" type="button" aria-label={c.theme}>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="7" /><path d="M12 5a7 7 0 0 0 0 14Z" fill="currentColor" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div id="voicecraft-case" data-ready={c.ready} data-active={c.active} data-start={c.start} data-stop={c.stop} data-copied={c.copied} data-copy-failed={c.copyFailed} data-generated={c.generated}>
+      <section class="vc-hero vc-shell">
+        <div class="vc-hero-copy">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{c.eyebrow}</p>
+          <h1>Voice<span>Craft</span><span class="vc-title-dot" aria-hidden="true">.</span></h1>
+          <h2>{c.tagline}</h2>
+          <p class="vc-intro">{c.intro}</p>
+          <div class="vc-hero-actions"><a class="button" href="#motivation">{c.explore}<span aria-hidden="true">↓</span></a><a class="text-link" href={repository} target="_blank" rel="noreferrer">{c.source} ↗</a></div>
+        </div>
+        <aside class="vc-project-notes">
+          <svg class="vc-emblem" viewBox="0 0 220 125" fill="none" aria-hidden="true"><path d="M8 63h23l9-19 12 40 13-68 16 94 16-70 12 39 12-25h24l11-16 12 32 11-50 12 77 9-34h12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="110" cy="63" r="55" stroke="currentColor" opacity=".18"/><circle cx="110" cy="63" r="37" stroke="currentColor" opacity=".18"/></svg>
+          <dl><div><dt>{c.role}</dt><dd>{c.roleValue}</dd></div><div><dt>{c.method}</dt><dd>{c.methodValue}</dd></div><div><dt>{c.platform}</dt><dd>{c.platformValue}</dd></div></dl>
+        </aside>
+      </section>
+
+      <figure class="vc-product vc-shell" aria-labelledby="vc-preview-heading">
+        <div class="vc-preview-caption"><div><p class="section-index">{c.previewLabel}</p><h2 id="vc-preview-heading">{c.previewTitle}</h2></div><span class="vc-preview-badge">{c.live}</span></div>
+        <div class="vc-window" id="vc-window">
+          <div class="vc-titlebar"><span class="vc-app-icon" aria-hidden="true">V</span><span>VoiceCraft</span><div class="vc-window-buttons" aria-hidden="true"><i>−</i><i>□</i><i>×</i></div></div>
+          <div class="vc-app-body">
+            <div class="vc-app-heading"><div><strong>VoiceCraft</strong><p>{c.appSubtitle}</p></div><span class="vc-rvc-badge">RVC v2</span></div>
+            <div class="vc-device-grid">
+              <label>{c.mic}<select><option>{c.micOption}</option></select></label>
+              <label>{c.output}<select><option>{c.outputOption}</option></select></label>
+              <label>{c.monitor}<select><option>{c.monitorOption}</option></select></label>
+            </div>
+            <div class="vc-voice-grid">
+              <label>{c.voice}<select id="vc-voice">{c.voiceOptions.map(option => <option>{option}</option>)}</select></label>
+              <div class="vc-pitch-control"><div><label for="vc-pitch">{c.pitch}</label><output id="vc-pitch-value" for="vc-pitch">+10 {c.semitones}</output></div><input id="vc-pitch" type="range" min="-12" max="12" value="10" data-unit={c.semitones} aria-valuetext={`+10 ${c.semitones}`} /></div>
+            </div>
+            <div class="vc-model-actions"><button type="button" data-vc-hint={c.importFeedback}>{c.import}<span aria-hidden="true">＋</span></button><button type="button" data-vc-hint={c.convertFeedback}>{c.convert}<span aria-hidden="true">↗</span></button><button type="button" data-vc-hint={c.converterFeedback}>{c.converter}<span aria-hidden="true">↓</span></button></div>
+            <div class="vc-wave-row"><svg class="vc-wave" viewBox="0 0 530 90" aria-hidden="true">{waveform.map((height, index) => <rect x={index * 10} y={(90 - height) / 2} width="3" height={height} rx="1.5" style={`--wave-delay:${index * -70}ms`} />)}</svg><button class="vc-start" id="vc-preview-toggle" type="button" aria-pressed="false"><span aria-hidden="true">▶</span><span data-vc-start-label>{c.start}</span></button></div>
+            <div class="vc-preview-status"><span class="vc-indicator" aria-hidden="true"></span><p id="vc-preview-status" role="status" aria-live="polite">{c.ready}</p></div>
+            <p class="vc-signal">{c.signal}</p>
+          </div>
+        </div>
+        <figcaption id="vc-preview-disclaimer">{c.previewNote}</figcaption>
+      </figure>
+
+      <nav class="vc-case-nav vc-shell" aria-label={c.explore}>{c.nav.map((label, index) => <a href={`#${anchors[index]}`}><span>0{index + 1}</span>{label}<span aria-hidden="true">↘</span></a>)}</nav>
+
+      <section id="motivation" class="vc-section vc-shell">
+        <div class="vc-section-heading"><p class="section-index">{c.motivationIndex}</p><h2>{c.motivationTitle}</h2></div>
+        <p class="vc-section-lead">{c.motivationLead}</p>
+        <div class="vc-motivation-grid">{c.motivationCards.map(([title, text], index) => <article><span class="vc-card-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <p class="vc-caption vc-section-foot">{c.motivationFoot}</p>
+      </section>
+
+      <section id="architecture" class="vc-section vc-shell">
+        <div class="vc-section-heading"><p class="section-index">{c.architectureIndex}</p><h2>{c.architectureTitle}</h2></div>
+        <p class="vc-section-lead">{c.architectureLead}</p>
+        <div class="vc-package-grid">
+          <article class="vc-package vc-main-package"><div class="vc-package-top"><span>{c.mainTag}</span><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="6" width="32" height="23" rx="3"/><path d="M14 35h12M20 29v6M10 17h4l3-5 5 12 4-7h4"/></svg></div><h3>{c.mainTitle}</h3><p>{c.mainText}</p><ul>{c.mainItems.map(item => <li>{item}</li>)}</ul><div class="vc-package-stack">C# / .NET 8 <span>WPF</span> <span>ONNX Runtime</span></div></article>
+          <article class="vc-package vc-optional-package"><div class="vc-package-top"><span>{c.optionalTag}</span><svg viewBox="0 0 40 40" width="38" height="38" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m20 4 15 8v17l-15 8L5 29V12Z M5 12l15 8 15-8M20 20v17M12 8l15 8"/></svg></div><h3>{c.optionalTitle}</h3><p>{c.optionalText}</p><ul>{c.optionalItems.map(item => <li>{item}</li>)}</ul><div class="vc-package-stack">CPython 3.12 <span>PyTorch</span> <span>ONNX export</span></div></article>
+        </div>
+        <figure class="vc-runtime"><ol>{c.architectureNodes.map((node, index) => <li><span class="vc-runtime-symbol" aria-hidden="true">{['◉', '≋', '◇', '⌁', '↗'][index]}</span><strong>{node}</strong></li>)}</ol><figcaption>{c.architectureCaption}</figcaption></figure>
+        <details class="vc-details"><summary>{c.detailSummary}</summary><p>{c.architectureDetails}</p></details>
+      </section>
+
+      <section id="engineering" class="vc-section vc-shell">
+        <div class="vc-section-heading"><p class="section-index">{c.evidenceIndex}</p><h2>{c.evidenceTitle}</h2></div>
+        <div class="vc-evidence-grid">
+          <article class="vc-size-card"><p class="vc-small-heading">{c.sizeTitle}</p><h3>−37<span>%</span></h3><p class="vc-metric-subtitle">{c.sizeReduction}</p><div class="vc-size-chart"><div><div><span>{c.sizeBefore}</span><strong>5.6 GiB</strong></div><div class="vc-bar vc-bar-before"><i></i></div></div><div><div><span>{c.sizeAfter}</span><strong>3.52 GiB</strong></div><div class="vc-bar vc-bar-after"><i></i></div></div></div><p class="vc-caption">{c.sizeNote}</p></article>
+          <article class="vc-timing-card"><p class="vc-small-heading">{c.timingTitle}</p><h3>124–133<span>ms</span></h3><p class="vc-metric-subtitle">{c.timingLabel}</p><div class="vc-timing-scale" aria-hidden="true"><span></span><i></i><i></i><i></i><i></i></div><p>{c.timingNote}</p><p class="vc-caption">{c.timingFoot}</p></article>
+        </div>
+      </section>
+
+      <section class="vc-section vc-shell vc-failure">
+        <div class="vc-section-heading"><p class="section-index">{c.failureIndex}</p><h2>{c.failureTitle}</h2></div>
+        <p class="vc-section-lead">{c.failureLead}</p>
+        <figure class="vc-code"><pre><code>{'home = C:\\Users\\<developer>\\...\\python\n# .venv / pyvenv.cfg'}</code></pre><figcaption>{c.failureCodeLabel}</figcaption></figure>
+        <div class="vc-failure-grid">{c.failureStages.map(([title, text], index) => <article><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div class="vc-validation"><h3>{c.validationTitle}</h3><ul>{c.validationItems.map(item => <li><span aria-hidden="true">✓</span>{item}</li>)}</ul><p class="vc-caption">{c.validationNote}</p></div>
+      </section>
+
+      <section id="delivery" class="vc-delivery-band">
+        <div class="vc-shell">
+          <div class="vc-section-heading"><p class="section-index">{c.deliveryIndex}</p><h2>{c.deliveryTitle}</h2></div>
+          <p class="vc-section-lead">{c.deliveryLead}</p>
+          <div class="vc-tunnel"><div><p class="vc-small-heading">{c.tunnelTag}</p><strong>{c.tunnelText}</strong></div><div class="vc-access"><article><span aria-hidden="true">↗</span><h3>{c.customer}</h3><p>{c.customerText}</p></article><article><span aria-hidden="true">⌑</span><h3>{c.admin}</h3><p>{c.adminText}</p></article></div></div>
+          <div class="vc-workflow" aria-label={c.workflow}>
+            <ol>{c.workflowSteps.map(([title, description], index) => <li><button type="button" data-vc-step={index} data-title={title} data-description={description} aria-pressed={index === 0 ? 'true' : 'false'} aria-controls="vc-step-content"><span>0{index + 1}</span>{title}</button></li>)}</ol>
+            <div id="vc-step-content" class="vc-step-content" aria-live="polite"><span id="vc-step-index" aria-hidden="true">01</span><div><h3 id="vc-step-title">{c.workflowSteps[0][0]}</h3><p id="vc-step-description">{c.workflowSteps[0][1]}</p></div></div>
+          </div>
+          <div class="vc-delivery-demo">
+            <div class="vc-demo-header"><p class="section-index">{c.demoLabel}</p><span aria-hidden="true">↗</span></div>
+            <p id="vc-demo-disclaimer" class="vc-caption">{c.demoNote}</p>
+            <form id="vc-delivery-form" class="vc-demo-form">
+              <div class="vc-demo-fields">
+                <fieldset><legend>{c.channel}</legend><div class="vc-channel-options"><label><input type="radio" name="channel" value="ja" checked={initialChannel === 'ja'} /><span>{c.channelJa}</span></label><label><input type="radio" name="channel" value="zh" checked={initialChannel === 'zh'} /><span>{c.channelZh}</span></label></div></fieldset>
+                <label for="vc-order">{c.order}<input type="text" id="vc-order" name="order" value="DEMO-2026-001" maxlength="32" required autocomplete="off" /></label>
+                <div class="vc-demo-field-pair"><label for="vc-duration">{c.duration}<select id="vc-duration" name="duration"><option value="30">{c.days30}</option><option value="365">{c.days365}</option></select></label><label for="vc-devices">{c.devices}<select id="vc-devices" name="devices"><option value="1">{c.device1}</option><option value="2">{c.device2}</option></select></label></div>
+                <label for="vc-download">{c.downloadInstructions}<textarea id="vc-download" name="download" rows="3" maxlength="300" spellcheck="false">{c.downloadDefault}</textarea></label>
+                <button type="submit" class="vc-generate">{c.generate}<span aria-hidden="true">↗</span></button>
+              </div>
+              <div class="vc-message-panel"><label for="vc-message">{c.message}</label><textarea id="vc-message" readonly rows="13" spellcheck="false" aria-describedby="vc-demo-disclaimer">{initialMessage}</textarea><div><button id="vc-copy" type="button">{c.copy}<svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M4 13H3V3h10v1"/></svg></button><p id="vc-copy-status" role="status" aria-live="polite"></p></div></div>
+            </form>
+          </div>
+          <p class="vc-operational-note">{c.operationalNote}</p>
+        </div>
+      </section>
+
+      <section class="vc-section vc-shell vc-security">
+        <div class="vc-section-heading"><p class="section-index">{c.securityIndex}</p><h2>{c.securityTitle}</h2></div>
+        <div class="vc-security-grid">{c.securityCards.map(([title, text], index) => <article><span class="vc-security-icon" aria-hidden="true">{['◇', '⌑', '§'][index]}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div class="vc-security-foot"><p class="vc-caption">{c.securityNote}</p><a class="text-link" href={license} target="_blank" rel="noreferrer">{c.licenseLink} ↗</a></div>
+      </section>
+
+      <section class="vc-closing vc-shell"><p class="section-index">{c.closingIndex}</p><h2>{c.closingTitle}</h2><p>{c.closingText}</p><p class="vc-next">{c.closingNext}</p><div><a class="button" href={repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a class="text-link" href={`${localePaths[locale].home}#projects`}>{c.back} ↗</a></div><p class="vc-source-note">{c.sourceNote}</p></section>
+    </div>
+  </main>
+  <footer class="vc-footer vc-shell"><span>{c.footer}</span><a href={localePaths[locale].home}>Shihong Yue ↗</a></footer>
+</BaseLayout>
+
+<script>
+  import { buildDeliveryMessage } from '../data/voicecraft';
+  const root = document.querySelector<HTMLElement>('#voicecraft-case');
+  const windowPreview = document.querySelector<HTMLElement>('#vc-window');
+  const previewStatus = document.querySelector<HTMLElement>('#vc-preview-status');
+  const pitch = document.querySelector<HTMLInputElement>('#vc-pitch');
+  const pitchValue = document.querySelector<HTMLOutputElement>('#vc-pitch-value');
+  const previewButton = document.querySelector<HTMLButtonElement>('#vc-preview-toggle');
+  pitch?.addEventListener('input', () => {
+    const value = `${Number(pitch.value) >= 0 ? '+' : ''}${pitch.value} ${pitch.dataset.unit}`;
+    if (pitchValue) pitchValue.value = value;
+    pitch.setAttribute('aria-valuetext', value);
+    windowPreview?.style.setProperty('--pitch-scale', String(.8 + (Number(pitch.value) + 12) / 60));
+  });
+  previewButton?.addEventListener('click', () => {
+    const active = previewButton.getAttribute('aria-pressed') !== 'true';
+    previewButton.setAttribute('aria-pressed', String(active));
+    windowPreview?.classList.toggle('is-active', active);
+    const label = previewButton.querySelector('[data-vc-start-label]');
+    if (label) label.textContent = (active ? root?.dataset.stop : root?.dataset.start) ?? '';
+    if (previewStatus) previewStatus.textContent = (active ? root?.dataset.active : root?.dataset.ready) ?? '';
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-vc-hint]').forEach(button => button.addEventListener('click', () => {
+    if (previewStatus) previewStatus.textContent = button.dataset.vcHint ?? '';
+  }));
+  document.querySelectorAll<HTMLButtonElement>('[data-vc-step]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-vc-step]').forEach(step => step.setAttribute('aria-pressed', String(step === button)));
+    const index = document.querySelector('#vc-step-index');
+    const title = document.querySelector('#vc-step-title');
+    const description = document.querySelector('#vc-step-description');
+    if (index) index.textContent = String(Number(button.dataset.vcStep) + 1).padStart(2, '0');
+    if (title) title.textContent = button.dataset.title ?? '';
+    if (description) description.textContent = button.dataset.description ?? '';
+  }));
+  const form = document.querySelector<HTMLFormElement>('#vc-delivery-form');
+  const message = document.querySelector<HTMLTextAreaElement>('#vc-message');
+  const copyStatus = document.querySelector<HTMLElement>('#vc-copy-status');
+  const updateMessage = (announce = true) => {
+    if (!form || !message) return;
+    const values = new FormData(form);
+    message.value = buildDeliveryMessage(String(values.get('channel')), String(values.get('order') || 'DEMO-2026-001'), String(values.get('duration')), String(values.get('devices')), String(values.get('download') || ''));
+    if (copyStatus) copyStatus.textContent = announce ? root?.dataset.generated ?? '' : '';
+  };
+  form?.addEventListener('submit', event => { event.preventDefault(); updateMessage(); });
+  form?.querySelectorAll<HTMLInputElement>('input[name="channel"]').forEach(input => input.addEventListener('change', () => updateMessage()));
+  document.querySelector<HTMLButtonElement>('#vc-copy')?.addEventListener('click', async () => {
+    if (!message) return;
+    try {
+      await navigator.clipboard.writeText(message.value);
+      if (copyStatus) copyStatus.textContent = root?.dataset.copied ?? '';
+    } catch {
+      message.focus(); message.select();
+      if (copyStatus) copyStatus.textContent = root?.dataset.copyFailed ?? '';
+    }
+  });
+  document.querySelector('#vc-theme')?.addEventListener('click', () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem('resume-theme', theme); } catch { /* Theme remains usable without storage. */ }
+  });
+</script>
