@@ -14,7 +14,8 @@ const copy = {
     source: 'View source', note: 'Static portfolio preview — no real accounts or operational data are used.',
     overview: 'Project overview', overviewText: 'EIMS turns equipment inspection work that is often fragmented across paper and spreadsheets into a traceable web workflow. Engineers record results in the field while administrators manage equipment, accounts, assignments, and audit history.',
     features: 'Core capabilities', featureItems: ['Role-based authentication and authorization', 'Equipment, account, and inspection CRUD workflows', 'Inspection schedules, notifications, and recycle bin', 'Audit logs and soft deletion for traceability'],
-    architecture: 'Architecture', layers: [['Presentation', 'Jinja templates · responsive UI'], ['Application', 'Flask views · DTO · service logic'], ['Data access', 'DAO · transactions · migrations'], ['Persistence', 'MySQL / TiDB Cloud']],
+    architecture: 'Architecture', layers: [['User interface', 'HTML template rendering (Jinja2) · responsive UI'], ['Application', 'Flask views · DTO · service logic'], ['Data access', 'DAO · transactions · migrations'], ['Persistence', 'MySQL / TiDB Cloud']],
+    templateNote: 'Jinja2 fills HTML templates with equipment and inspection data to generate pages for the browser.',
     quality: 'Engineering & quality', qualityText: 'The project uses a modular Flask structure, schema migration scripts, Docker configuration, and pytest-based view and integration tests. Database credentials remain outside the repository through environment variables.',
     preview: 'Interface preview', dashboard: 'Operations dashboard', healthy: 'Operational', equipment: 'Equipment', inspections: 'Inspections', completion: 'Completion', recent: 'Recent inspections', status: 'Status', complete: 'Complete', pending: 'Pending',
     stack: 'Technology', next: 'Explore the implementation on GitHub'
@@ -25,7 +26,8 @@ const copy = {
     source: '查看源代码', note: '静态作品集预览——不使用真实账号或业务数据。',
     overview: '项目概览', overviewText: 'EIMS 将分散在纸张和表格中的设备点检工作转化为可追踪的 Web 流程。工程师可登记现场结果，管理员可管理设备、账号、任务分配和审计记录。',
     features: '核心功能', featureItems: ['基于角色的认证与权限控制', '设备、账号与点检 CRUD 流程', '点检计划、通知与回收站', '通过审计日志和软删除保证可追踪性'],
-    architecture: '系统架构', layers: [['表现层', 'Jinja 模板 · 响应式界面'], ['应用层', 'Flask 视图 · DTO · 业务逻辑'], ['数据访问层', 'DAO · 事务 · 数据库迁移'], ['持久层', 'MySQL / TiDB Cloud']],
+    architecture: '系统架构', layers: [['界面展示层', 'HTML 模板渲染（Jinja2）· 响应式界面'], ['应用层', 'Flask 视图 · DTO · 业务逻辑'], ['数据访问层', 'DAO · 事务 · 数据库迁移'], ['持久层', 'MySQL / TiDB Cloud']],
+    templateNote: 'Jinja2 将设备和点检数据填入 HTML 模板，生成浏览器中显示的页面。',
     quality: '工程实践与质量', qualityText: '项目采用模块化 Flask 结构，包含数据库迁移脚本、Docker 配置，以及基于 pytest 的视图和集成测试。数据库凭据通过环境变量管理，不进入代码仓库。',
     preview: '界面预览', dashboard: '运营仪表盘', healthy: '运行正常', equipment: '设备', inspections: '点检记录', completion: '完成率', recent: '最近点检', status: '状态', complete: '已完成', pending: '待处理',
     stack: '技术栈', next: '前往 GitHub 查看实现'
@@ -36,7 +38,8 @@ const copy = {
     source: 'ソースコードを見る', note: '静的なポートフォリオ表示です。実在するアカウントや業務データは使用していません。',
     overview: 'プロジェクト概要', overviewText: 'EIMSは、紙や表計算に分散しがちな設備点検を追跡可能なWebワークフローへ変換します。現場では点検結果を登録し、管理者は設備、アカウント、担当割当、監査履歴を管理できます。',
     features: '主な機能', featureItems: ['ロールベース認証・認可', '設備・アカウント・点検のCRUD', '点検予定・通知・ごみ箱', '監査ログと論理削除による追跡性'],
-    architecture: 'アーキテクチャ', layers: [['プレゼンテーション', 'Jinjaテンプレート · レスポンシブUI'], ['アプリケーション', 'Flask View · DTO · 業務ロジック'], ['データアクセス', 'DAO · トランザクション · マイグレーション'], ['永続化', 'MySQL / TiDB Cloud']],
+    architecture: 'アーキテクチャ', layers: [['画面表示', 'HTML画面の生成（Jinja2）・レスポンシブUI'], ['アプリケーション', 'Flask View · DTO · 業務ロジック'], ['データアクセス', 'DAO · トランザクション · マイグレーション'], ['永続化', 'MySQL / TiDB Cloud']],
+    templateNote: 'Jinja2 は設備・点検データを HTML テンプレートに埋め込み、ブラウザーに表示するページを生成します。',
     quality: '品質と開発プラクティス', qualityText: 'モジュール化されたFlask構成、DBマイグレーション、Docker設定、pytestによるView・結合テストを整備しています。DB認証情報は環境変数で管理し、リポジトリには保存しません。',
     preview: '画面プレビュー', dashboard: '運用ダッシュボード', healthy: '正常稼働', equipment: '設備', inspections: '点検記録', completion: '完了率', recent: '最近の点検', status: '状態', complete: '完了', pending: '対応待ち',
     stack: '技術スタック', next: 'GitHubで実装を見る'
@@ -80,9 +83,9 @@ const repo = 'https://github.com/shihongyue2022/Equipment-Inspection-Management-
       </div>
     </section>
     <section class="case-grid case-shell"><article class="case-card overview-card"><p class="section-index">01</p><h2>{copy.overview}</h2><p>{copy.overviewText}</p></article><article class="case-card features-card"><p class="section-index">02</p><h2>{copy.features}</h2><ul>{copy.featureItems.map(item => <li>{item}</li>)}</ul></article></section>
-    <section class="architecture case-shell"><p class="section-index">03 / {copy.architecture}</p><div class="layer-list">{copy.layers.map(([name, detail], index) => <article><span>0{index + 1}</span><strong>{name}</strong><p>{detail}</p></article>)}</div></section>
+    <section class="architecture case-shell"><p class="section-index">03 / {copy.architecture}</p><div class="layer-list">{copy.layers.map(([name, detail], index) => <article><span>0{index + 1}</span><strong>{name}</strong><p>{detail}</p></article>)}</div><p class="architecture-note">{copy.templateNote}</p></section>
     <section class="case-grid case-shell quality-section"><article class="case-card quality-card"><p class="section-index">04</p><h2>{copy.quality}</h2><p>{copy.qualityText}</p></article></section>
-    <section class="stack-band"><div class="case-shell"><p class="section-index">{copy.stack}</p><div class="stack-list">{['Python', 'Flask', 'MySQL / TiDB', 'Docker', 'pytest', 'Jinja'].map(item => <span>{item}</span>)}</div><a href={repo} target="_blank" rel="noreferrer">{copy.next} ↗</a></div></section>
+    <section class="stack-band"><div class="case-shell"><p class="section-index">{copy.stack}</p><div class="stack-list">{['Python', 'Flask', 'MySQL / TiDB', 'Docker', 'pytest', 'Jinja2'].map(item => <span>{item}</span>)}</div><a href={repo} target="_blank" rel="noreferrer">{copy.next} ↗</a></div></section>
   </main>
   <script>document.querySelector('.theme-toggle')?.addEventListener('click', () => { const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = theme; localStorage.setItem('resume-theme', theme); });</script>
 </BaseLayout>
@@ -92,6 +95,13 @@ const repo = 'https://github.com/shihongyue2022/Equipment-Inspection-Management-
 </style>
 
 <style>
+  .architecture-note {
+    max-width: 850px;
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+
   .overview-card {
     border-top: 4px solid color-mix(in srgb, var(--ink) 55%, var(--line));
     background: color-mix(in srgb, var(--surface) 88%, #9fb4a7);
