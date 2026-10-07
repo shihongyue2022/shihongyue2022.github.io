@@ -6,10 +6,11 @@ interface Props {
   index: number;
   sourceLabel?: string;
   demoLabel?: string;
+  storeLabel?: string;
   caseStudyLabel?: string;
 }
 
-const { project, index, sourceLabel = 'Source', demoLabel = 'Demo', caseStudyLabel = 'Case study' } = Astro.props;
+const { project, index, sourceLabel = 'Source', demoLabel = 'Demo', storeLabel = 'BOOTH', caseStudyLabel = 'Case study' } = Astro.props;
 ---
 
 <article class:list={['project-card', 'reveal', { 'project-card-case-study': Boolean(project.caseStudyUrl) }]}>
@@ -24,6 +25,7 @@ const { project, index, sourceLabel = 'Source', demoLabel = 'Demo', caseStudyLab
     <div class="project-links">
       {project.repoUrl && <a href={project.repoUrl} target="_blank" rel="noreferrer">{sourceLabel} ↗</a>}
       {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noreferrer">{demoLabel} ↗</a>}
+      {project.storeUrl && <a href={project.storeUrl} target="_blank" rel="noreferrer">{storeLabel} ↗</a>}
       {project.caseStudyUrl && <a class="case-study-link" href={project.caseStudyUrl}>{caseStudyLabel} →</a>}
     </div>
   </div>

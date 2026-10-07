@@ -16,6 +16,8 @@
 .vc-intro { max-width:38rem; margin:0; color:var(--muted); font-size:1rem; }
 .vc-hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:1.3rem; margin-top:2rem; font-size:.85rem; }
 .vc-hero-actions .button { padding:.8rem 1.15rem; }
+.vc-hero-actions .vc-shop-link { border:1px solid var(--line); background:transparent; color:var(--ink); }
+.vc-hero-actions .vc-shop-link:hover { border-color:var(--ink); }
 .vc-project-notes { border-top:1px solid var(--line); }
 .vc-emblem { display:block; width:100%; max-width:220px; margin:1.5rem auto; color:var(--ink); }
 .vc-project-notes dl { margin:0; }

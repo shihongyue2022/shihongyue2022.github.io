@@ -25,7 +25,7 @@ export const ui = {
     emptyCertTitle: 'Certification section ready', emptyCertHelp: 'Add badge images to public/assets/certificates and records to the locale data file.',
     contactIndex: '05 / Contact', contactTitle: 'Have an opportunity or an interesting project?', contactLine: "Let's talk.", sendEmail: 'Send an Email', viewGitHub: 'View GitHub',
     emailOptionsTitle: 'Choose how to email', emailOptionsText: 'Use a webmail service, your default mail app, or copy the address.', defaultMail: 'Mail App', gmail: 'Gmail', outlook: 'Outlook', copyEmail: 'Copy Email', emailCopied: 'Email Copied', close: 'Close',
-    footer: 'Built with Astro · Hosted on GitHub Pages', source: 'Source', demo: 'Demo', caseStudy: 'Case study', credentialId: 'Credential ID',
+    footer: 'Built with Astro · Hosted on GitHub Pages', source: 'Source', demo: 'Demo', store: 'BOOTH store', caseStudy: 'Case study', credentialId: 'Credential ID',
     backWebsite: 'Back to website', printHint: 'For best results, choose A4 and disable browser headers and footers', printAction: 'Print / Save PDF',
     resume: { profile: 'Profile', experience: 'Experience', projects: 'Projects', skills: 'Skills', education: 'Education', certifications: 'Certifications', empty: 'To be added' }
   },
@@ -40,7 +40,7 @@ export const ui = {
     emptyCertTitle: '資格情報を追加できます', emptyCertHelp: '画像を public/assets/certificates に置き、言語別データファイルに情報を追加してください。',
     contactIndex: '05 / お問い合わせ', contactTitle: '新しい機会やプロジェクトについて', contactLine: 'ぜひお話ししましょう。', sendEmail: 'メールを送る', viewGitHub: 'GitHubを見る',
     emailOptionsTitle: 'メールの送信方法を選択', emailOptionsText: 'Webメール、既定のメールアプリ、またはアドレスのコピーを利用できます。', defaultMail: 'メールアプリ', gmail: 'Gmail', outlook: 'Outlook', copyEmail: 'アドレスをコピー', emailCopied: 'コピーしました', close: '閉じる',
-    footer: 'Astroで構築 · GitHub Pagesで公開', source: 'ソース', demo: 'デモ', caseStudy: '開発事例', credentialId: '認定ID',
+    footer: 'Astroで構築 · GitHub Pagesで公開', source: 'ソース', demo: 'デモ', store: 'BOOTH 商品ページ', caseStudy: '開発事例', credentialId: '認定ID',
     backWebsite: 'サイトへ戻る', printHint: 'A4を選択し、ブラウザのヘッダーとフッターを無効にしてください', printAction: '印刷 / PDF保存',
     resume: { profile: 'プロフィール', experience: '経験', projects: 'プロジェクト', skills: 'スキル', education: '学歴', certifications: '資格・認定', empty: '追加予定' }
   },
@@ -55,7 +55,7 @@ export const ui = {
     emptyCertTitle: '证书区域已经准备好', emptyCertHelp: '将图片放入 public/assets/certificates，并在对应语言数据文件中添加记录。',
     contactIndex: '05 / 联系', contactTitle: '有合适的机会或有趣的项目？', contactLine: '我们聊聊。', sendEmail: '发送邮件', viewGitHub: '查看 GitHub',
     emailOptionsTitle: '选择发送方式', emailOptionsText: '可以使用网页邮箱、默认邮件应用，或直接复制邮箱地址。', defaultMail: '邮件应用', gmail: 'Gmail', outlook: 'Outlook', copyEmail: '复制邮箱', emailCopied: '已复制邮箱', close: '关闭',
-    footer: '使用 Astro 构建 · 托管于 GitHub Pages', source: '源码', demo: '演示', caseStudy: '开发过程', credentialId: '证书编号',
+    footer: '使用 Astro 构建 · 托管于 GitHub Pages', source: '源码', demo: '演示', store: 'BOOTH 商品页', caseStudy: '开发过程', credentialId: '证书编号',
     backWebsite: '返回网站', printHint: '建议在打印设置中选择 A4，并关闭页眉和页脚', printAction: '打印 / 保存 PDF',
     resume: { profile: '个人简介', experience: '工作与实践经历', projects: '项目经历', skills: '专业技能', education: '教育经历', certifications: '资格证书', empty: '待补充' }
   }

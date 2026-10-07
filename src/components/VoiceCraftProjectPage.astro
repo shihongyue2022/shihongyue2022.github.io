@@ -9,6 +9,7 @@ interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const c = voicecraftCopy[locale];
 const repository = 'https://github.com/shihongyue2022/VoiceCraft-Community';
+const shopUrl = 'https://shitoushop.booth.pm/items/8707216';
 const license = 'https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/81eed5e8f68b6bed1789f682fe78cdd324495afc/LICENSE';
 const initialChannel = locale === 'zh' ? 'zh' : 'ja';
 const initialMessage = buildDeliveryMessage(initialChannel, 'DEMO-2026-001', '30', '1', c.downloadDefault);
@@ -37,7 +38,7 @@ const waveform = Array.from({ length: 53 }, (_, index) => 10 + Math.abs(Math.sin
           <h1>Voice<span>Craft</span><span class="vc-title-dot" aria-hidden="true">.</span></h1>
           <h2>{c.tagline}</h2>
           <p class="vc-intro">{c.intro}</p>
-          <div class="vc-hero-actions"><a class="button" href="#motivation">{c.explore}<span aria-hidden="true">↓</span></a><a class="text-link" href={repository} target="_blank" rel="noreferrer">{c.source} ↗</a></div>
+          <div class="vc-hero-actions"><a class="button" href="#motivation">{c.explore}<span aria-hidden="true">↓</span></a><a class="button vc-shop-link" href={shopUrl} target="_blank" rel="noreferrer">{c.shop}<span aria-hidden="true">↗</span></a><a class="text-link" href={repository} target="_blank" rel="noreferrer">{c.source} ↗</a></div>
         </div>
         <aside class="vc-project-notes">
           <svg class="vc-emblem" viewBox="0 0 220 125" fill="none" aria-hidden="true"><path d="M8 63h23l9-19 12 40 13-68 16 94 16-70 12 39 12-25h24l11-16 12 32 11-50 12 77 9-34h12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="110" cy="63" r="55" stroke="currentColor" opacity=".18"/><circle cx="110" cy="63" r="37" stroke="currentColor" opacity=".18"/></svg>
@@ -138,7 +139,7 @@ const waveform = Array.from({ length: 53 }, (_, index) => 10 + Math.abs(Math.sin
         <div class="vc-security-foot"><p class="vc-caption">{c.securityNote}</p><a class="text-link" href={license} target="_blank" rel="noreferrer">{c.licenseLink} ↗</a></div>
       </section>
 
-      <section class="vc-closing vc-shell"><p class="section-index">{c.closingIndex}</p><h2>{c.closingTitle}</h2><p>{c.closingText}</p><p class="vc-next">{c.closingNext}</p><div><a class="button" href={repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a class="text-link" href={`${localePaths[locale].home}#projects`}>{c.back} ↗</a></div><p class="vc-source-note">{c.sourceNote}</p></section>
+      <section class="vc-closing vc-shell"><p class="section-index">{c.closingIndex}</p><h2>{c.closingTitle}</h2><p>{c.closingText}</p><p class="vc-next">{c.closingNext}</p><div><a class="button" href={shopUrl} target="_blank" rel="noreferrer">{c.shop}<span aria-hidden="true">↗</span></a><a class="text-link" href={repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a class="text-link" href={`${localePaths[locale].home}#projects`}>{c.back} ↗</a></div><p class="vc-source-note">{c.sourceNote}</p></section>
     </div>
   </main>
   <footer class="vc-footer vc-shell"><span>{c.footer}</span><a href={localePaths[locale].home}>Shihong Yue ↗</a></footer>
