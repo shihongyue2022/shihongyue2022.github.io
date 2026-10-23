@@ -28,7 +28,7 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
         <p class="pc-wordmark">PoE2 <span>Companion</span></p>
         <h1>{c.title}</h1>
         <p class="pc-lead">{c.intro}</p>
-        <div class="pc-actions"><a class="button" href="#demo">{c.tryDemo} ↓</a><a href={poe2Repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a href={`${source}/README.md`} target="_blank" rel="noreferrer">{c.local} ↗</a></div>
+        <div class="pc-actions"><a class="button" href="/apps/poe2-companion/" target="_blank" rel="noreferrer">{locale === 'zh' ? '打开实际工坊' : locale === 'ja' ? '工坊を開く' : 'Open the workbench'} ↗</a><a href="#demo">{c.tryDemo} ↓</a><a href={poe2Repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a href={`${source}/README.md`} target="_blank" rel="noreferrer">{c.local} ↗</a></div>
       </div>
       <aside class="pc-hero-aside">
         <span class="pc-emblem" aria-hidden="true">P<span>2</span></span>

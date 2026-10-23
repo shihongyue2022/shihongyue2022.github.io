@@ -35,7 +35,7 @@ export const poe2Copy = {
     screenshots: '实际界面', screenshotNote: '以下为隔离回归样例的实际工坊界面，数据不是个人角色或真实成交。', skillImage: '紧凑技能组与折叠规则', pairImage: '同一候选池中的单件和两件方案',
     quality: '验证与边界', qualityTitle: '能验证的结果，才写进结论。', tests: '工坊测试通过', files: '个测试文件', verification: '对应源码版本 94c3ef6 的本地验证：类型检查、变更文件 ESLint、生产构建，以及桌面／移动浏览器通路检查通过。此处数字是该版本快照，不代表所有未来提交。',
     evidence: '查看候选组合测试', browserEvidence: '查看浏览器验证脚本',
-    limits: ['方向分不是 DPS；完整循环、条件覆盖率与逐词缀伤害敏感度仍需接入 PoB 重算。', 'GitHub Pages 展示此案例和示例；本机文件读取、快捷键、实时查价与成交同步需运行本地工坊。', '官方历史只同步实际可读记录；买入覆盖和历史长度尚需账号验证，缺少支出时不能称为净利润。'],
+    limits: ['方向分不是 DPS；完整循环、条件覆盖率与逐词缀伤害敏感度仍需接入 PoB 重算。', '实际工坊已部署浏览器版，支持上传 XML、技能组、比较、官网检索与制作计算；自动读档、快捷键、后台查价与成交同步需本地版。在线与本地记录不自动同步。', '官方历史只同步实际可读记录；买入覆盖和历史长度尚需账号验证，缺少支出时不能称为净利润。'],
     attribution: '项目沿用上游制作引擎并保留署名与提交历史，代码采用 AGPL-3.0。技能图像归 Grinding Gear Games 所有；本项目不是官方产品。', upstream: '上游项目', assets: '图像与截图来源', footer: '查看实现与本地启动方式'
   },
   en: {
@@ -69,7 +69,7 @@ export const poe2Copy = {
     screenshots: 'Actual interface', screenshotNote: 'Captured from isolated workbench regression fixtures, not a personal character or real transactions.', skillImage: 'Compact skill routine with folded rules', pairImage: 'Single-item and paired plans from one candidate pool',
     quality: 'VERIFICATION & LIMITS', qualityTitle: 'Make claims that the evidence supports.', tests: 'workbench tests passed', files: 'test files', verification: 'Local verification at revision 94c3ef6: type checking, ESLint on changed files, production build, and desktop/mobile browser flows passed. These figures describe that revision, not every future commit.',
     evidence: 'Inspect plan tests', browserEvidence: 'Inspect browser checks',
-    limits: ['Direction scores are not DPS. Full rotation, condition uptime, and per-modifier damage sensitivity still need PoB recalculation.', 'GitHub Pages hosts this case study and example. Local file access, hotkeys, live trade queries, and trade synchronization require the local workbench.', 'Official history covers only readable records. Purchase coverage and history depth need account validation; missing expenses cannot establish net profit.'],
+    limits: ['Direction scores are not DPS. Full rotation, condition uptime, and per-modifier damage sensitivity still need PoB recalculation.', 'The real browser workbench supports XML uploads, skill routines, comparisons, official search links, and crafting calculations. Automatic file access, hotkeys, listing fetches, and trade synchronization require the local edition; records do not automatically sync.', 'Official history covers only readable records. Purchase coverage and history depth need account validation; missing expenses cannot establish net profit.'],
     attribution: 'The project retains the upstream crafting engine, attribution, and commit history under AGPL-3.0. Skill artwork belongs to Grinding Gear Games. This is an unofficial community tool.', upstream: 'Upstream project', assets: 'Artwork and screenshot sources', footer: 'Explore the implementation and local setup'
   },
   ja: {
@@ -103,7 +103,7 @@ export const poe2Copy = {
     screenshots: '実際の画面', screenshotNote: '隔離された回帰テスト用データの画面です。個人のキャラクターや実取引ではありません。', skillImage: 'コンパクトなスキル構成と折りたたみ設定', pairImage: '同一候補プールの1部位・2部位プラン',
     quality: '検証と制約', qualityTitle: '根拠を確認できる結果を示す。', tests: '工坊テスト通過', files: 'テストファイル', verification: 'リビジョン94c3ef6でのローカル検証：型チェック、変更ファイルのESLint、本番ビルド、PC・モバイルのブラウザー操作を確認済み。この数値は当該版の記録です。',
     evidence: '組合せテストを見る', browserEvidence: 'ブラウザー検証を見る',
-    limits: ['方向スコアはDPSではありません。スキル循環、効果の稼働率、Mod別火力感度はPoBによる再計算が必要です。', 'GitHub Pagesには事例とサンプルを公開。ローカルファイル読取、ホットキー、実取引検索、履歴同期にはローカル工坊が必要です。', '公式履歴は取得できる記録のみ。購入履歴の網羅性・保存期間はアカウントでの検証待ちで、支出不明の収入を純利益とは表示しません。'],
+    limits: ['方向スコアはDPSではありません。スキル循環、効果の稼働率、Mod別火力感度はPoBによる再計算が必要です。', '実際の工坊をブラウザー版として公開。XML読込、スキル構成、比較、公式検索リンク、クラフト計算に対応します。自動ファイル読取、ホットキー、出品取得、取引同期はローカル版が必要で、記録は自動同期されません。', '公式履歴は取得できる記録のみ。購入履歴の網羅性・保存期間はアカウントでの検証待ちで、支出不明の収入を純利益とは表示しません。'],
     attribution: '上流のクラフトエンジン、著作者表示、コミット履歴を保持し、コードはAGPL-3.0を継承。スキル画像はGrinding Gear Gamesに帰属する非公式コミュニティツールです。', upstream: '上流プロジェクト', assets: '画像・スクリーンショット出典', footer: '実装とローカル起動方法を見る'
   }
 } satisfies Record<Locale, unknown>;

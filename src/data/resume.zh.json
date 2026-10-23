@@ -66,16 +66,6 @@
   }],
   "projects": [
     {
-      "name": "PoE2 Companion — 技能驱动的配装工坊",
-      "description": "在开源制作工具基础上，以 AI 辅助开发扩展的本地游戏助手：从角色快照与实际输出技能组出发，查阅增伤词缀，联合检索装备并核对整套换装。",
-      "impact": "实现 PoB2 数据解析、双武器组、英文属性 ID 与中文展示映射、两件候选的四抗和预算约束，以及官方可读成交同步与去重；87 个测试文件、499 项工坊测试通过，完整循环 DPS 仍需 PoB 验证",
-      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
-      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
-      "demoUrl": "/zh/projects/poe2-companion/#demo",
-      "caseStudyUrl": "/zh/projects/poe2-companion/",
-      "featured": true
-    },
-    {
       "name": "VoiceCraft — Windows 变声器",
       "description": "采用 AI 辅助编码完成的个人项目。以 RVC 为基础聚焦男声转女声，整理 Windows 操作界面，并将外部模型转换环境拆为可选组件。",
       "impact": "实现 C# ONNX/CUDA 推理、便携 Python 打包、模型资产保护，以及基于 ASP.NET Core/PostgreSQL 的授权后台、临时 HTTPS 认证入口与定制发货信息生成",
@@ -102,6 +92,16 @@
       "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
       "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
       "demoUrl": "/zh/projects/eims/",
+      "featured": true
+    },
+    {
+      "name": "PoE2 Companion — 技能驱动的配装工坊",
+      "description": "在开源制作工具基础上，以 AI 辅助开发扩展的本地游戏助手：从角色快照与实际输出技能组出发，查阅增伤词缀，联合检索装备并核对整套换装。",
+      "impact": "实现 PoB2 数据解析、双武器组、英文属性 ID 与中文展示映射、两件候选的四抗和预算约束，以及官方可读成交同步与去重；87 个测试文件、499 项工坊测试通过，完整循环 DPS 仍需 PoB 验证",
+      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
+      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
+      "demoUrl": "/apps/poe2-companion/",
+      "caseStudyUrl": "/zh/projects/poe2-companion/",
       "featured": true
     }
   ],

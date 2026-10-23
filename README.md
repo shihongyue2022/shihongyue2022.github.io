@@ -34,7 +34,7 @@ The language selector keeps visitors on the corresponding portfolio or printable
 
 ## Project case studies
 
-PoE2 Companion is included on all three homepages and printable resumes. Its case study is available at `/projects/poe2-companion/`, `/ja/projects/poe2-companion/`, and `/zh/projects/poe2-companion/`, with matching language and canonical links. The page includes actual synthetic-fixture screenshots and an interactive example of whole-loadout resistance and purchase-budget checks. It does not run the full application, access local files, connect an account, query live listings, or compute skill DPS; those workflows require the local application linked on the page.
+PoE2 Companion is the last project on all three homepages and printable resumes. Its case study is available at `/projects/poe2-companion/`, `/ja/projects/poe2-companion/`, and `/zh/projects/poe2-companion/`, with matching language and canonical links. The real browser application is deployed at **[/apps/poe2-companion/](https://shihongyue2022.github.io/apps/poe2-companion/)**, supporting explicit PoB2 uploads, skill routines, equipment comparisons, official trade search links, and crafting calculations. Automatic local file access, desktop shortcuts, backend listing fetches, and trade synchronization require the local edition. Browser and local records are stored separately.
 
 Edit the case study in `src/components/Poe2ProjectPage.astro`, localized content in `src/data/poe2.ts`, the illustration in `src/scripts/poe2-demo.ts`, and styles in `src/styles/poe2.css`. Test counts describe the verified application revision `94c3ef6`. Image provenance and game-art attribution are recorded in `public/assets/projects/poe2-companion/SOURCES.md`.
 
@@ -77,6 +77,8 @@ Place badge images in `public/assets/certificates/`, then add a record such as:
 ## Deployment
 
 Every push to `main` runs the GitHub Actions workflow and deploys the generated `dist/` directory to GitHub Pages.
+
+The workflow also checks out a pinned PoE2 Companion revision, builds it with `VITE_WORKBENCH_HOSTED=1` and `VITE_WORKBENCH_BASE=/apps/poe2-companion/`, and includes its output using `scripts/include-workbench.mjs`. The application source, dependencies, and generated bundle are not committed to this resume repository. To verify locally, build the application with those variables, build this Astro site, then run the include script with `WORKBENCH_DIST` pointing to the application `dist` directory.
 
 ## Project structure
 

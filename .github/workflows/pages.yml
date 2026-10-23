@@ -23,15 +23,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout PoE2 Companion
+        uses: actions/checkout@v4
+        with:
+          repository: shihongyue2022/PoE2-Companion
+          ref: 266805a956f1ca242c4b15884615ab8235241f15
+          path: .workbench-source
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            .workbench-source/package-lock.json
       - name: Install dependencies
         run: npm ci
+      - name: Build hosted workbench
+        working-directory: .workbench-source
+        env:
+          VITE_WORKBENCH_HOSTED: '1'
+          VITE_WORKBENCH_BASE: /apps/poe2-companion/
+        run: npm ci && npm run build
       - name: Build Astro site
         run: npm run build
+      - name: Include the real workbench application
+        run: node scripts/include-workbench.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site

@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .astro/
+.workbench-source/
 /.cache/
 .DS_Store
 *.log
