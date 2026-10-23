@@ -34,6 +34,10 @@ The language selector keeps visitors on the corresponding portfolio or printable
 
 ## Project case studies
 
+PoE2 Companion is included on all three homepages and printable resumes. Its case study is available at `/projects/poe2-companion/`, `/ja/projects/poe2-companion/`, and `/zh/projects/poe2-companion/`, with matching language and canonical links. The page includes actual synthetic-fixture screenshots and an interactive example of whole-loadout resistance and purchase-budget checks. It does not run the full application, access local files, connect an account, query live listings, or compute skill DPS; those workflows require the local application linked on the page.
+
+Edit the case study in `src/components/Poe2ProjectPage.astro`, localized content in `src/data/poe2.ts`, the illustration in `src/scripts/poe2-demo.ts`, and styles in `src/styles/poe2.css`. Test counts describe the verified application revision `94c3ef6`. Image provenance and game-art attribution are recorded in `public/assets/projects/poe2-companion/SOURCES.md`.
+
 VoiceCraft is featured on the homepage and printable resume. Its development story is available at `/projects/voicecraft/`, `/ja/projects/voicecraft/`, and `/zh/projects/voicecraft/`. The language selector and canonical/alternate links keep visitors on the corresponding project.
 
 Edit the case study in `src/components/VoiceCraftProjectPage.astro`, its localized content in `src/data/voicecraft.ts`, and its styles in `src/styles/voicecraft.css`. The client illustration and delivery workflow are portfolio demonstrations using fictitious data; they do not run audio inference or contact the production licensing service. Package-size figures compare historical uncompressed VoiceCraft builds, and inference timings describe a two-second audio block on an RTX 4060, not end-to-end latency.

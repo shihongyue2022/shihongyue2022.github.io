@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { localePaths, ui, type Locale } from '../i18n';
+import { poe2Copy, poe2Repository, poe2Revision } from '../data/poe2';
+import '../styles/poe2.css';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const c = poe2Copy[locale];
+const assets = '/assets/projects/poe2-companion';
+const icons = ['twister', 'explosive-spear', 'whirling-slash'];
+const source = `${poe2Repository}/tree/${poe2Revision}`;
+const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.overBudget, passed: c.passed, reasons: c.reasons };
+---
+
+<BaseLayout title={`PoE2 Companion | ${ui[locale].projectsTitle}`} description={c.intro} locale={locale} page="poe2" className="poe2-page">
+  <a class="skip-link" href="#main-content">{c.skip}</a>
+  <header class="pc-header">
+    <a href={`${localePaths[locale].home}#projects`}>↖ {c.back}</a>
+    <div><LanguageSwitcher locale={locale} page="poe2" /><button type="button" class="icon-button" id="pc-theme" aria-label={c.theme}>◐</button></div>
+  </header>
+
+  <main id="main-content">
+    <section class="pc-hero pc-shell">
+      <div>
+        <p class="eyebrow">{c.label}</p>
+        <p class="pc-wordmark">PoE2 <span>Companion</span></p>
+        <h1>{c.title}</h1>
+        <p class="pc-lead">{c.intro}</p>
+        <div class="pc-actions"><a class="button" href="#demo">{c.tryDemo} ↓</a><a href={poe2Repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a href={`${source}/README.md`} target="_blank" rel="noreferrer">{c.local} ↗</a></div>
+      </div>
+      <aside class="pc-hero-aside">
+        <span class="pc-emblem" aria-hidden="true">P<span>2</span></span>
+        <p>{c.role}</p><p>{c.base}</p><p>{c.stack}</p>
+      </aside>
+    </section>
+
+    <ol class="pc-workflow pc-shell" aria-label={c.engineeringLabel}>{c.workflow.map((step, index) => <li><span>0{index + 1}</span>{step}</li>)}</ol>
+
+    <section id="demo" class="pc-section pc-shell" aria-labelledby="pc-demo-title">
+      <p class="section-index">01 / {c.demoLabel}</p>
+      <h2 id="pc-demo-title">{c.demoTitle}</h2><p class="pc-section-lead">{c.demoLead}</p>
+      <div class="pc-console" id="pc-demo" data-copy={JSON.stringify(demoCopy)}>
+        <div class="pc-console-bar"><strong>PoE2 Companion</strong><span>{c.demoLabel}</span></div>
+        <div class="pc-console-body">
+          <div class="pc-skill-heading"><span>01</span><p>{c.skillsTitle}</p></div>
+          <div class="pc-skills">{c.skills.map((skill, index) => <button type="button" data-skill={index} data-detail={skill.text} aria-pressed={index === 0 ? 'true' : 'false'} aria-controls="pc-skill-detail"><img src={`${assets}/${icons[index]}.png`} alt="" width="56" height="56" /><span><strong>{skill.name}</strong><small>{skill.role}</small></span></button>)}</div>
+          <p class="pc-skill-detail" id="pc-skill-detail" aria-label={c.skillDetail} aria-live="polite">{c.skills[0].text}</p>
+          <div class="pc-decision">
+            <div class="pc-options">
+              <div class="pc-skill-heading"><span>02</span><p>{c.candidates}</p></div>
+              <div class="pc-plan-options" role="group" aria-label={c.candidates}>
+                {[c.current, c.ring, c.pair].map((label, index) => <button type="button" data-plan={index} aria-pressed={index === 1 ? 'true' : 'false'}>{label}<span aria-hidden="true">↗</span></button>)}
+              </div>
+              <label class="pc-budget">{c.budget}<select id="pc-budget"><option value="5">5 {c.currency}</option><option value="10" selected>10 {c.currency}</option><option value="25">25 {c.currency}</option></select></label>
+              <p class="pc-cost">{c.total}<strong><output id="pc-cost">6</output> <small>{c.currency}</small></strong></p>
+            </div>
+            <div class="pc-results">
+              <div class="pc-table-wrap"><table><caption>{c.resistance}</caption><thead><tr><th scope="col">{c.resistance}</th><th scope="col">{c.uncapped}</th><th scope="col">{c.effective}</th></tr></thead><tbody>{c.resists.map((name, index) => <tr data-resistance={index} data-met="false"><th scope="row"><i aria-hidden="true" class={`pc-resist-dot pc-resist-${index}`}></i>{name}</th><td data-raw>{[60, 60, 60, 63][index]}%</td><td><span data-effective>{[60, 60, 60, 63][index]}%</span> / 75%</td></tr>)}</tbody></table></div>
+              <div class="pc-result" data-state="fail" role="status" aria-live="polite" aria-atomic="true"><strong id="pc-verdict">{c.shortfall}</strong><p id="pc-reason">{c.reasons[1]}</p></div>
+              <p class="pc-result-note">{c.resultNote}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pc-caption">{c.demoNote}</p>
+    </section>
+
+    <section class="pc-section pc-shell" aria-labelledby="pc-engineering-title">
+      <p class="section-index">02 / {c.engineeringLabel}</p><h2 id="pc-engineering-title">{c.engineeringTitle}</h2>
+      <div class="pc-engineering">{c.engineering.map(([title, text], index) => <article><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+      <h3 class="pc-architecture-title">{c.architecture}</h3>
+      <ol class="pc-architecture">{c.layers.map(([title, text], index) => <li><span>0{index + 1}</span><h4>{title}</h4><p>{text}</p></li>)}</ol>
+    </section>
+
+    <section class="pc-section pc-shell" aria-labelledby="pc-screenshots-title">
+      <p class="section-index">03 / {c.screenshots}</p><h2 id="pc-screenshots-title">{c.screenshots}</h2><p class="pc-caption">{c.screenshotNote}</p>
+      <div class="pc-captures">
+        <figure><a href={`${assets}/skill-routine.png`} target="_blank" rel="noreferrer"><img src={`${assets}/skill-routine.png`} alt={c.skillImage} width="1384" height="219" loading="lazy" /></a><figcaption>{c.skillImage}</figcaption></figure>
+        <figure><a href={`${assets}/paired-upgrades.png`} target="_blank" rel="noreferrer"><img src={`${assets}/paired-upgrades.png`} alt={c.pairImage} width="558" height="688" loading="lazy" /></a><figcaption>{c.pairImage}</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="pc-section pc-shell" aria-labelledby="pc-quality-title">
+      <p class="section-index">04 / {c.quality}</p><h2 id="pc-quality-title">{c.qualityTitle}</h2>
+      <div class="pc-quality-grid"><div class="pc-test-count"><strong>499</strong><span>{c.tests}</span><small>87 {c.files} · {poe2Revision}</small></div><div><p>{c.verification}</p><div class="pc-actions"><a href={`${source}/src/workbench/upgradePlans.test.ts`} target="_blank" rel="noreferrer">{c.evidence} ↗</a><a href={`${source}/scripts/workbench-default-workflow-regression.mjs`} target="_blank" rel="noreferrer">{c.browserEvidence} ↗</a></div></div></div>
+      <details class="pc-limits" open><summary>{c.quality}</summary><ul>{c.limits.map(limit => <li>{limit}</li>)}</ul></details>
+    </section>
+  </main>
+  <footer class="pc-footer"><div class="pc-shell"><a class="pc-footer-link" href={poe2Repository} target="_blank" rel="noreferrer">{c.footer} ↗</a><p>{c.attribution}</p><div class="pc-actions"><a href="https://github.com/Dboire9/POE2_HTC" target="_blank" rel="noreferrer">{c.upstream} ↗</a><a href={`${assets}/SOURCES.md`} target="_blank" rel="noreferrer">{c.assets} ↗</a><a href={`${source}/LICENSE`} target="_blank" rel="noreferrer">AGPL-3.0 ↗</a></div></div></footer>
+  <script>
+    import '../scripts/poe2-demo';
+  </script>
+</BaseLayout>

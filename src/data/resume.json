@@ -77,6 +77,16 @@
   ],
   "projects": [
     {
+      "name": "PoE2 Companion — Skill-driven Equipment Planning",
+      "description": "An AI-assisted extension of an open-source crafting tool, connecting character snapshots and actual skill routines to modifier research, multi-attribute equipment searches, and whole-loadout comparisons.",
+      "impact": "Implemented PoB2 parsing, dual weapon sets, English stat IDs with Chinese display mapping, two-item resistance and budget checks, and deduplication of readable official trade records; 499 workbench tests across 87 files passed, with full rotation DPS still requiring PoB validation",
+      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
+      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
+      "demoUrl": "/projects/poe2-companion/#demo",
+      "caseStudyUrl": "/projects/poe2-companion/",
+      "featured": true
+    },
+    {
       "name": "VoiceCraft — Windows Voice Changer",
       "description": "An AI-assisted personal project built around RVC for male-to-female voice conversion, with a focused Windows interface and a separate optional model-conversion environment.",
       "impact": "Implemented C# ONNX/CUDA inference, portable Python packaging, model asset protection, and an ASP.NET Core/PostgreSQL licensing dashboard with temporary HTTPS activation URLs and generated delivery messages",

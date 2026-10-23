@@ -66,6 +66,16 @@
   }],
   "projects": [
     {
+      "name": "PoE2 Companion — スキル起点の装備プランナー",
+      "description": "オープンソースのクラフトツールを基に、AI支援開発で拡張したローカルゲーム支援アプリ。キャラクター情報と実際のスキル構成から、強化Modの調査、複数条件検索、装備全体の比較へつなぎます。",
+      "impact": "PoB2解析、武器セット切替、英語の属性IDと中国語表示の対応付け、2部位の耐性・予算制約、取得可能な公式取引履歴の同期・重複排除を実装。87ファイル・499件の工坊テストが通過。最終DPSはPoBでの検証が必要",
+      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
+      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
+      "demoUrl": "/ja/projects/poe2-companion/#demo",
+      "caseStudyUrl": "/ja/projects/poe2-companion/",
+      "featured": true
+    },
+    {
       "name": "VoiceCraft — Windows向けボイスチェンジャー",
       "description": "AIのコーディング支援を活用した個人開発。RVCを基盤に男声から女声への変換に用途を絞り、Windows画面と任意導入のモデル変換環境を設計しました。",
       "impact": "C#によるONNX/CUDA推論、可搬型Pythonの配布、モデル資産の保護、ASP.NET Core/PostgreSQLのライセンス管理、一時HTTPS認証URLと納品メッセージ生成を実装",

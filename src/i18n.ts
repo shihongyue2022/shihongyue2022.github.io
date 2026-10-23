@@ -1,5 +1,5 @@
 export type Locale = 'en' | 'ja' | 'zh';
-export type PageKind = 'home' | 'resume' | 'project' | 'voicecraft';
+export type PageKind = 'home' | 'resume' | 'project' | 'voicecraft' | 'poe2';
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',
@@ -8,9 +8,9 @@ export const localeNames: Record<Locale, string> = {
 };
 
 export const localePaths: Record<Locale, Record<PageKind, string>> = {
-  en: { home: '/', resume: '/resume/', project: '/projects/eims/', voicecraft: '/projects/voicecraft/' },
-  ja: { home: '/ja/', resume: '/ja/resume/', project: '/ja/projects/eims/', voicecraft: '/ja/projects/voicecraft/' },
-  zh: { home: '/zh/', resume: '/zh/resume/', project: '/zh/projects/eims/', voicecraft: '/zh/projects/voicecraft/' }
+  en: { home: '/', resume: '/resume/', project: '/projects/eims/', voicecraft: '/projects/voicecraft/', poe2: '/projects/poe2-companion/' },
+  ja: { home: '/ja/', resume: '/ja/resume/', project: '/ja/projects/eims/', voicecraft: '/ja/projects/voicecraft/', poe2: '/ja/projects/poe2-companion/' },
+  zh: { home: '/zh/', resume: '/zh/resume/', project: '/zh/projects/eims/', voicecraft: '/zh/projects/voicecraft/', poe2: '/zh/projects/poe2-companion/' }
 };
 
 export const ui = {
