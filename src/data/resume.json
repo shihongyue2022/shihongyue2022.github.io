@@ -107,11 +107,17 @@
     },
     {
       "name": "PoE2 Companion — Skill-driven Equipment Planning",
-      "description": "An AI-assisted extension of an open-source crafting tool, connecting character snapshots and actual skill routines to modifier research, multi-attribute equipment searches, and whole-loadout comparisons.",
-      "impact": "Implemented PoB2 parsing, dual weapon sets, English stat IDs with Chinese display mapping, two-item resistance and budget checks, and deduplication of readable official trade records; 499 workbench tests across 87 files passed, with full rotation DPS still requiring PoB validation",
-      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
+      "description": "Extended an open-source crafting engine with AI-assisted development into a Path of Exile 2 equipment and crafting assistant, connecting character imports, damage analysis, market searches, and crafting decisions across local and static browser editions.",
+      "impact": "Connected character import, modifier analysis, budgeted equipment search, whole-loadout resistance checks, and crafting-result verification.",
+      "highlights": [
+        "Data and engine integration: parsed PoB2 XML/share codes and English, Traditional Chinese, and Simplified Chinese item text; mapped native modifiers to official trade IDs. Connected Node.js, local PowerShell, and Lua to PoB2 for modifier-removal DPS recalculation, with separate item-level attribution.",
+        "Constrained search and API handling: enumerated one/two-item swaps from up to 24 candidates against total budget and four loadout resistances. Added caching, request spacing, and Retry-After-aware rate limiting, distinguishing login restrictions, missing prices, and empty results.",
+        "Crafting state management: validated actual base items against level, tier, modifier-group, and fractured-mod constraints before reusing the upstream Worker solver. Invalidated stale routes after edits, checked actual crafting outcomes before recalculation, and isolated cost ledgers by league and project.",
+        "Engineering verification: used Vitest for parsing, trade filters, swap constraints, and crafting state, plus Playwright scripts for desktop/mobile workflows. Static hosting uses official search links; local services enable PoB2 recalculation and desktop price-check hotkeys."
+      ],
+      "tags": ["TypeScript", "React", "Node.js", "Lua", "Web Workers", "Vitest / Playwright"],
       "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
-      "demoUrl": "/apps/poe2-companion/",
+      "demoUrl": "/apps/poe2-companion/?lang=en",
       "caseStudyUrl": "/projects/poe2-companion/",
       "featured": true
     }

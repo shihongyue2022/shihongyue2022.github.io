@@ -45,6 +45,7 @@ export interface Project {
   name: string;
   description: string;
   impact: string;
+  highlights?: string[];
   tags: string[];
   repoUrl: string;
   demoUrl: string;

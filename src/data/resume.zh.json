@@ -96,11 +96,17 @@
     },
     {
       "name": "PoE2 Companion — 技能驱动的配装工坊",
-      "description": "在开源制作工具基础上，以 AI 辅助开发扩展的本地游戏助手：从角色快照与实际输出技能组出发，查阅增伤词缀，联合检索装备并核对整套换装。",
-      "impact": "实现 PoB2 数据解析、双武器组、英文属性 ID 与中文展示映射、两件候选的四抗和预算约束，以及官方可读成交同步与去重；87 个测试文件、499 项工坊测试通过，完整循环 DPS 仍需 PoB 验证",
-      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
+      "description": "基于开源制作引擎，以 AI 辅助开发面向《流放之路 2》的配装与制作助手，将角色导入、伤害分析、市场检索和制作决策串成可操作流程，提供本地版与静态浏览器版。",
+      "impact": "打通角色读取、增伤词缀分析、预算内装备检索、整套抗性校验与制作结果验证的工作流。",
+      "highlights": [
+        "数据解析与引擎集成：解析 PoB2 XML／分享代码及英、繁、简物品文本，映射原生词缀与官方交易 ID；通过 Node.js、本机 PowerShell 与 Lua 接入 PoB2，逐条移除词缀重算 DPS，区分单条贡献和整件装备贡献。",
+        "约束搜索与接口治理：在最多 24 件候选中枚举一件／两件换装组合，同时校验总预算与整套四种抗性；官方查价加入缓存、请求间隔和 Retry-After 动态限流，区分登录受限、缺价与无结果。",
+        "制作流程与状态一致性：基于实际底装校验物等、阶层、互斥组和破裂锁定，复用上游 Worker 求解制作策略；目标或装备变更即使旧路线失效，操作后按真实结果核对并重算，账本按赛季和项目隔离保存。",
+        "工程验证：使用 Vitest 覆盖解析、交易条件、换装约束与制作状态，使用 Playwright 脚本验证桌面／移动端关键流程；静态版通过官网链接检索，本地版提供 PoB2 重算与桌面快捷查价。"
+      ],
+      "tags": ["TypeScript", "React", "Node.js", "Lua", "Web Workers", "Vitest / Playwright"],
       "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
-      "demoUrl": "/apps/poe2-companion/",
+      "demoUrl": "/apps/poe2-companion/?lang=zh-CN",
       "caseStudyUrl": "/zh/projects/poe2-companion/",
       "featured": true
     }

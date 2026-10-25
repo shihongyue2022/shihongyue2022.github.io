@@ -96,11 +96,17 @@
     },
     {
       "name": "PoE2 Companion — スキル起点の装備プランナー",
-      "description": "オープンソースのクラフトツールを基に、AI支援開発で拡張したローカルゲーム支援アプリ。キャラクター情報と実際のスキル構成から、強化Modの調査、複数条件検索、装備全体の比較へつなぎます。",
-      "impact": "PoB2解析、武器セット切替、英語の属性IDと中国語表示の対応付け、2部位の耐性・予算制約、取得可能な公式取引履歴の同期・重複排除を実装。87ファイル・499件の工坊テストが通過。最終DPSはPoBでの検証が必要",
-      "tags": ["TypeScript", "React", "Node.js", "Vitest", "Playwright"],
+      "description": "オープンソースのクラフトエンジンを基盤に、AI支援開発で『Path of Exile 2』の装備・クラフト支援ツールを拡張。キャラクター読込、ダメージ分析、市場検索、制作判断をつなぎ、ローカル版と静的ブラウザー版を提供。",
+      "impact": "キャラクター読込から有効Modの分析、予算内の装備検索、装備全体の耐性確認、クラフト結果の検証までを一連の操作に統合。",
+      "highlights": [
+        "データ解析・エンジン連携：PoB2 XML／共有コードと英語・繁体字・簡体字のアイテム文を解析し、元のModと公式取引IDを対応付け。Node.js・ローカルPowerShell・Lua経由でPoB2を呼び出し、Modを一つずつ除外したDPS再計算と装備単位の寄与分析を実装。",
+        "制約付き検索・API制御：最大24候補から1点／2点の交換を列挙し、合計予算と装備全体の4耐性を検証。公式価格検索にキャッシュ、リクエスト間隔、Retry-Afterに従う動的制限を実装し、ログイン制限・価格不足・該当なしを区別。",
+        "クラフトの状態管理：実物のベースに対し、アイテムレベル・Tier・排他グループ・破砕Modを検証し、上流のWorkerソルバーを再利用。目標・装備の変更で旧ルートを無効化し、操作結果を確認して再計算。費用台帳はリーグ・プロジェクト別に保存。",
+        "品質検証：Vitestで解析・取引条件・交換制約・制作状態を検証し、PlaywrightスクリプトでPC／モバイルの主要操作を確認。静的版は公式検索リンクを使い、ローカル版はPoB2再計算とデスクトップの価格確認ホットキーを提供。"
+      ],
+      "tags": ["TypeScript", "React", "Node.js", "Lua", "Web Workers", "Vitest / Playwright"],
       "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
-      "demoUrl": "/apps/poe2-companion/",
+      "demoUrl": "/apps/poe2-companion/?lang=ja",
       "caseStudyUrl": "/ja/projects/poe2-companion/",
       "featured": true
     }
