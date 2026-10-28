@@ -1,0 +1,86 @@
+{
+  "modifier-equipment-contributions.png": {
+    "zh": {
+      "width": 1384,
+      "height": 612
+    },
+    "en": {
+      "width": 1384,
+      "height": 612
+    },
+    "ja": {
+      "width": 1384,
+      "height": 612
+    }
+  },
+  "skill-combination-contributions.png": {
+    "zh": {
+      "width": 1384,
+      "height": 460
+    },
+    "en": {
+      "width": 1384,
+      "height": 460
+    },
+    "ja": {
+      "width": 1384,
+      "height": 460
+    }
+  },
+  "craft-base-comparison.png": {
+    "zh": {
+      "width": 1494,
+      "height": 888
+    },
+    "en": {
+      "width": 1494,
+      "height": 1032
+    },
+    "ja": {
+      "width": 1494,
+      "height": 1032
+    }
+  },
+  "craft-material-ledger.png": {
+    "zh": {
+      "width": 1544,
+      "height": 1113
+    },
+    "en": {
+      "width": 1544,
+      "height": 1112
+    },
+    "ja": {
+      "width": 1544,
+      "height": 1112
+    }
+  },
+  "skill-routine.png": {
+    "zh": {
+      "width": 1384,
+      "height": 232
+    },
+    "en": {
+      "width": 1384,
+      "height": 232
+    },
+    "ja": {
+      "width": 1384,
+      "height": 232
+    }
+  },
+  "paired-upgrades.png": {
+    "zh": {
+      "width": 558,
+      "height": 715
+    },
+    "en": {
+      "width": 558,
+      "height": 806
+    },
+    "ja": {
+      "width": 558,
+      "height": 715
+    }
+  }
+}

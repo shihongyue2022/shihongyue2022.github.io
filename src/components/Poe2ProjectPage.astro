@@ -3,12 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 import { localePaths, ui, type Locale } from '../i18n';
 import { poe2Copy, poe2Repository, poe2Revision } from '../data/poe2';
+import captures from '../data/poe2-captures.json';
 import '../styles/poe2.css';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const c = poe2Copy[locale];
 const assets = '/assets/projects/poe2-companion';
+const capture = (name: keyof typeof captures) => ({ src: `${assets}/${locale}/${name}`, ...captures[name][locale] });
 const icons = ['twister', 'explosive-spear', 'whirling-slash'];
 const source = `${poe2Repository}/tree/${poe2Revision}`;
 const readmePath = { zh: 'README.md', en: 'README.en.md', ja: 'README.ja.md' }[locale];
@@ -46,8 +48,8 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
       <div class="pc-engineering">{c.analysisSteps.map(([title, text], index) => <article><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
       <p class="pc-section-lead pc-analysis-outcome">{c.analysisOutcome}</p>
       <div class="pc-captures pc-analysis-captures">
-        <figure><a href={`${assets}/modifier-equipment-contributions.png`} target="_blank" rel="noreferrer"><img src={`${assets}/modifier-equipment-contributions.png`} alt={c.contributionImage} width="1384" height="612" loading="lazy" /></a><figcaption>{c.contributionImage}</figcaption></figure>
-        <figure><a href={`${assets}/skill-combination-contributions.png`} target="_blank" rel="noreferrer"><img src={`${assets}/skill-combination-contributions.png`} alt={c.combinationImage} width="1384" height="459" loading="lazy" /></a><figcaption>{c.combinationImage}</figcaption></figure>
+        <figure><a href={capture('modifier-equipment-contributions.png').src} target="_blank" rel="noreferrer"><img {...capture('modifier-equipment-contributions.png')} alt={c.contributionImage} loading="lazy" /></a><figcaption>{c.contributionImage}</figcaption></figure>
+        <figure><a href={capture('skill-combination-contributions.png').src} target="_blank" rel="noreferrer"><img {...capture('skill-combination-contributions.png')} alt={c.combinationImage} loading="lazy" /></a><figcaption>{c.combinationImage}</figcaption></figure>
       </div>
     </section>
 
@@ -100,16 +102,16 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
       <ol class="pc-craft-workflow">{c.craftingSteps.map(([title, text], index) => <li><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
       <p class="pc-caption">{c.craftingNote}</p>
       <div class="pc-captures pc-craft-captures">
-        <figure><a href={`${assets}/craft-base-comparison.png`} target="_blank" rel="noreferrer"><img src={`${assets}/craft-base-comparison.png`} alt={c.comparisonImage} width="1494" height="888" loading="lazy" /></a><figcaption>{c.comparisonImage}</figcaption></figure>
-        <figure><a href={`${assets}/craft-material-ledger.png`} target="_blank" rel="noreferrer"><img src={`${assets}/craft-material-ledger.png`} alt={c.ledgerImage} width="1544" height="1113" loading="lazy" /></a><figcaption>{c.ledgerImage}</figcaption></figure>
+        <figure><a href={capture('craft-base-comparison.png').src} target="_blank" rel="noreferrer"><img {...capture('craft-base-comparison.png')} alt={c.comparisonImage} loading="lazy" /></a><figcaption>{c.comparisonImage}</figcaption></figure>
+        <figure><a href={capture('craft-material-ledger.png').src} target="_blank" rel="noreferrer"><img {...capture('craft-material-ledger.png')} alt={c.ledgerImage} loading="lazy" /></a><figcaption>{c.ledgerImage}</figcaption></figure>
       </div>
     </section>
 
     <section class="pc-section pc-shell pc-screenshots" aria-labelledby="pc-screenshots-title">
       <div class="pc-screenshots-heading"><p class="section-index">06 / {c.screenshots}</p><h2 id="pc-screenshots-title">{c.screenshots}</h2><p class="pc-caption">{c.screenshotNote}</p></div>
       <div class="pc-captures pc-screenshot-captures">
-        <figure><a href={`${assets}/skill-routine.png`} target="_blank" rel="noreferrer"><img src={`${assets}/skill-routine.png`} alt={c.skillImage} width="1384" height="219" loading="lazy" /></a><figcaption>{c.skillImage}</figcaption></figure>
-        <figure><a href={`${assets}/paired-upgrades.png`} target="_blank" rel="noreferrer"><img src={`${assets}/paired-upgrades.png`} alt={c.pairImage} width="558" height="688" loading="lazy" /></a><figcaption>{c.pairImage}</figcaption></figure>
+        <figure><a href={capture('skill-routine.png').src} target="_blank" rel="noreferrer"><img {...capture('skill-routine.png')} alt={c.skillImage} loading="lazy" /></a><figcaption>{c.skillImage}</figcaption></figure>
+        <figure><a href={capture('paired-upgrades.png').src} target="_blank" rel="noreferrer"><img {...capture('paired-upgrades.png')} alt={c.pairImage} loading="lazy" /></a><figcaption>{c.pairImage}</figcaption></figure>
       </div>
     </section>
 

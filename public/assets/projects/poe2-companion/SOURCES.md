@@ -2,6 +2,32 @@
 
 Source application: https://github.com/shihongyue2022/PoE2-Build-Atlas
 
+## Localized UI captures
+
+The six UI screenshots are available separately in `zh/`, `en/`, and `ja/`. Both
+the embedded image and its full-size link use the page's selected language.
+Skill artwork is shared across languages.
+
+These images were recaptured on 2026-10-28 from Build Atlas revision `1d4d420`,
+including the reviewed UI catalog and label layout corrections found during
+capture. They render the actual application in each language using the original
+isolated demonstration fixtures; they are not translated overlays on Chinese
+images. Damage calculations use the local PoB2 engine. The materials ledger
+retains its fixed worker and exchange fixtures, so it does not show live prices.
+
+To regenerate, start the local application on port 5173, then run from this site:
+
+```powershell
+node scripts/capture-poe2-locales.mjs ../PoE2-Build-Atlas
+```
+
+The script reuses the six regression capture states documented below and writes
+the actual image dimensions to `src/data/poe2-captures.json`. It isolates desktop
+language synchronization so capturing does not change the user's floating-window
+language. The original unlocalized files remain available for existing links.
+
+## Original capture provenance
+
 - `modifier-equipment-contributions.png`: the application's `artifacts/workbench/damage-attribution-desktop.png`, captured by `scripts/workbench-attribution-regression.mjs`. Shows an isolated example character's contribution groups and their market actions.
 - `skill-combination-contributions.png`: the application's `artifacts/workbench/barrage-attribution-desktop.png`, captured by `scripts/workbench-barrage-attribution-regression.mjs`. The example calls the local PoB2 calculator with Barrage targeting Twister. Both captures illustrate the workflow; their example damage values are not performance claims or a recommended build.
 

@@ -1,7 +1,7 @@
 import type { Locale } from '../i18n';
 
 export const poe2Repository = 'https://github.com/shihongyue2022/PoE2-Build-Atlas';
-export const poe2Revision = 'ae2e7d5';
+export const poe2Revision = '1d4d420';
 export const poe2Copy = {
   zh: {
     back: '返回项目作品', skip: '跳到主要内容', theme: '切换主题', label: '项目案例 / 本地决策工具',

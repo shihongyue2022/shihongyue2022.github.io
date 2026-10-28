@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: shihongyue2022/PoE2-Build-Atlas
-          ref: ae2e7d55f444adda842d1fcb0c4f66626c4849bd
+          ref: 1d4d420375a892eb7d0daa9ef647a12d318b80d4
           path: .workbench-source
       - name: Setup Node.js
         uses: actions/setup-node@v4
