@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>EIMS · Browser Demo</title><link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script></head>
+<body>
+  <header><a class="brand" href="./">E<span>_</span>T.ECH <small>EIMS</small></a><div class="header-actions"><select id="language" aria-label="Language"><option value="zh">中文</option><option value="ja">日本語</option><option value="en">English</option></select><a id="back"></a></div></header>
+  <div class="notice" id="notice"></div>
+  <div class="layout"><aside><p class="eyebrow">WORKSPACE / DEMO</p><nav id="nav"></nav><div class="identity"><label for="role" id="role-label"></label><select id="role"></select><p id="role-note"></p></div><button id="reset" class="secondary"></button><a class="source" href="https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS" target="_blank" rel="noreferrer">GitHub ↗</a></aside>
+  <main><div class="page-heading"><div><p class="eyebrow">EQUIPMENT OPERATIONS</p><h1 id="heading"></h1><p id="subtitle"></p></div><button id="add"></button></div><div id="content"></div><p id="feedback" role="status" aria-live="polite"></p></main></div>
+  <dialog id="modal"><form id="form"><div class="dialog-heading"><h2 id="modal-title"></h2><button type="button" id="close" class="secondary" aria-label="Close">×</button></div><div id="fields"></div><div class="form-actions"><button type="button" id="cancel" class="secondary"></button><button type="submit" id="save"></button></div></form></dialog>
+</body></html>

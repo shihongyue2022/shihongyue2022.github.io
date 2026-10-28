@@ -46,7 +46,8 @@ const copy = {
   }
 }[locale];
 
-const repo = 'https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-';
+const repo = 'https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS';
+const demoLabel = { zh: '体验浏览器演示', en: 'Try browser demo', ja: 'ブラウザーデモを体験' }[locale];
 ---
 
 <BaseLayout title={`${copy.title} | Shihong Yue`} description={copy.intro} locale={locale} page="project" className="project-detail-page">
@@ -57,7 +58,7 @@ const repo = 'https://github.com/shihongyue2022/Equipment-Inspection-Management-
   <main>
     <section class="case-hero case-shell">
       <p class="eyebrow">{copy.label}</p><h1>{copy.title}</h1><p class="case-lead">{copy.intro}</p>
-      <div class="case-cta"><a class="button" href={repo} target="_blank" rel="noreferrer">{copy.source} ↗</a><span>{copy.note}</span></div>
+      <div class="case-cta"><a class="button" href={`/apps/eims/?lang=${locale}`}>{demoLabel} →</a><a class="text-link" href={repo} target="_blank" rel="noreferrer">{copy.source} ↗</a><span>{copy.note}</span></div>
     </section>
     <section class="product-preview case-shell" aria-label={copy.preview}>
       <div class="preview-body">

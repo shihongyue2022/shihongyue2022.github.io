@@ -101,8 +101,9 @@
       "description": "A role-based Flask web application where field engineers register equipment inspection results and administrators monitor equipment, assignments, and records in real time.",
       "impact": "Built modular Blueprints, authentication and authorization, equipment/account/inspection CRUD, transactional services, MySQL and TiDB Cloud connectivity, Alembic migrations, Docker deployment, and HTTP integration tests",
       "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
-      "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
-      "demoUrl": "/projects/eims/",
+      "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS",
+      "demoUrl": "/apps/eims/?lang=en",
+      "caseStudyUrl": "/projects/eims/",
       "featured": true
     },
     {

@@ -90,8 +90,9 @@
       "description": "基于角色权限的 Flask Web 应用，现场工程师可登记设备点检结果，管理员可实时查看设备、负责人和点检记录。",
       "impact": "实现 Blueprint 模块化架构、认证与权限控制、设备/账号/点检 CRUD、事务服务、MySQL 与 TiDB Cloud 连接、Alembic 迁移、Docker 部署和 HTTP 集成测试",
       "tags": ["Python", "Flask", "SQLAlchemy", "MySQL / TiDB", "Docker", "pytest"],
-      "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-",
-      "demoUrl": "/zh/projects/eims/",
+      "repoUrl": "https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS",
+      "demoUrl": "/apps/eims/?lang=zh",
+      "caseStudyUrl": "/zh/projects/eims/",
       "featured": true
     },
     {

@@ -34,6 +34,17 @@ The language selector keeps visitors on the corresponding portfolio or printable
 
 ## Project case studies
 
+### EIMS browser demo
+
+The interactive demo is served at `/apps/eims/?lang=en` (`zh` and `ja` are also supported). The EIMS project card and case study link to it. It is a standalone browser implementation of the equipment and inspection workflows, using fictional fixtures rather than the Python backend or a live database.
+
+- Switch between administrator and engineer roles. Engineers see only their assigned equipment; this simulates role behavior and is not authentication.
+- Search and filter equipment, inspect details and history, and register normal or abnormal inspection results with the next inspection date.
+- As administrator, add, edit, or delete equipment. Deleting equipment also removes its demo inspection history.
+- Changes persist in this browser under `eims-browser-demo-v1`. Reset restores fictional fixtures. If storage is unavailable, changes last only for the current page.
+
+The demo does not implement account management, audit logs, maintenance workflows, or the original application's recycle bin. Source files are in `public/apps/eims/`; `npm run build` copies them to the static site without a separate build step.
+
 PoE2 Build Atlas is the last project on all three homepages and printable resumes. Its case study is available at `/projects/poe2-companion/`, `/ja/projects/poe2-companion/`, and `/zh/projects/poe2-companion/`, with matching language and canonical links. The real browser application is deployed at **[/apps/poe2-companion/](https://shihongyue2022.github.io/apps/poe2-companion/)**, supporting explicit PoB2 uploads, skill routines, equipment comparisons, official trade search links, and crafting calculations. Automatic local file access, desktop shortcuts, backend listing fetches, and trade synchronization require the local edition. Browser and local records are stored separately.
 
 The local setup link follows the page language: Chinese uses `README.md`, English uses `README.en.md`, and Japanese uses `README.ja.md` on the application repository's `main` branch. Documentation stays current while implementation references retain their pinned source revision.

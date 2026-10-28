@@ -51,7 +51,7 @@ export function resumeProjects(projects: Project[], locale: Locale): Project[] {
     if (project.repoUrl === 'https://github.com/shihongyue2022/VoiceCraft-Community') {
       return { ...project, description: text.voiceDescription, impact: text.voiceImpact, highlights: [], tags: ['C#', 'Python', 'SQL'] };
     }
-    if (project.repoUrl === 'https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS-') {
+    if (project.repoUrl === 'https://github.com/shihongyue2022/Equipment-Inspection-Management-System-EIMS') {
       return { ...project, description: text.eimsDescription, impact: text.eimsImpact, highlights: [], tags: ['Python', 'SQL'] };
     }
     return project;
