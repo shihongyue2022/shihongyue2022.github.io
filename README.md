@@ -78,7 +78,7 @@ Place badge images in `public/assets/certificates/`, then add a record such as:
 
 Every push to `main` runs the GitHub Actions workflow and deploys the generated `dist/` directory to GitHub Pages.
 
-The workflow checks out PoE2 Companion revision `63f116b47364d9478b2acb512e6d3c18ca006e10`, builds it with `VITE_WORKBENCH_HOSTED=1` and `VITE_WORKBENCH_BASE=/apps/poe2-companion/`, and includes its output using `scripts/include-workbench.mjs`. Push the corresponding application commit before deploying this site. The application source, dependencies, and generated bundle are not committed to this resume repository. To verify locally, build the application with those variables, build this Astro site, then run the include script with `WORKBENCH_DIST` pointing to the application `dist` directory. English and Japanese project links pass `?lang=en` or `?lang=ja` to the workbench.
+The workflow checks out PoE2 Companion revision `6306a92c2d93943d46107a3ed5ebf48de53e1210`, builds it with `VITE_WORKBENCH_HOSTED=1` and `VITE_WORKBENCH_BASE=/apps/poe2-companion/`, and includes its output using `scripts/include-workbench.mjs`. This revision fixes untranslated import guides, equipment comparisons, and ledger help, and replaces browser-native file captions with localized controls. Push the corresponding application commit before deploying this site. The application source, dependencies, and generated bundle are not committed to this resume repository. To verify locally, build the application with those variables, build this Astro site, then run the include script with `WORKBENCH_DIST` pointing to the application `dist` directory. English and Japanese project links pass `?lang=en` or `?lang=ja` to the workbench.
 
 ## Project structure
 
