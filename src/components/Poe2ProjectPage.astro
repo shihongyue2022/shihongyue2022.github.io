@@ -105,9 +105,9 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
       </div>
     </section>
 
-    <section class="pc-section pc-shell" aria-labelledby="pc-screenshots-title">
-      <p class="section-index">06 / {c.screenshots}</p><h2 id="pc-screenshots-title">{c.screenshots}</h2><p class="pc-caption">{c.screenshotNote}</p>
-      <div class="pc-captures">
+    <section class="pc-section pc-shell pc-screenshots" aria-labelledby="pc-screenshots-title">
+      <div class="pc-screenshots-heading"><p class="section-index">06 / {c.screenshots}</p><h2 id="pc-screenshots-title">{c.screenshots}</h2><p class="pc-caption">{c.screenshotNote}</p></div>
+      <div class="pc-captures pc-screenshot-captures">
         <figure><a href={`${assets}/skill-routine.png`} target="_blank" rel="noreferrer"><img src={`${assets}/skill-routine.png`} alt={c.skillImage} width="1384" height="219" loading="lazy" /></a><figcaption>{c.skillImage}</figcaption></figure>
         <figure><a href={`${assets}/paired-upgrades.png`} target="_blank" rel="noreferrer"><img src={`${assets}/paired-upgrades.png`} alt={c.pairImage} width="558" height="688" loading="lazy" /></a><figcaption>{c.pairImage}</figcaption></figure>
       </div>
