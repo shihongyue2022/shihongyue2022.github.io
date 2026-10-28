@@ -1,17 +1,16 @@
 import type { Locale } from '../i18n';
 
 export const poe2Repository = 'https://github.com/shihongyue2022/PoE2-Companion';
-export const poe2Revision = '63f116b';
-export const poe2Verification = { tests: 592, files: 103, date: '2026-10-25' };
+export const poe2Revision = '73e4af0';
 export const poe2Copy = {
   zh: {
     back: '返回项目作品', skip: '跳到主要内容', theme: '切换主题', label: '项目案例 / 本地决策工具',
     title: '从技能出发，配好一整套。',
-    intro: 'PoE2 Companion 连接角色读取、技能分析、装备联合检索与整套换装比较。制作时从一件成品参考出发，调查词池和底装，再按实际装备逐步核对并记录成本。',
+    intro: 'PoE2 Companion 把“这件装备值不值得换”拆成可以操作的流程：确定主输出与联动条件，找出适用词条和可出现部位，为核心属性设置同时满足的门槛，再把市场候选放回整套装备中核对抗性、预算和机制。',
     hostedNote: '在线与本地版使用相同源码，支持中／英／日界面。PoB2 原生重算、桌面快捷键、自动读档及最新汇率查询需本地运行。',
     tryDemo: '体验换装决策', source: '查看源码', local: '本地运行指南',
     role: '个人项目 · AI 辅助开发', base: '基于 POE2_HTC 扩展', stack: 'React / TypeScript / Node.js',
-    workflow: ['读取角色快照', '定义输出技能组', '调查联动与词缀', '联合检索装备', '核对整套换装'],
+    workflow: ['读取装备与基准', '定义技能与目标', '筛选适用词条', '设定门槛与排序', '比较整套换装'],
     demoLabel: '交互示例 / 合成数据', demoTitle: '一件掉抗，两件一起补齐。',
     demoLead: '试着只换增伤戒指，再加入补抗鞋靴，或降低总预算。检查对象始终是最终整套，而不是要求每件装备单独满足四抗。',
     demoNote: '这是无需登录的简化交互示例，数值为合成数据；不查询实时挂牌、不连接账号，也不运行完整工坊或计算技能 DPS。',
@@ -26,15 +25,30 @@ export const poe2Copy = {
     baseline: '当前基准 · 无换装', shortfall: '整套抗性未达标', overBudget: '超过购买预算', passed: '四抗与预算通过 · 待 PoB 验证',
     resultNote: '火冰雷与混沌分别核对。有效抗性按 75% 封顶，溢出不计作增伤；不预支旧装出售收入。',
     reasons: ['保留当前装备作为基准，不产生购买成本。', '戒指提供进攻词缀，但移除了部分抗性；不能只凭单件词缀判断升级。', '鞋靴补回火冰雷与混沌缺口，总价 10 神圣；是否增加实际伤害仍需 PoB 重算。'],
-    engineeringLabel: '设计与实现', engineeringTitle: '把复杂规则变成可核对的决策。',
+    engineeringLabel: '装备筛选工作流', engineeringTitle: '先定义想改善什么，再决定去市场找什么。',
     engineering: [
-      ['可追溯的角色状态', '解析 PoB2 装备、技能和伤害快照，记录来源、更新时间与变更。两套武器互斥汇总，未知面板不以零值替代。'],
-      ['原生标识与中文展示', '使用英文技能名、词缀与官方交易属性 ID 匹配资料，再映射为简体中文。将合法部位、前后缀、阶层及条件带入检索。'],
-      ['核心属性驱动的市场检索', '多个数值下限同时满足，指定核心属性降序观察档位，再按价格找候选；逐件比价，不用宽泛低价样本的均价代替价值。'],
-      ['有状态的整套方案', '候选自动携带公开报价，枚举一件／两件组合，检查四抗、总成本、重复挂牌及传奇保护；来源变动使旧候选失效。'],
-      ['PoB2 原生逐词缀重算', '本地调用 PoB2 引擎，逐条移除词缀并重算指定技能，按伤害损失排序，也独立计算整件装备贡献。技能增益需指定兼容输出，单条损失不相加冒充整套收益。'],
-      ['从成品目标到制作账本', '按真实底座词池编辑来源、阶层和目标，与实际底装左右对照；同页锁定和核对每步结果，耗材随所选路线更新，旧用量与买价持续保留。']
+      ['建立当前装备的比较基准', '从 PoB2 分享代码或 XML 读取装备、主技能、辅助和保存时的面板。火、冰、雷、混沌使用角色未封顶总抗性及各自上限；两套武器分别记录。后续比较始终基于当前装备，避免把不同存档、武器组或旧面板混在一起。'],
+      ['把技能组合写成筛选目标', '分别指定主输出、联动来源和辅助宝石，记录效果是常驻、偶发还是不使用。再选择单件替换或跨部位搭配、总购买预算及需保留的传奇机制。例如旋风、爆炸长矛和回旋斩各有职责，查看某个技能的词条不会更改既定主输出。'],
+      ['从有效机制找到可买的词条', '按攻击／法术、武器类型、伤害方向和辅助联动排除不适用的属性，再列出词条能出现的部位与底座。每项推荐说明适用原因，并带出前后缀、阶层、物等和来源要求；选定“词条＋部位＋档位”后，直接进入对应装备搜索。'],
+      ['把改善幅度变成联合条件', '也可以直接从当前装备选取核心属性。每项独立设置至少当前值、相同值或提高 1%／3%／5%；有已核对档位的词条可直接选 T1 等门槛。同时设置底座、同名传奇、腐化状态、赛季、交易方式及预算，页面逐项展示最终要求。'],
+      ['先看性能档位，再找预算内候选', '保留全部条件，选择一个核心属性降序查看符合要求的挂牌性能档位；再按价格升序寻找同时达标的候选。多项条件按 AND 组合，某项特别高不能抵消另一项不足。把候选带回角色页，先比较实际数值与机制，再决定是否采用。'],
+      ['让整套装备承担抗性约束', '只换一件时，固定其他部位核对换入后的四抗；允许跨部位时，先保留有进攻价值的候选，再用另一部位补缺口。组合同时核对购买总价、重复挂牌和传奇保护；未知抗性或缺价保留待核对，确认采用后才替换原装备。']
     ],
+    filteringLabel: '词条筛选与排序', filteringTitle: '把“相关”“更强”和“买得起”分别判断。',
+    filteringLead: '词条推荐解决“哪些属性对这个技能有意义”；市场筛选解决“哪些装备满足要求”；候选排序解决“放回整套后优先看哪一组”。每一层都保留自己的依据，便于调整条件和解释结果。',
+    filteringRules: [
+      ['先筛相关性，再排推荐顺序', '技能标签、武器类别和辅助配置决定哪些伤害方向有效；不匹配的方向排除，有条件的联动注明成立条件。推荐按机制优先级排列，并列出合法出现部位。这个顺序用于缩小调查范围，不把预设权重直接解释成实际伤害提升。'],
+      ['用 PoB 查看已有词条的真实贡献', '本地版对指定输出技能逐条移除现有词条并重算，按 DPS 损失降序查看依赖程度；整件装备另做一次独立重算。由此判断该保留什么，再与词条的合法部位和市场条件衔接。不同词条共享乘区和条件，单条贡献不直接相加。'],
+      ['把“现有数值”和“目标档位”分开', '原装备的实际 roll 是比较基准；目标词条的阶层、范围和最低物等来自对应底座词池。T1 表示阶层，满 roll 表示该阶层中的数值位置。品质、复合来源和孔位联动另行核对，不能仅凭显示数值宣称已经达到某阶层。'],
+      ['先过全部门槛，再决定怎么排', '普通核心属性搜索要求所选条件全部同时满足。向下箭头只指定一个属性作为降序观察轴，其他条件继续生效；查提升候选时按价格升序比较。高级自定义检索另可按所选词条加权，但综合分只覆盖已选方向，不代替主技能 DPS。'],
+      ['机制、数值和存在条件分开处理', '赋予技能、传奇专属效果和必须保留的联动作为机制条件。只有能对应官方交易属性且读到可靠数值的词条才进入数值筛选；数值未知或优劣依赖机制时，仅查效果是否存在，或保留为人工核对项。装备显示属性与每插槽词条也分别列出。'],
+      ['候选组合先判可行性，再排优先级', '在已收集的候选中分别比较单件和两件替换，先区分可行、待核对与不满足条件，再参考伤害方向增量和购买总价排序。四抗缺口、未知价格和传奇机制冲突都随方案列明；最终实际伤害仍回 PoB 核对。']
+    ],
+    exampleTitle: '一件胸甲，如何变成六条可执行条件？',
+    exampleLead: '以一件含命定技能品质和每插槽暴击减伤的胸甲为例，除了护甲、闪避、能量护盾，也能把特殊词条加入同一次检索。以下选“至少当前值”：',
+    exampleColumns: ['属性或词条', '当前记录', '搜索下限'],
+    exampleRows: [['技能品质（命定）', '+5%', '≥ 5%'], ['每插槽受到的暴击伤害加成减少', '23%', '≥ 23%'], ['装备护甲', '1,389', '≥ 1,389'], ['装备闪避', '1,278', '≥ 1,278'], ['装备能量护盾', '393', '≥ 393'], ['附加护甲词条', '+30', '≥ 30']],
+    exampleNote: '把“护甲”设为降序，另外五项下限仍保留；切换为按价格查候选时，六项条件也不变。每插槽效果保留其单孔数值，实际镶嵌数量在换装比较时另外核对。这个例子说明条件怎样组合，不代表这些属性一定是每个流派的最佳选择。',
     craftingLabel: '成品目标制作', craftingTitle: '从成品参考，到真实底装上的下一步。',
     craftingLead: '制作规划独立于角色装备。先复制想做的成品，再按词池与规则调整目标；买到的底装经过核对，才成为通货手顺的计算起点。',
     craftingSteps: [
@@ -45,22 +59,20 @@ export const poe2Copy = {
       ['记录实际消耗', '耗材按所选路线显示为紧凑条目，手填累计用量、单价和底装买价；统一换算神圣石或混沌石，缺价保留待补齐。']
     ],
     craftingNote: '通货策略与逐步执行目前支持常规戒指／项链；其他可识别装备用于底座与词池研究。通用准备攻略按需展开，求解器期望与实际用量账本分别呈现。',
-    comparisonImage: '实际底装与目标词缀左右对照', ledgerImage: '随所选路线更新的紧凑材料账本 · 布局测试样例',
-    architecture: '运行架构', layers: [['浏览器工坊', '技能组、检索、换装与制作规划'], ['本机 Node.js 接口', 'PoB2 原生重算、文件、日志与查询'], ['数据与同步桥', '规则快照、官方属性、可读成交'], ['浏览器记录', '配装、候选、报价与制作成本']],
-    screenshots: '实际界面', screenshotNote: '以下为隔离回归样例的实际工坊界面，数据不是个人角色或真实成交。', skillImage: '紧凑技能组与折叠规则', pairImage: '同一候选池中的单件和两件方案',
-    quality: '验证与边界', qualityTitle: '能验证的结果，才写进结论。', tests: '工坊测试通过', files: '个测试文件', verification: `对应源码版本 ${poe2Revision} 的本地验证：工坊测试、类型检查、变更文件 ESLint、生产构建，以及桌面／移动浏览器通路检查通过。测试数据和固定路线布局样例用于验证界面与状态，不作为制作攻略或实时行情。`,
-    evidence: '查看候选组合测试', browserEvidence: '查看浏览器验证脚本',
-    craftEvidence: '查看制作流程测试', craftBrowserEvidence: '查看材料账本浏览器验证',
+    comparisonImage: '实际底装与目标词缀左右对照', ledgerImage: '随所选路线更新的材料与成本记录',
+    screenshots: '实际界面', screenshotNote: '使用演示角色与候选展示实际操作，便于查看技能配置、跨部位搭配与材料记录；不代表实时行情或真实成交。', skillImage: '先定义主输出、联动与辅助，再进入词条调查', pairImage: '同一候选池中比较单件与两件方案的四抗和总价',
+    quality: '使用方式与功能范围', qualityTitle: '筛选得到候选，换装前核对整套。',
+    usage: '从角色装备栏发起检索，会带上当前部位和整套约束；直接粘贴物品则可先调查属性与价格。在线版生成官网搜索链接，将候选物品复制回角色页即可比较；需要自动读档和原生伤害重算时，再使用本地版。',
     limits: ['本地已支持 PoB2 逐词缀及整件装备重算；完整技能循环、条件覆盖率与候选换装优化尚未自动重算，市场方向分仍不等于 DPS。', '在线体验版支持手动导入与浏览器内计算，与本地版由同一源码构建；PoB2 原生引擎、自动读档、快捷键、后台查价、成交同步及最新汇率需本地版。两端记录不自动同步。', '制作结果受规则快照、词池和已建模机制限制；阶层目标不保证具体 roll，成本下界和假设权重不作为确定花费。官方历史只覆盖可读记录，缺少支出时不能称为净利润。'],
     attribution: '项目沿用上游制作引擎并保留署名与提交历史，代码采用 AGPL-3.0。技能图像归 Grinding Gear Games 所有；本项目不是官方产品。', upstream: '上游项目', assets: '图像与截图来源', footer: '查看实现与本地启动方式'
   },
   en: {
     back: 'Back to selected work', skip: 'Skip to main content', theme: 'Toggle theme', label: 'CASE STUDY / LOCAL DECISION TOOL',
     title: 'Start with skills. Plan the whole loadout.',
-    intro: 'PoE2 Companion connects character imports, skill analysis, joint equipment searches, and whole-loadout comparisons. Crafting starts from a finished-item reference, researches its modifier pool and base, then checks actual item states and tracks costs.',
+    intro: 'PoE2 Companion turns “is this item worth replacing?” into a workflow: define the damage skill and its interactions, identify applicable modifiers and legal slots, set joint thresholds for core stats, then check market candidates against the loadout’s resistances, budget, and required mechanics.',
     hostedNote: 'Online and local editions share the same source revision and Chinese, English, and Japanese interfaces. Native PoB2 recalculation, desktop hotkeys, automatic file access, and fresh exchange-rate queries require local setup.',
     tryDemo: 'Try the decision flow', source: 'View source', local: 'Local setup guide', role: 'Personal project · AI-assisted development', base: 'Extended from POE2_HTC', stack: 'React / TypeScript / Node.js',
-    workflow: ['Read a character snapshot', 'Define a skill routine', 'Research modifiers', 'Search joint conditions', 'Check the full loadout'],
+    workflow: ['Import gear & baselines', 'Define skills & goals', 'Find applicable modifiers', 'Set filters & sorting', 'Compare loadout swaps'],
     demoLabel: 'INTERACTIVE EXAMPLE / SYNTHETIC DATA', demoTitle: 'One item loses resistance. Two can restore it.',
     demoLead: 'Try the offensive ring alone, add the compensating boots, or lower the total budget. Constraints apply to the resulting loadout, rather than requiring every item to supply all four resistances.',
     demoNote: 'This simplified example uses synthetic values. It does not query live listings, connect an account, run the full workbench, or calculate skill DPS.',
@@ -75,15 +87,30 @@ export const poe2Copy = {
     baseline: 'Current baseline · no replacement', shortfall: 'Loadout resistances below target', overBudget: 'Purchase budget exceeded', passed: 'Resistance and budget pass · verify in PoB',
     resultNote: 'Chaos is checked separately from elemental resistance. Effective values cap at 75%; excess is not damage. Unsold equipment does not offset purchase cost.',
     reasons: ['Keep the original loadout as the baseline, with no purchase cost.', 'The ring adds offensive modifiers but removes resistance. Its own stats cannot establish a whole-build upgrade.', 'The boots restore elemental and chaos resistance for a combined cost of 10 Divine. Actual damage still requires PoB recalculation.'],
-    engineeringLabel: 'DESIGN & IMPLEMENTATION', engineeringTitle: 'Turn complex rules into inspectable decisions.',
+    engineeringLabel: 'EQUIPMENT SEARCH WORKFLOW', engineeringTitle: 'Define the improvement before choosing the market filters.',
     engineering: [
-      ['Traceable character state', 'Parse PoB2 equipment, skills, and saved damage values with source and update history. Keep weapon sets separate and preserve unknown panel values.'],
-      ['Native IDs, localized display', 'Match English skills, modifiers, and official trade stat IDs, then render Simplified Chinese. Carry legal slots, affix groups, tiers, and conditions into searches.'],
-      ['Core-attribute market research', 'Require multiple minimum values together, inspect a chosen attribute in descending order, then compare listing prices within those thresholds rather than a broad cheap-sample average.'],
-      ['Stateful loadout plans', 'Carry public prices into one- and two-item combinations. Check resistances, cost, duplicate listings, and unique-item protection; invalidate the pool when character evidence changes.'],
-      ['Native PoB2 modifier recalculation', 'Run the local PoB2 engine after removing each modifier, ranking the damage lost for a selected skill. Recalculate whole-item contributions separately, and assign compatible outputs to active buffs; individual losses are not additive.'],
-      ['From reference item to crafting ledger', 'Edit modifier sources, tiers, and goals against the real base pool, compare them with an imported base, and check each step on the same page. Materials follow the selected route while recorded quantities and purchase cost persist.']
+      ['Establish the current comparison baseline', 'Import equipment, active skills, supports, and saved stats from a PoB2 share code or XML. Record uncapped fire, cold, lightning, and chaos totals and their individual caps; keep both weapon sets separate. Subsequent comparisons use this equipment snapshot rather than mixing old stats, saves, or weapon sets.'],
+      ['Turn the skill routine into search goals', 'Choose the main damage skill, interaction sources, and supports, and mark effects as permanent, occasional, or unused. Set a single-slot or cross-slot replacement scope, total purchase budget, and unique mechanics to preserve. Twister, Explosive Spear, and Whirling Slash retain separate roles; inspecting one skill does not silently change the damage focus.'],
+      ['Find modifiers that can actually appear', 'Filter damage directions by attack or spell tags, weapon requirements, and enabled support interactions, then show eligible slots and bases. Recommendations explain their relevance and carry prefix/suffix, tier, item-level, and source requirements. Choosing a modifier, slot, and tier opens the corresponding equipment search.'],
+      ['Express improvements as joint thresholds', 'Alternatively, choose core stats from the current item. Set each to at least its current value, an exact match, or a 1%, 3%, or 5% increase; verified tier presets offer targets such as T1. Add base, unique-name, corruption, league, trade-status, and budget filters. The page lists the resulting requirements individually.'],
+      ['Inspect performance bands, then prices', 'Keep every condition while sorting one core attribute descending to inspect the available performance range. Then search qualifying listings by ascending price. Conditions are combined with AND: an exceptional roll cannot compensate for another failed floor. Send a candidate back to the character page to compare actual stats and mechanics before adopting it.'],
+      ['Apply resistance constraints to the loadout', 'For a single replacement, hold the other slots fixed and check all four resulting resistances. For cross-slot plans, retain offensive candidates and consider a second item to fill the gaps. Check total purchase cost, duplicate listings, and unique protection together. Missing prices or resistance evidence stay unresolved; gear changes only after explicit adoption.']
     ],
+    filteringLabel: 'MODIFIER FILTERING & SORTING', filteringTitle: 'Separate relevance, improvement, and affordability.',
+    filteringLead: 'Modifier recommendations identify what matters to the skill. Market filters identify items that meet the requirements. Candidate ordering identifies which resulting loadout to inspect first. Each layer keeps its own rationale so the player can adjust and understand the search.',
+    filteringRules: [
+      ['Filter relevance before ordering suggestions', 'Skill tags, weapon class, and supports determine applicable damage directions. Exclude mismatches and explain conditional interactions. Suggestions are ordered by mechanic-based priority and list legal item locations. This narrows the research; preset weights are not measured damage gains.'],
+      ['Use PoB to inspect existing contributions', 'The local edition removes each existing modifier and recalculates the selected skill, ranking the resulting DPS loss. Whole-item effects are recalculated separately. Use this evidence to identify what to preserve, then find its legal locations and market filters. Shared multipliers and conditions mean individual losses cannot simply be added.'],
+      ['Keep current rolls separate from target tiers', 'Actual item rolls establish the baseline; the matching base pool supplies target tiers, ranges, and minimum item levels. T1 is a tier, while a perfect roll is a position within it. Quality, combined sources, and socket scaling need separate review; a displayed number alone does not verify a tier.'],
+      ['Require every floor before choosing the sort', 'Standard core-stat searches require every selected condition. The down arrow selects one attribute for descending inspection while the other filters remain active; upgrade listings are compared by ascending price. Advanced custom searches can use selected modifier weights, but that score covers only the chosen directions and is not main-skill DPS.'],
+      ['Distinguish mechanics, values, and presence', 'Granted skills, unique effects, and required interactions are preserved as mechanics. Numeric filters require a verified official trade mapping and a readable value. Unknown or mechanism-dependent values use presence-only searches or manual review. Item display stats and per-socket modifiers remain separate rows.'],
+      ['Check feasibility before ranking combinations', 'Compare one- and two-item swaps within the collected candidate pool. Separate feasible, review-needed, and rejected plans before considering damage-direction improvement and total purchase cost. Show resistance gaps, missing prices, and unique conflicts with each plan; verify final damage in PoB.']
+    ],
+    exampleTitle: 'How does one body armour become six search conditions?',
+    exampleLead: 'A body armour with Bonded skill quality and per-socket critical damage reduction can combine those effects with armour, evasion, and energy shield in one search. This example chooses “at least current”:',
+    exampleColumns: ['Stat or modifier', 'Current record', 'Search minimum'],
+    exampleRows: [['Skill quality (Bonded)', '+5%', '≥ 5%'], ['Reduced critical damage bonus against you per filled socket', '23%', '≥ 23%'], ['Item Armour', '1,389', '≥ 1,389'], ['Item Evasion Rating', '1,278', '≥ 1,278'], ['Item Energy Shield', '393', '≥ 393'], ['Added Armour modifier', '+30', '≥ 30']],
+    exampleNote: 'Sorting Armour descending preserves the other five floors; switching to price ordering also keeps all six conditions. Per-socket effects retain their single-socket values, with actual occupancy checked during replacement comparisons. This illustrates how filters combine, not a claim that these stats are best for every build.',
     craftingLabel: 'GOAL-DRIVEN CRAFTING', craftingTitle: 'From a finished reference to the next step on your real base.',
     craftingLead: 'Crafting research is independent of equipped gear. Paste a finished item, adjust the goal against the actual pool and rules, then verify a purchased base before calculating currency steps.',
     craftingSteps: [
@@ -94,22 +121,20 @@ export const poe2Copy = {
       ['Record actual consumption', 'Compact material rows follow the selected route. Enter cumulative quantities, prices, and base purchase cost, convert to Divine or Chaos Orbs, and keep missing quotes unresolved.']
     ],
     craftingNote: 'Currency strategies and step checking currently support regular rings and amulets; other recognized equipment supports base and pool research. General preparation guides are optional, and solver expectations remain separate from recorded consumption.',
-    comparisonImage: 'Actual base and target modifiers compared side by side', ledgerImage: 'Compact materials for the selected route · layout test fixture',
-    architecture: 'Runtime architecture', layers: [['Browser workbench', 'Skills, search, loadouts, crafting plans'], ['Local Node.js API', 'Native PoB2, files, logs, queries'], ['Data and sync bridge', 'Rule snapshots, official stats, readable trades'], ['Browser storage', 'Loadouts, candidates, quotes, crafting costs']],
-    screenshots: 'Actual interface', screenshotNote: 'Captured from isolated workbench regression fixtures, not a personal character or real transactions.', skillImage: 'Compact skill routine with folded rules', pairImage: 'Single-item and paired plans from one candidate pool',
-    quality: 'VERIFICATION & LIMITS', qualityTitle: 'Make claims that the evidence supports.', tests: 'workbench tests passed', files: 'test files', verification: `Local verification at revision ${poe2Revision}: workbench tests, type checking, ESLint on changed files, production build, and desktop/mobile browser checks passed. Fixtures and fixed-route layout examples verify UI and state handling; they are not crafting recipes or live market quotes.`,
-    evidence: 'Inspect plan tests', browserEvidence: 'Inspect browser checks',
-    craftEvidence: 'Inspect crafting tests', craftBrowserEvidence: 'Inspect material-ledger browser checks',
+    comparisonImage: 'Actual base and target modifiers compared side by side', ledgerImage: 'Materials and costs for the selected route',
+    screenshots: 'Actual interface', screenshotNote: 'Demonstration equipment shows skill setup, cross-slot plans, and material records. These are examples of the workflow, not live market quotes or completed transactions.', skillImage: 'Define damage roles, interactions, and supports before researching modifiers', pairImage: 'Compare resistances and total cost for single-item and paired plans',
+    quality: 'USAGE & SCOPE', qualityTitle: 'Find candidates, then check the resulting loadout.',
+    usage: 'Searching from a character slot carries its current equipment and loadout constraints. Pasting an item directly lets you research stats and prices first. The online edition opens official trade searches; copy a candidate back to compare it. Use the local edition for automatic file access and native damage recalculation.',
     limits: ['The local edition recalculates individual modifiers and whole items with PoB2. Full rotations, condition uptime, and candidate replacement optimization are not automatically recalculated; market direction scores remain distinct from DPS.', 'The online edition, built from the same source revision, supports manual imports and browser calculations. Native PoB2, automatic file access, hotkeys, listing fetches, trade synchronization, and fresh exchange rates require the local edition; records do not automatically sync.', 'Crafting depends on rule snapshots, pools, and modeled mechanics. Tier goals do not guarantee exact rolls; cost lower bounds and assumed weights are not fixed spending estimates. Official history only covers readable records, and missing expenses cannot establish net profit.'],
     attribution: 'The project retains the upstream crafting engine, attribution, and commit history under AGPL-3.0. Skill artwork belongs to Grinding Gear Games. This is an unofficial community tool.', upstream: 'Upstream project', assets: 'Artwork and screenshot sources', footer: 'Explore the implementation and local setup'
   },
   ja: {
     back: 'プロジェクト一覧へ', skip: 'メインコンテンツへ移動', theme: 'テーマを切り替える', label: 'CASE STUDY / ローカル意思決定ツール',
     title: 'スキルを起点に、装備全体を組む。',
-    intro: 'PoE2 Companion はキャラクター読込、スキル分析、複数条件の装備検索、装備全体の比較をつなぎます。クラフトでは完成品を参考にモッドプールとベースを調査し、実物の状態を確認しながら手順と費用を管理します。',
+    intro: '「この装備に交換する価値があるか」を操作の流れに落とし込みました。主力スキルと連動条件を決め、有効なモッドと出現部位を調べ、重要属性に同時に満たす条件を設定します。市場の候補は装備全体に戻し、耐性・予算・必要なメカニクスと照合します。',
     hostedNote: 'オンライン版とローカル版は同じソース版を使用し、中国語・英語・日本語に対応します。PoB2ネイティブ再計算、ホットキー、自動ファイル読込、最新レート取得にはローカル版が必要です。',
     tryDemo: '装備選択を試す', source: 'ソースコード', local: 'ローカル起動ガイド', role: '個人プロジェクト · AI支援開発', base: 'POE2_HTC を基に拡張', stack: 'React / TypeScript / Node.js',
-    workflow: ['キャラクター読込', 'スキル構成を定義', '連携・モッドを調査', '複数条件で装備検索', '装備全体を確認'],
+    workflow: ['装備と基準値を読込', 'スキルと目標を定義', '有効モッドを選ぶ', '条件と並べ替えを設定', '装備全体で比較'],
     demoLabel: '操作サンプル / 合成データ', demoTitle: '1部位で失う耐性を、2部位で補う。',
     demoLead: '攻撃用指輪のみの交換、補完する靴の追加、予算の変更を試せます。4耐性の制約は、各アイテムではなく交換後の装備全体に適用します。',
     demoNote: '合成データを使う簡易サンプルです。実際の出品検索、アカウント接続、工房全体の実行、スキルDPS計算は行いません。',
@@ -124,15 +149,30 @@ export const poe2Copy = {
     baseline: '現在の基準 · 交換なし', shortfall: '装備全体の耐性が不足', overBudget: '購入予算を超過', passed: '耐性・予算を満たす · PoBで要検証',
     resultNote: '混沌は元素耐性と別に確認。実効値は75%が上限で、超過分は火力点に加算しません。未売却の旧装備は予算から差し引きません。',
     reasons: ['現在の装備を基準に保持し、購入費用は発生しません。', '指輪の攻撃モッドは増えますが、耐性が低下します。単品の性能だけではビルド全体の強化を判断できません。', '靴で元素・混沌耐性を補完し、総額は神のオーブ10個。実際の火力向上はPoBでの再計算が必要です。'],
-    engineeringLabel: '設計と実装', engineeringTitle: '複雑なルールを、確認できる判断へ。',
+    engineeringLabel: '装備検索のワークフロー', engineeringTitle: '改善したいことを決めてから、市場の条件を組む。',
     engineering: [
-      ['追跡可能な状態管理', 'PoB2の装備・スキル・保存済み火力値を解析し、出典と更新履歴を保持。武器セットを分離し、不明なパネル値をゼロに置換しません。'],
-      ['原語IDと表示の分離', '英語スキル名・モッド・公式取引属性IDで照合し、簡体字中国語へ表示を変換。出現部位、プレフィックス・サフィックス、Tier、成立条件を検索へ引き継ぎます。'],
-      ['重要属性から市場を調べる', '複数の最低条件を同時に満たし、指定属性の降順で性能帯を確認。その範囲の出品を個別比較し、広い安値サンプルの平均を価値とみなしません。'],
-      ['状態を持つ装備プラン', '公開価格を候補へ引き継ぎ、1・2部位の組合せを列挙。耐性、総額、重複出品、ユニーク保護を確認し、元の状態が変われば候補を無効化します。'],
-      ['PoB2によるモッド別再計算', 'ローカルのPoB2エンジンで各モッドを除去して再計算し、選択スキルの火力低下で順位付け。装備単位の寄与は別に計算し、バフには対応する出力スキルを指定します。単独の低下率は加算しません。'],
-      ['完成品の目標から費用台帳へ', '実際のベースのモッドプールで出現元・Tier・目標を調整し、購入したベースと左右比較。同じページで手順を固定・検証し、選択ルートの素材と累積使用数・購入費を保持します。']
+      ['現在の装備を比較の基準にする', 'PoB2共有コードまたはXMLから装備、主力スキル、サポート、保存時のステータスを読み込みます。火・冷気・雷・混沌は上限適用前の合計値と個別の上限を記録し、武器セットも分離します。以後の比較で異なる保存データや古い基準値を混在させません。'],
+      ['スキル構成を検索目標へ変える', '主力、連動の供給元、サポートを指定し、効果を常時・時々・未使用に分けます。1部位か複数部位か、購入総予算、残したいユニークの仕組みも設定します。ツイスターなどの役割を別々に保持し、詳細閲覧だけで主力を変更しません。'],
+      ['有効かつ出現可能なモッドを探す', 'アタック／スペル、武器種、ダメージ方向、サポートの連動から適用できない属性を除外し、出現部位とベースを提示します。推奨理由とプレフィックス／サフィックス、Tier、アイテムレベル、出現元を確認し、モッド・部位・段階を選ぶと該当装備の検索へ進めます。'],
+      ['改善幅を複合条件にする', '現在の装備から重要属性を直接選ぶこともできます。各項目に現在値以上、同値、1%／3%／5%向上を指定し、確認済みのものはT1などの段階も選べます。ベース、同名ユニーク、コラプト状態、リーグ、取引方式、予算を加え、最終条件を項目ごとに表示します。'],
+      ['性能帯を調べてから価格で候補を探す', '全条件を維持し、1属性の降順で市場の性能帯を確認します。その後、条件を満たす出品を価格の昇順で比較します。条件はAND結合であり、突出した1項目が別の不足を補うことはありません。候補はキャラクターページへ戻し、実数値と仕組みを比較してから採用します。'],
+      ['耐性条件を装備全体に適用する', '1部位だけの交換では他の装備を固定して4耐性を確認します。複数部位を許可する場合は攻撃面で有用な候補を残し、別部位で不足を補います。購入総額、重複出品、ユニーク保護も同時に確認し、価格や耐性が不明なら要確認として保持します。採用確定後に初めて装備を置き換えます。']
     ],
+    filteringLabel: 'モッドの絞り込みと並べ替え', filteringTitle: '関連性、強さ、購入費用を分けて判断する。',
+    filteringLead: 'モッドの推奨はスキルに有効な属性を調べるため、市場の条件は要件に合う装備を探すため、候補の順位は交換後の構成を比較するために使います。それぞれの根拠を残し、条件を調整しやすくしています。',
+    filteringRules: [
+      ['関連性で絞り、推奨順を付ける', 'スキルのタグ、武器種、サポートで有効な方向を判断し、不適合を除外します。条件付きの連動には成立条件を示し、仕組み上の優先度と合法な出現部位を提示します。この順序は調査を絞るもので、設定上の重みを実測の火力上昇率とは扱いません。'],
+      ['既存モッドの寄与をPoBで調べる', 'ローカル版では既存モッドを1つずつ除去して選択スキルを再計算し、DPS損失の降順で依存度を確認します。装備全体の寄与は別に再計算し、残したい属性の出現部位と市場条件へつなげます。共有する乗算や条件があるため、単独の寄与は合算しません。'],
+      ['現在のロールと目標Tierを区別する', '実物の数値を比較基準にし、目標Tier、範囲、必要アイテムレベルは対応ベースのプールから取得します。T1は階層、最大ロールはその階層内の位置です。品質、複合由来、ソケット連動は別途確認し、表示値だけでTierを断定しません。'],
+      ['全条件を満たしてから並べ方を選ぶ', '通常の重要属性検索は選んだ条件を全て同時に要求します。下矢印は降順で観察する1属性を選び、他の条件も維持します。候補出品は価格の昇順で比較します。高度な検索では選択モッドを重み付けできますが、その総合点を主力スキルのDPSとは扱いません。'],
+      ['仕組み、数値、存在条件を分ける', '付与スキル、ユニーク固有効果、必要な連動を仕組みの条件として保持します。公式取引属性に対応し、信頼できる実数値がある項目のみ数値検索に使います。不明値や数値の優劣が仕組みに依存するものは存在条件または手動確認とし、装備の表示属性とソケット単位のモッドも別項目にします。'],
+      ['組合せの成立可否を先に判定する', '収集済み候補から1部位・2部位の交換を比較します。実行可能、要確認、条件不成立を分けたうえで、火力方向の増分と購入総額を参照して並べます。耐性不足、価格不明、ユニークの競合を各案に明記し、最終火力はPoBで確認します。']
+    ],
+    exampleTitle: '1つの鎧を、6つの検索条件にするには？',
+    exampleLead: '絆のスキル品質とソケットごとのクリティカルダメージ軽減を持つ鎧なら、アーマー・回避力・エナジーシールドと合わせて検索できます。ここでは「現在値以上」を選びます。',
+    exampleColumns: ['属性・モッド', '現在の記録', '検索の下限'],
+    exampleRows: [['スキル品質（絆）', '+5%', '≥ 5%'], ['埋まったソケットごとの被クリティカルダメージボーナス減少', '23%', '≥ 23%'], ['装備のアーマー', '1,389', '≥ 1,389'], ['装備の回避力', '1,278', '≥ 1,278'], ['装備のエナジーシールド', '393', '≥ 393'], ['追加アーマーのモッド', '+30', '≥ 30']],
+    exampleNote: 'アーマーを降順にしても他の5条件を保持し、価格順の候補検索へ切り替えても6条件は変わりません。ソケット単位の効果は1個分の値を保ち、実際の装着数は装備比較で確認します。条件の組み方の例であり、全ビルドに最適な属性を示すものではありません。',
     craftingLabel: '完成品を目標にしたクラフト', craftingTitle: '完成品の参考から、実物のベースの次の一手へ。',
     craftingLead: 'クラフト調査はキャラクターの装備と独立しています。完成品を貼り付け、モッドプールと制約に合わせて目標を調整。購入したベースを確認してからカレンシーの手順を計算します。',
     craftingSteps: [
@@ -143,12 +183,10 @@ export const poe2Copy = {
       ['実際の使用量を記録', '選択ルートの素材をコンパクトな行で表示。累積数量、単価、ベース購入費を入力し、神のオーブ／カオスオーブに換算。未取得価格は未確定のまま保持。']
     ],
     craftingNote: 'カレンシーの戦略と手順検証は通常の指輪・アミュレットに対応。他の認識可能な装備はベースとモッドプールの調査に対応します。一般的な準備ガイドは任意で展開し、計算上の期待値と実際の使用量は別に表示します。',
-    comparisonImage: '実物のベースと目標モッドの左右比較', ledgerImage: '選択ルートに連動する素材台帳・レイアウト検証用データ',
-    architecture: '実行時アーキテクチャ', layers: [['ブラウザー工房', 'スキル・検索・装備比較・クラフト'], ['ローカルNode.js API', 'PoB2再計算・ファイル・ログ・照会'], ['データ・同期ブリッジ', 'ルール・公式属性・取得可能な取引'], ['ブラウザー内保存', '装備・候補・価格・クラフト費用']],
-    screenshots: '実際の画面', screenshotNote: '隔離された回帰テスト用データの画面です。個人のキャラクターや実取引ではありません。', skillImage: 'コンパクトなスキル構成と折りたたみ設定', pairImage: '同一候補プールの1部位・2部位プラン',
-    quality: '検証と制約', qualityTitle: '根拠を確認できる結果を示す。', tests: '工房テスト通過', files: 'テストファイル', verification: `リビジョン${poe2Revision}で工房テスト、型チェック、変更ファイルのESLint、本番ビルド、PC・モバイル操作を確認。固定ルートのレイアウト例とテストデータは画面・状態管理の検証用で、制作攻略や最新の市場価格ではありません。`,
-    evidence: '組合せテストを見る', browserEvidence: 'ブラウザー検証を見る',
-    craftEvidence: 'クラフトのテストを見る', craftBrowserEvidence: '素材台帳のブラウザー検証',
+    comparisonImage: '実物のベースと目標モッドの左右比較', ledgerImage: '選択ルートに対応する素材と費用の記録',
+    screenshots: '実際の画面', screenshotNote: 'デモ用の装備と候補でスキル設定、部位をまたぐ比較、素材記録を示します。最新の相場や実際の成立取引ではありません。', skillImage: '主力・連動・サポートを定義してからモッドを調査', pairImage: '同じ候補群で1部位・2部位案の耐性と総額を比較',
+    quality: '使い方と対応範囲', qualityTitle: '候補を絞り、交換前に装備全体を確認する。',
+    usage: 'キャラクターの装備欄から検索すると、対象部位と装備全体の条件を引き継ぎます。アイテムを直接貼り付けて属性や価格から調べることもできます。オンライン版は公式検索を開き、候補をコピーして比較します。自動読込やネイティブ火力再計算にはローカル版を使います。',
     limits: ['ローカル版はPoB2によるモッド別・装備単位の再計算に対応。完全なスキル循環、効果の稼働率、候補装備の最適化は自動再計算の対象外で、市場の方向スコアはDPSと区別します。', 'オンライン体験版は同じソース版から構築し、手動読込とブラウザー内計算に対応。PoB2エンジン、自動読込、ホットキー、出品取得、取引同期、最新レートにはローカル版が必要です。両版の記録は自動同期されません。', 'クラフトはルールのスナップショット、モッドプール、実装済みの仕組みに依存します。Tier目標は特定のrollを保証せず、費用の下界や仮定の重みを確定費用とは扱いません。公式履歴は取得可能分のみで、支出不明なら純利益は算出しません。'],
     attribution: '上流のクラフトエンジン、著作者表示、コミット履歴を保持し、コードはAGPL-3.0を継承。スキル画像はGrinding Gear Gamesに帰属する非公式コミュニティツールです。', upstream: '上流プロジェクト', assets: '画像・スクリーンショット出典', footer: '実装とローカル起動方法を見る'
   }
