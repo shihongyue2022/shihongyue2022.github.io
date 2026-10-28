@@ -107,11 +107,11 @@
     },
     {
       "name": "PoE2 Companion — Skill-driven Equipment Planning",
-      "description": "Extended an open-source crafting engine with AI-assisted development into a Path of Exile 2 assistant: define damage roles, interactions, and replacement constraints, then select applicable modifiers, build joint market filters, and compare the resulting loadout.",
-      "impact": "Translated skill mechanics into actionable equipment filters and extended single-item price checks into replacement comparisons constrained by budget, four resistances, and unique mechanics.",
+      "description": "An AI-assisted Path of Exile 2 workbench integrating PoB2 skill-setup damage analysis, modifier references, official trade, loadout comparisons, and an upstream crafting engine into one workflow.",
+      "impact": "Connected modifier and item contribution calculations to stat selection, replacement searches, and loadout checks around one character and skill setup, reducing repeated data entry and handoffs between tools.",
       "highlights": [
-        "Defined the search workflow: import equipment and character baselines, separate damage roles, interaction sources, and supports, then set single-slot or cross-slot replacement scope, total budget, loadout resistances, and unique mechanics to preserve.",
-        "Filtered and ordered modifiers: use skill tags, weapon requirements, and support interactions to explain applicable stats and their legal slots, affix types, tiers, and item levels. The local edition removes existing modifiers and recalculates PoB2 DPS, ranking the loss to identify core stats worth preserving.",
+        "Integrated character and skill context: import PoB2 gear, selected skill combinations, and each group’s supports while retaining weapon sets, interactions, and buffs. Connect native calculations, reference research, trade conditions, candidates, and prices around the same equipment goal.",
+        "Calculated modifier and item contributions: call local PoB2 while removing each modifier in the selected skill context, showing before/after DPS and relative loss. Independently recalculate whole items with all modifiers removed, ranking items and their internal modifiers to identify what the output depends on.",
         "Built joint trade filters: choose current-value floors, exact values, relative improvements, or verified tiers. All requirements must hold together. Keep filters while inspecting one attribute descending or finding candidates by ascending price, separating recommendation weights, actual rolls, and skill DPS.",
         "Compared resulting loadouts: return candidates to their original slots and assess one- or two-item swaps. Check resistances, total purchase cost, and unique protection before ordering by damage-direction improvement and cost. Keep missing evidence explicit and replace equipment only after adoption.",
         "Connected buying with crafting: research a target item’s pool and base, compare goals with an actual imported base, resolve conflicts, recalculate after observed outcomes, and record materials, prices, and base purchase cost."

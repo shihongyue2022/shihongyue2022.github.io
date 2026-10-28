@@ -39,13 +39,23 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
 
     <ol class="pc-workflow pc-shell" aria-label={c.engineeringLabel}>{c.workflow.map((step, index) => <li><span>0{index + 1}</span>{step}</li>)}</ol>
 
+    <section class="pc-section pc-shell" aria-labelledby="pc-analysis-title">
+      <p class="section-index">01 / {c.analysisLabel}</p><h2 id="pc-analysis-title">{c.analysisTitle}</h2><p class="pc-section-lead">{c.analysisLead}</p>
+      <div class="pc-engineering">{c.analysisSteps.map(([title, text], index) => <article><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+      <p class="pc-section-lead pc-analysis-outcome">{c.analysisOutcome}</p>
+      <div class="pc-captures pc-analysis-captures">
+        <figure><a href={`${assets}/modifier-equipment-contributions.png`} target="_blank" rel="noreferrer"><img src={`${assets}/modifier-equipment-contributions.png`} alt={c.contributionImage} width="1384" height="612" loading="lazy" /></a><figcaption>{c.contributionImage}</figcaption></figure>
+        <figure><a href={`${assets}/skill-combination-contributions.png`} target="_blank" rel="noreferrer"><img src={`${assets}/skill-combination-contributions.png`} alt={c.combinationImage} width="1384" height="459" loading="lazy" /></a><figcaption>{c.combinationImage}</figcaption></figure>
+      </div>
+    </section>
+
     <section class="pc-section pc-shell" aria-labelledby="pc-engineering-title">
-      <p class="section-index">01 / {c.engineeringLabel}</p><h2 id="pc-engineering-title">{c.engineeringTitle}</h2>
+      <p class="section-index">02 / {c.engineeringLabel}</p><h2 id="pc-engineering-title">{c.engineeringTitle}</h2>
       <div class="pc-engineering">{c.engineering.map(([title, text], index) => <article><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
     </section>
 
     <section class="pc-section pc-shell" aria-labelledby="pc-filtering-title">
-      <p class="section-index">02 / {c.filteringLabel}</p><h2 id="pc-filtering-title">{c.filteringTitle}</h2><p class="pc-section-lead">{c.filteringLead}</p>
+      <p class="section-index">03 / {c.filteringLabel}</p><h2 id="pc-filtering-title">{c.filteringTitle}</h2><p class="pc-section-lead">{c.filteringLead}</p>
       <div class="pc-engineering">{c.filteringRules.map(([title, text], index) => <article><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
       <div class="pc-search-example">
         <h3>{c.exampleTitle}</h3><p>{c.exampleLead}</p>
@@ -55,7 +65,7 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
     </section>
 
     <section id="demo" class="pc-section pc-shell" aria-labelledby="pc-demo-title">
-      <p class="section-index">03 / {c.demoLabel}</p>
+      <p class="section-index">04 / {c.demoLabel}</p>
       <h2 id="pc-demo-title">{c.demoTitle}</h2><p class="pc-section-lead">{c.demoLead}</p>
       <div class="pc-console" id="pc-demo" data-copy={JSON.stringify(demoCopy)}>
         <div class="pc-console-bar"><strong>PoE2 Companion</strong><span>{c.demoLabel}</span></div>
@@ -84,7 +94,7 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
     </section>
 
     <section id="crafting" class="pc-section pc-shell" aria-labelledby="pc-crafting-title">
-      <p class="section-index">04 / {c.craftingLabel}</p><h2 id="pc-crafting-title">{c.craftingTitle}</h2><p class="pc-section-lead">{c.craftingLead}</p>
+      <p class="section-index">05 / {c.craftingLabel}</p><h2 id="pc-crafting-title">{c.craftingTitle}</h2><p class="pc-section-lead">{c.craftingLead}</p>
       <ol class="pc-craft-workflow">{c.craftingSteps.map(([title, text], index) => <li><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
       <p class="pc-caption">{c.craftingNote}</p>
       <div class="pc-captures pc-craft-captures">
@@ -94,7 +104,7 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
     </section>
 
     <section class="pc-section pc-shell" aria-labelledby="pc-screenshots-title">
-      <p class="section-index">05 / {c.screenshots}</p><h2 id="pc-screenshots-title">{c.screenshots}</h2><p class="pc-caption">{c.screenshotNote}</p>
+      <p class="section-index">06 / {c.screenshots}</p><h2 id="pc-screenshots-title">{c.screenshots}</h2><p class="pc-caption">{c.screenshotNote}</p>
       <div class="pc-captures">
         <figure><a href={`${assets}/skill-routine.png`} target="_blank" rel="noreferrer"><img src={`${assets}/skill-routine.png`} alt={c.skillImage} width="1384" height="219" loading="lazy" /></a><figcaption>{c.skillImage}</figcaption></figure>
         <figure><a href={`${assets}/paired-upgrades.png`} target="_blank" rel="noreferrer"><img src={`${assets}/paired-upgrades.png`} alt={c.pairImage} width="558" height="688" loading="lazy" /></a><figcaption>{c.pairImage}</figcaption></figure>
@@ -102,9 +112,9 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
     </section>
 
     <section class="pc-section pc-shell" aria-labelledby="pc-quality-title">
-      <p class="section-index">06 / {c.quality}</p><h2 id="pc-quality-title">{c.qualityTitle}</h2>
+      <p class="section-index">07 / {c.quality}</p><h2 id="pc-quality-title">{c.qualityTitle}</h2>
       <p class="pc-section-lead">{c.usage}</p>
-      <details class="pc-limits" open><summary>{c.quality}</summary><ul>{c.limits.map(limit => <li>{limit}</li>)}</ul></details>
+      <details class="pc-limits"><summary>{c.quality}</summary><ul>{c.limits.map(limit => <li>{limit}</li>)}</ul></details>
     </section>
   </main>
   <footer class="pc-footer"><div class="pc-shell"><a class="pc-footer-link" href={poe2Repository} target="_blank" rel="noreferrer">{c.footer} ↗</a><p>{c.attribution}</p><div class="pc-actions"><a href="https://github.com/Dboire9/POE2_HTC" target="_blank" rel="noreferrer">{c.upstream} ↗</a><a href={`${assets}/SOURCES.md`} target="_blank" rel="noreferrer">{c.assets} ↗</a><a href={`${source}/LICENSE`} target="_blank" rel="noreferrer">AGPL-3.0 ↗</a></div></div></footer>

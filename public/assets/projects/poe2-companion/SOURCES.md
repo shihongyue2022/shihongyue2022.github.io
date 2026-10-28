@@ -2,6 +2,9 @@
 
 Source application: https://github.com/shihongyue2022/PoE2-Companion
 
+- `modifier-equipment-contributions.png`: the application's `artifacts/workbench/damage-attribution-desktop.png`, captured by `scripts/workbench-attribution-regression.mjs`. Shows an isolated example character's contribution groups and their market actions.
+- `skill-combination-contributions.png`: the application's `artifacts/workbench/barrage-attribution-desktop.png`, captured by `scripts/workbench-barrage-attribution-regression.mjs`. The example calls the local PoB2 calculator with Barrage targeting Twister. Both captures illustrate the workflow; their example damage values are not performance claims or a recommended build.
+
 The original skill/loadout captures below are from revision `94c3ef6`; the crafting captures are from revision `71673a7` (2026-10-25).
 
 - `skill-routine.png`: actual workbench screenshot captured by `scripts/workbench-skill-routine-regression.mjs` using isolated synthetic fixtures.
