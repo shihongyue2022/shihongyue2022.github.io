@@ -104,10 +104,8 @@ const navTargets = ['certificates', 'about', 'experience', 'projects', 'contact'
               <button class="dialog-close" type="button" data-dialog-close aria-label={t.close}>×</button>
             </div>
             <div class="email-options">
-              <a class="email-option" href={`mailto:${profile.email}`}>{t.defaultMail}<span>↗</span></a>
               <a class="email-option" href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodedEmail}`} target="_blank" rel="noreferrer">{t.gmail}<span>↗</span></a>
               <a class="email-option" href={`https://outlook.live.com/mail/0/deeplink/compose?to=${encodedEmail}`} target="_blank" rel="noreferrer">{t.outlook}<span>↗</span></a>
-              <button class="email-option" type="button" data-copy-email={profile.email} data-copy-label={t.copyEmail} data-copied-label={t.emailCopied}>{t.copyEmail}<span>⧉</span></button>
             </div>
           </div>
         </dialog>
@@ -139,20 +137,6 @@ const navTargets = ['certificates', 'about', 'experience', 'projects', 'contact'
     emailDialog?.addEventListener('click', (event) => {
       if (event.target === emailDialog) emailDialog.close();
     });
-    emailDialog?.querySelector<HTMLButtonElement>('[data-copy-email]')?.addEventListener('click', async (event) => {
-      const button = event.currentTarget as HTMLButtonElement;
-      const email = button.dataset.copyEmail || '';
-      let copied = false;
-      try {
-        await navigator.clipboard.writeText(email);
-        copied = true;
-      } catch {
-        window.prompt(button.dataset.copyLabel || 'Copy email', email);
-      }
-      if (!copied) return;
-      const original = button.childNodes[0]?.textContent || '';
-      if (button.childNodes[0]) button.childNodes[0].textContent = button.dataset.copiedLabel || original;
-      window.setTimeout(() => { if (button.childNodes[0]) button.childNodes[0].textContent = original; }, 1800);
-    });
+
   </script>
 </BaseLayout>
