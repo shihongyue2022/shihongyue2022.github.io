@@ -16,10 +16,10 @@
     "socials": [{ "label": "GitHub", "url": "https://github.com/shihongyue2022" }]
   },
   "skills": [
-    { "category": "后端开发", "items": ["Python", "Flask", "SQLAlchemy", "SQL", "MySQL / TiDB"] },
-    { "category": "数据分析", "items": ["pandas", "MATLAB", "时间序列", "统计建模", "数据可视化"] },
-    { "category": "机器学习", "items": ["PyTorch", "扩散模型", "实验设计"] },
-    { "category": "工程工具", "items": ["Git / GitHub", "Docker", "pytest", "Linux / Shell", "Jupyter", "可复现工作流"] }
+    { "category": "后端开发", "items": ["Python", "SQL"] },
+    { "category": "数据分析", "items": ["时间序列", "统计建模", "数据可视化"] },
+    { "category": "机器学习", "items": ["扩散模型", "实验设计"] },
+    { "category": "工程工具", "items": ["Git", "Linux", "可复现工作流"] }
   ],
   "experience": [{
     "period": "2024年4月 — 2026年4月",
@@ -66,6 +66,15 @@
   }],
   "projects": [
     {
+      "name": "Conditional Denoising Score Matching (CDSM)",
+      "description": "使用时域和傅里叶域条件扩散模型进行滑动窗口协方差估计，并在金融时间序列数据上与经典统计基线比较的 Python 研究代码库。",
+      "impact": "为论文与学位研究提供可复现的数据准备、训练、基线、指标评估和可视化流程",
+      "tags": ["Python", "PyTorch", "时间序列", "统计建模", "数据分析"],
+      "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
+      "demoUrl": "",
+      "featured": true
+    },
+    {
       "name": "VoiceCraft — Windows 变声器",
       "description": "采用 AI 辅助编码完成的个人项目。以 RVC 为基础聚焦男声转女声，整理 Windows 操作界面，并将外部模型转换环境拆为可选组件。",
       "impact": "实现 C# ONNX/CUDA 推理、便携 Python 打包、模型资产保护，以及基于 ASP.NET Core/PostgreSQL 的授权后台、临时 HTTPS 认证入口与定制发货信息生成",
@@ -74,15 +83,6 @@
       "demoUrl": "",
       "storeUrl": "https://shitoushop.booth.pm/items/8707216",
       "caseStudyUrl": "/zh/projects/voicecraft/",
-      "featured": true
-    },
-    {
-      "name": "Conditional Denoising Score Matching (CDSM)",
-      "description": "使用时域和傅里叶域条件扩散模型进行滑动窗口协方差估计，并在金融时间序列数据上与经典统计基线比较的 Python 研究代码库。",
-      "impact": "为论文与学位研究提供可复现的数据准备、训练、基线、指标评估和可视化流程",
-      "tags": ["Python", "PyTorch", "时间序列", "统计建模", "数据分析"],
-      "repoUrl": "https://github.com/TEST-TEAM-CDSM/CDSM",
-      "demoUrl": "",
       "featured": true
     },
     {

@@ -113,7 +113,7 @@ html[lang='zh-CN'] .hero h1 span { color: var(--ink); -webkit-text-stroke: 0; }
 .project-card { display: flex; flex-direction: column; min-height: 26rem; padding: 2rem; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); transition: transform .25s, box-shadow .25s; }
 .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .project-card:only-child { grid-column: 1 / -1; min-height: 24rem; }
-.project-card-case-study { grid-column: 1 / -1; min-height: 23rem; border-top: 4px solid var(--accent-strong); }
+.project-card-case-study, .project-card-primary { grid-column: 1 / -1; min-height: 23rem; border-top: 4px solid var(--accent-strong); }
 .project-card-case-study h3 { max-width: 46rem; margin-top: 2rem; }
 .project-card-case-study > p { max-width: 62rem; }
 .project-links { flex-wrap: wrap; flex-shrink: 0; }

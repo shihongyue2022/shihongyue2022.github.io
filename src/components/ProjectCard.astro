@@ -13,7 +13,7 @@ interface Props {
 const { project, index, sourceLabel = 'Source', demoLabel = 'Demo', storeLabel = 'BOOTH', caseStudyLabel = 'Case study' } = Astro.props;
 ---
 
-<article class:list={['project-card', 'reveal', { 'project-card-case-study': Boolean(project.caseStudyUrl) }]}>
+<article class:list={['project-card', 'reveal', { 'project-card-case-study': Boolean(project.caseStudyUrl), 'project-card-primary': index === 0 }]}>
   <span class="project-number">PROJECT / {String(index + 1).padStart(2, '0')}</span>
   <h3>{project.name}</h3>
   <p>{project.description}</p>
