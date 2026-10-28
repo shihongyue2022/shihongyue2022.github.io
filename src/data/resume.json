@@ -106,7 +106,7 @@
       "featured": true
     },
     {
-      "name": "PoE2 Companion — Skill-driven Equipment Planning",
+      "name": "PoE2 Build Atlas — Skill-driven Equipment Planning",
       "description": "An AI-assisted Path of Exile 2 workbench integrating PoB2 skill-setup damage analysis, modifier references, official trade, loadout comparisons, and an upstream crafting engine into one workflow.",
       "impact": "Connected modifier and item contribution calculations to stat selection, replacement searches, and loadout checks around one character and skill setup, reducing repeated data entry and handoffs between tools.",
       "highlights": [
@@ -117,7 +117,7 @@
         "Connected buying with crafting: research a target item’s pool and base, compare goals with an actual imported base, resolve conflicts, recalculate after observed outcomes, and record materials, prices, and base purchase cost."
       ],
       "tags": ["TypeScript", "React", "Node.js", "PoB2 / Lua", "Equipment Search", "Crafting"],
-      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
+      "repoUrl": "https://github.com/shihongyue2022/PoE2-Build-Atlas",
       "demoUrl": "/apps/poe2-companion/?lang=en",
       "caseStudyUrl": "/projects/poe2-companion/",
       "featured": true

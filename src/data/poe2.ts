@@ -1,12 +1,12 @@
 import type { Locale } from '../i18n';
 
-export const poe2Repository = 'https://github.com/shihongyue2022/PoE2-Companion';
-export const poe2Revision = '73e4af0';
+export const poe2Repository = 'https://github.com/shihongyue2022/PoE2-Build-Atlas';
+export const poe2Revision = 'ae2e7d5';
 export const poe2Copy = {
   zh: {
     back: '返回项目作品', skip: '跳到主要内容', theme: '切换主题', label: '项目案例 / 本地决策工具',
     title: '从技能组合的伤害贡献，找到该换的装备。',
-    intro: 'PoE2 Companion 将原本分散在 PoB2、词缀资料、官方交易、装备比较和制作工具中的操作接成一个工作流。导入角色并定义实际使用的技能组合后，调用 PoB2 分析词缀与装备对输出的贡献，再从分析结果选择要保留的属性、发起市场检索、比较整套换装，并继续研究购买或制作。',
+    intro: 'PoE2 Build Atlas 将原本分散在 PoB2、词缀资料、官方交易、装备比较和制作工具中的操作接成一个工作流。导入角色并定义实际使用的技能组合后，调用 PoB2 分析词缀与装备对输出的贡献，再从分析结果选择要保留的属性、发起市场检索、比较整套换装，并继续研究购买或制作。',
     hostedNote: '伤害贡献重算在本地版调用 PoB2。在线版可手动导入角色、调查词条、生成交易搜索和比较候选；两版均支持中／英／日界面。',
     tryDemo: '体验换装决策', source: '查看源码', local: '本地运行指南',
     role: '个人项目 · AI 辅助开发', base: '基于 POE2_HTC 扩展', stack: 'React / TypeScript / Node.js',
@@ -76,12 +76,12 @@ export const poe2Copy = {
     quality: '在线与本地的使用方式', qualityTitle: '在线研究候选，本地计算原生伤害贡献。',
     usage: '从角色装备栏发起检索，会带上当前部位和整套约束；直接粘贴物品则可先调查属性与价格。在线版生成官网搜索链接，将候选物品复制回角色页即可比较；需要自动读档和原生伤害重算时，再使用本地版。',
     limits: ['本地已支持 PoB2 逐词缀及整件装备重算；完整技能循环、条件覆盖率与候选换装优化尚未自动重算，市场方向分仍不等于 DPS。', '在线体验版支持手动导入与浏览器内计算，与本地版由同一源码构建；PoB2 原生引擎、自动读档、快捷键、后台查价、成交同步及最新汇率需本地版。两端记录不自动同步。', '制作结果受规则快照、词池和已建模机制限制；阶层目标不保证具体 roll，成本下界和假设权重不作为确定花费。官方历史只覆盖可读记录，缺少支出时不能称为净利润。'],
-    attribution: '项目沿用上游制作引擎并保留署名与提交历史，代码采用 AGPL-3.0。技能图像归 Grinding Gear Games 所有；本项目不是官方产品。', upstream: '上游项目', assets: '图像与截图来源', footer: '查看实现与本地启动方式'
+    attribution: '项目沿用上游制作引擎并保留署名与来源记录，代码采用 AGPL-3.0。技能图像归 Grinding Gear Games 所有；本项目不是官方产品。', upstream: '上游项目', assets: '图像与截图来源', footer: '查看实现与本地启动方式'
   },
   en: {
     back: 'Back to selected work', skip: 'Skip to main content', theme: 'Toggle theme', label: 'CASE STUDY / LOCAL DECISION TOOL',
     title: 'From skill damage contributions to equipment decisions.',
-    intro: 'PoE2 Companion connects work previously split across PoB2, modifier references, official trade, equipment comparison, and crafting tools. Import a character and define the skills you actually use, calculate modifier and item contributions through PoB2, then carry selected attributes into market searches, loadout comparisons, and buying or crafting decisions.',
+    intro: 'PoE2 Build Atlas connects work previously split across PoB2, modifier references, official trade, equipment comparison, and crafting tools. Import a character and define the skills you actually use, calculate modifier and item contributions through PoB2, then carry selected attributes into market searches, loadout comparisons, and buying or crafting decisions.',
     hostedNote: 'Native PoB2 contribution recalculation runs in the local edition. Online, import characters manually, research modifiers, generate trade searches, and compare candidates. Both editions support Chinese, English, and Japanese.',
     tryDemo: 'Try the decision flow', source: 'View source', local: 'Local setup guide', role: 'Personal project · AI-assisted development', base: 'Extended from POE2_HTC', stack: 'React / TypeScript / Node.js',
     workflow: ['Import character & skill setup', 'Calculate modifier & item contributions', 'Build searches from the results', 'Compare candidates & loadouts', 'Connect buying & crafting'],
@@ -150,7 +150,7 @@ export const poe2Copy = {
     quality: 'ONLINE & LOCAL USE', qualityTitle: 'Research candidates online. Calculate native contributions locally.',
     usage: 'Searching from a character slot carries its current equipment and loadout constraints. Pasting an item directly lets you research stats and prices first. The online edition opens official trade searches; copy a candidate back to compare it. Use the local edition for automatic file access and native damage recalculation.',
     limits: ['The local edition recalculates individual modifiers and whole items with PoB2. Full rotations, condition uptime, and candidate replacement optimization are not automatically recalculated; market direction scores remain distinct from DPS.', 'The online edition, built from the same source revision, supports manual imports and browser calculations. Native PoB2, automatic file access, hotkeys, listing fetches, trade synchronization, and fresh exchange rates require the local edition; records do not automatically sync.', 'Crafting depends on rule snapshots, pools, and modeled mechanics. Tier goals do not guarantee exact rolls; cost lower bounds and assumed weights are not fixed spending estimates. Official history only covers readable records, and missing expenses cannot establish net profit.'],
-    attribution: 'The project retains the upstream crafting engine, attribution, and commit history under AGPL-3.0. Skill artwork belongs to Grinding Gear Games. This is an unofficial community tool.', upstream: 'Upstream project', assets: 'Artwork and screenshot sources', footer: 'Explore the implementation and local setup'
+    attribution: 'The project retains the upstream crafting engine, attribution, and provenance records under AGPL-3.0. Skill artwork belongs to Grinding Gear Games. This is an unofficial community tool.', upstream: 'Upstream project', assets: 'Artwork and screenshot sources', footer: 'Explore the implementation and local setup'
   },
   ja: {
     back: 'プロジェクト一覧へ', skip: 'メインコンテンツへ移動', theme: 'テーマを切り替える', label: 'CASE STUDY / ローカル意思決定ツール',
@@ -224,6 +224,6 @@ export const poe2Copy = {
     quality: 'オンライン版とローカル版の使い方', qualityTitle: 'オンラインで候補を調べ、ローカルで寄与を計算する。',
     usage: 'キャラクターの装備欄から検索すると、対象部位と装備全体の条件を引き継ぎます。アイテムを直接貼り付けて属性や価格から調べることもできます。オンライン版は公式検索を開き、候補をコピーして比較します。自動読込やネイティブ火力再計算にはローカル版を使います。',
     limits: ['ローカル版はPoB2によるモッド別・装備単位の再計算に対応。完全なスキル循環、効果の稼働率、候補装備の最適化は自動再計算の対象外で、市場の方向スコアはDPSと区別します。', 'オンライン体験版は同じソース版から構築し、手動読込とブラウザー内計算に対応。PoB2エンジン、自動読込、ホットキー、出品取得、取引同期、最新レートにはローカル版が必要です。両版の記録は自動同期されません。', 'クラフトはルールのスナップショット、モッドプール、実装済みの仕組みに依存します。Tier目標は特定のrollを保証せず、費用の下界や仮定の重みを確定費用とは扱いません。公式履歴は取得可能分のみで、支出不明なら純利益は算出しません。'],
-    attribution: '上流のクラフトエンジン、著作者表示、コミット履歴を保持し、コードはAGPL-3.0を継承。スキル画像はGrinding Gear Gamesに帰属する非公式コミュニティツールです。', upstream: '上流プロジェクト', assets: '画像・スクリーンショット出典', footer: '実装とローカル起動方法を見る'
+    attribution: '上流のクラフトエンジン、著作者表示、出典記録を保持し、コードはAGPL-3.0を継承。スキル画像はGrinding Gear Gamesに帰属する非公式コミュニティツールです。', upstream: '上流プロジェクト', assets: '画像・スクリーンショット出典', footer: '実装とローカル起動方法を見る'
   }
 } satisfies Record<Locale, unknown>;

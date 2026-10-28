@@ -1,6 +1,6 @@
-# PoE2 Companion portfolio assets
+# PoE2 Build Atlas portfolio assets
 
-Source application: https://github.com/shihongyue2022/PoE2-Companion
+Source application: https://github.com/shihongyue2022/PoE2-Build-Atlas
 
 - `modifier-equipment-contributions.png`: the application's `artifacts/workbench/damage-attribution-desktop.png`, captured by `scripts/workbench-attribution-regression.mjs`. Shows an isolated example character's contribution groups and their market actions.
 - `skill-combination-contributions.png`: the application's `artifacts/workbench/barrage-attribution-desktop.png`, captured by `scripts/workbench-barrage-attribution-regression.mjs`. The example calls the local PoB2 calculator with Barrage targeting Twister. Both captures illustrate the workflow; their example damage values are not performance claims or a recommended build.

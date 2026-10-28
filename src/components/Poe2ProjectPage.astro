@@ -16,7 +16,7 @@ const localGuide = `${poe2Repository}/blob/main/${readmePath}`;
 const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.overBudget, passed: c.passed, reasons: c.reasons };
 ---
 
-<BaseLayout title={`PoE2 Companion | ${ui[locale].projectsTitle}`} description={c.intro} locale={locale} page="poe2" className="poe2-page">
+<BaseLayout title={`PoE2 Build Atlas | ${ui[locale].projectsTitle}`} description={c.intro} locale={locale} page="poe2" className="poe2-page">
   <a class="skip-link" href="#main-content">{c.skip}</a>
   <header class="pc-header">
     <a href={`${localePaths[locale].home}#projects`}>↖ {c.back}</a>
@@ -27,7 +27,7 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
     <section class="pc-hero pc-shell">
       <div>
         <p class="eyebrow">{c.label}</p>
-        <p class="pc-wordmark">PoE2 <span>Companion</span></p>
+        <p class="pc-wordmark">PoE2 <span>Build Atlas</span></p>
         <h1>{c.title}</h1>
         <p class="pc-lead">{c.intro}</p>
         <div class="pc-actions"><a class="button" href={`/apps/poe2-companion/?lang=${locale === 'zh' ? 'zh-CN' : locale}`} target="_blank" rel="noreferrer">{locale === 'zh' ? '打开实际工坊' : locale === 'ja' ? '工坊を開く' : 'Open the workbench'} ↗</a><a href="#demo">{c.tryDemo} ↓</a><a href={poe2Repository} target="_blank" rel="noreferrer">{c.source} ↗</a><a href={localGuide} target="_blank" rel="noreferrer">{c.local} ↗</a></div>
@@ -70,7 +70,7 @@ const demoCopy = { baseline: c.baseline, shortfall: c.shortfall, overBudget: c.o
       <p class="section-index">04 / {c.demoLabel}</p>
       <h2 id="pc-demo-title">{c.demoTitle}</h2><p class="pc-section-lead">{c.demoLead}</p>
       <div class="pc-console" id="pc-demo" data-copy={JSON.stringify(demoCopy)}>
-        <div class="pc-console-bar"><strong>PoE2 Companion</strong><span>{c.demoLabel}</span></div>
+        <div class="pc-console-bar"><strong>PoE2 Build Atlas</strong><span>{c.demoLabel}</span></div>
         <div class="pc-console-body">
           <div class="pc-skill-heading"><span>01</span><p>{c.skillsTitle}</p></div>
           <div class="pc-skills">{c.skills.map((skill, index) => <button type="button" data-skill={index} data-detail={skill.text} aria-pressed={index === 0 ? 'true' : 'false'} aria-controls="pc-skill-detail"><img src={`${assets}/${icons[index]}.png`} alt="" width="56" height="56" /><span><strong>{skill.name}</strong><small>{skill.role}</small></span></button>)}</div>

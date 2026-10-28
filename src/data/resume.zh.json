@@ -95,7 +95,7 @@
       "featured": true
     },
     {
-      "name": "PoE2 Companion — 技能驱动的配装工坊",
+      "name": "PoE2 Build Atlas — 技能驱动的配装工坊",
       "description": "以 AI 辅助开发《流放之路 2》聚合工坊，将 PoB2 技能组合伤害分析、词缀资料、官方交易、换装比较和上游制作引擎接成连续操作流程。",
       "impact": "围绕同一角色与技能组合，把“计算词缀和装备贡献 → 选择保留属性 → 搜索替代装备 → 核对整套换装”串起来，减少跨工具整理条件与重复录入。",
       "highlights": [
@@ -106,7 +106,7 @@
         "衔接制作决策：买成品之外，可复制目标装备调查词池与底座，导入实际底装后核对目标和冲突，按操作后的真实状态重算路线，并记录材料用量、单价和底装成本。"
       ],
       "tags": ["TypeScript", "React", "Node.js", "PoB2 / Lua", "装备检索", "制作规划"],
-      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
+      "repoUrl": "https://github.com/shihongyue2022/PoE2-Build-Atlas",
       "demoUrl": "/apps/poe2-companion/?lang=zh-CN",
       "caseStudyUrl": "/zh/projects/poe2-companion/",
       "featured": true

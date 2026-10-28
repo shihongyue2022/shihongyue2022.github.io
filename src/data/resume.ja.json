@@ -95,7 +95,7 @@
       "featured": true
     },
     {
-      "name": "PoE2 Companion — スキル起点の装備プランナー",
+      "name": "PoE2 Build Atlas — スキル起点の装備プランナー",
       "description": "AI支援で開発したPoE2統合工房。PoB2のスキル構成別火力分析、モッド資料、公式トレード、装備比較、上流クラフトエンジンを一連の操作へ接続。",
       "impact": "同じキャラクターとスキル構成を中心に、モッド・装備の寄与計算から残す属性の選択、代替品検索、装備全体の確認へつなぎ、ツール間の転記と再入力を削減。",
       "highlights": [
@@ -106,7 +106,7 @@
         "制作判断への接続：目標装備のプールとベースを調査し、実物の素材と目標を比較。競合を解消し、実際の操作結果からルートを再計算して、素材使用量、単価、ベース購入費を記録。"
       ],
       "tags": ["TypeScript", "React", "Node.js", "PoB2 / Lua", "装備検索", "クラフト"],
-      "repoUrl": "https://github.com/shihongyue2022/PoE2-Companion",
+      "repoUrl": "https://github.com/shihongyue2022/PoE2-Build-Atlas",
       "demoUrl": "/apps/poe2-companion/?lang=ja",
       "caseStudyUrl": "/ja/projects/poe2-companion/",
       "featured": true

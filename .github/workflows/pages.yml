@@ -23,11 +23,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Checkout PoE2 Companion
+      - name: Checkout PoE2 Build Atlas
         uses: actions/checkout@v4
         with:
-          repository: shihongyue2022/PoE2-Companion
-          ref: 73e4af0bbf9090973b70b359e22d75f9ad87163d
+          repository: shihongyue2022/PoE2-Build-Atlas
+          ref: ae2e7d55f444adda842d1fcb0c4f66626c4849bd
           path: .workbench-source
       - name: Setup Node.js
         uses: actions/setup-node@v4
